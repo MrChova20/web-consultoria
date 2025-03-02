@@ -2,6 +2,7 @@ import React from 'react';
 //
 import { motion } from 'framer-motion';
 import { Menu } from 'lucide-react';
+import Footer from './components/ui/Footer';
 
 
 const Home: React.FC = () => {
@@ -89,6 +90,22 @@ const Home: React.FC = () => {
 </div>
 
       </section>
+
+
+{/* Sección de la Web */}
+<div className="w-screen min-h-screen flex flex-col bg-gray-900 text-white">
+  
+  {/* Contenido Principal */}
+  <div className="flex-grow">
+    {/* Aquí van las demás secciones de la web */}
+  </div>
+
+  {/* Footer */}
+  <Footer />
+
+</div>
+
+
     </div>
   );
 };
