@@ -56,7 +56,7 @@ const Home: React.FC = () => {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="w-screen h-screen flex flex-col justify-center items-center text-center bg-cover bg-center snap-start" style={{ backgroundImage: "url('https://images.pexels.com/photos/326501/pexels-photo-326501.jpeg')" }}>
+        <section id="services" className="w-screen h-screen flex flex-col justify-center items-center text-center bg-cover bg-center snap-start" style={{ backgroundImage: "url('https://media.licdn.com/dms/image/v2/D4D22AQG8SO9FvoyzZQ/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1733763583420?e=1744243200&v=beta&t=59mkIrRxd0xJhtKAE615yTvbpGThB1m5FplZmkFW0YU')" }}>
           <div className="bg-black bg-opacity-70 p-12 rounded-xl max-w-3xl">
             <h2 className="text-5xl font-bold text-blue-400">Nuestros Servicios</h2>
             <p className="text-xl mt-4 text-gray-300">Desarrollo de software, consultoría IT y ciberseguridad.</p>
