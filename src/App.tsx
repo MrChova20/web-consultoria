@@ -75,7 +75,7 @@ const Home: React.FC = () => {
               <p className="text-lg mt-2 text-gray-300">Teléfono: +34 601 745 344</p>
               <p className="text-lg text-gray-300">Email: pablochova02@gmail.com</p>
             </div>
-            <img src="https://media.licdn.com/dms/image/v2/D4D03AQERfL01zhUluA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1727361699136?e=1746057600" alt="Pablo Chova Aparisi" className="w-48 h-48 rounded-full object-cover border-4 border-blue-400" />
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQERfL01zhUluA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1727361699136?e=1746057600&v=beta&t=x6lXIhCnRk5y2AxfpQXZOMFFdwf6hkfUUWMBh1RfsT4" />
           </div>
           <div className="w-full max-w-4xl h-96 mt-10 border-4 border-blue-400">
             <iframe
