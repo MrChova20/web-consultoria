@@ -98,21 +98,89 @@ const ScheduleAppointment: React.FC = () => {
           <>
             <h2 className="text-2xl font-bold text-center mb-6">Agenda tu Cita</h2>
             {error && <p className="text-red-500 text-sm text-center mb-4">{error}</p>}
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Nombre" required className="w-full p-2 bg-gray-700 border border-gray-600 rounded" />
-              <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Correo Electrónico" required className="w-full p-2 bg-gray-700 border border-gray-600 rounded" />
-              <input type="text" name="company" value={formData.company} onChange={handleChange} placeholder="Empresa" required className="w-full p-2 bg-gray-700 border border-gray-600 rounded" />
-              <input type="date" name="date" value={formData.date} onChange={handleChange} required className="w-full p-2 bg-gray-700 border border-gray-600 rounded" />
-              <input type="time" name="time" value={formData.time} onChange={handleChange} required className="w-full p-2 bg-gray-700 border border-gray-600 rounded" />
-              <select name="mode" value={formData.mode} onChange={handleChange} className="w-full p-2 bg-gray-700 border border-gray-600 rounded">
-                <option value="online">Reunión Online</option>
-                <option value="presencial">Reunión Presencial</option>
-              </select>
-              <textarea name="topic" value={formData.topic} onChange={handleChange} placeholder="Descripción del tema a tratar" required className="w-full p-2 bg-gray-700 border border-gray-600 rounded"></textarea>
-              <button type="submit" className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded">
-                Agendar Cita
-              </button>
-            </form>
+            <form onSubmit={handleSubmit} className="space-y-4 text-sm sm:text-base">
+  <div>
+    <label htmlFor="name" className="block mb-1 text-gray-300">Nombre</label>
+    <input type="text" name="name" id="name" value={formData.name} onChange={handleChange} required className="w-full p-2 bg-gray-700 border border-gray-600 rounded" />
+  </div>
+
+  <div>
+    <label htmlFor="email" className="block mb-1 text-gray-300">Correo Electrónico</label>
+    <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} required className="w-full p-2 bg-gray-700 border border-gray-600 rounded" />
+  </div>
+
+  <div>
+    <label htmlFor="company" className="block mb-1 text-gray-300">Empresa</label>
+    <input type="text" name="company" id="company" value={formData.company} onChange={handleChange} required className="w-full p-2 bg-gray-700 border border-gray-600 rounded" />
+  </div>
+
+  <div className="flex flex-col sm:flex-row gap-4">
+    <div className="flex-1">
+      <label htmlFor="date" className="block mb-1 text-gray-300">Fecha</label>
+      <input
+        type="date"
+        name="date"
+        id="date"
+        value={formData.date}
+        onChange={handleChange}
+        required
+        className="w-full p-2 bg-gray-700 border border-gray-600 rounded"
+        min={new Date().toISOString().split('T')[0]}
+      />
+    </div>
+
+    <div className="flex-1">
+      <label htmlFor="time" className="block mb-1 text-gray-300">Hora</label>
+      <input
+        type="time"
+        name="time"
+        id="time"
+        value={formData.time}
+        onChange={handleChange}
+        required
+        className="w-full p-2 bg-gray-700 border border-gray-600 rounded"
+        step="1800"
+        list="availableHours"
+      />
+      <datalist id="availableHours">
+        <option value="09:00" />
+        <option value="09:30" />
+        <option value="10:00" />
+        <option value="10:30" />
+        <option value="11:00" />
+        <option value="11:30" />
+        <option value="12:00" />
+        <option value="12:30" />
+        <option value="13:00" />
+        <option value="13:30" />
+        <option value="16:00" />
+        <option value="16:30" />
+        <option value="17:00" />
+        <option value="17:30" />
+        <option value="18:00" />
+        <option value="18:30" />
+      </datalist>
+    </div>
+  </div>
+
+  <div>
+    <label htmlFor="mode" className="block mb-1 text-gray-300">Modo</label>
+    <select name="mode" id="mode" value={formData.mode} onChange={handleChange} className="w-full p-2 bg-gray-700 border border-gray-600 rounded">
+      <option value="online">Reunión Online</option>
+      <option value="presencial">Reunión Presencial</option>
+    </select>
+  </div>
+
+  <div>
+    <label htmlFor="topic" className="block mb-1 text-gray-300">Tema a tratar</label>
+    <textarea name="topic" id="topic" value={formData.topic} onChange={handleChange} required className="w-full p-2 bg-gray-700 border border-gray-600 rounded" />
+  </div>
+
+  <button type="submit" className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded">
+    Agendar Cita
+  </button>
+</form>
+
           </>
         ) : (
           <div className="text-center">
