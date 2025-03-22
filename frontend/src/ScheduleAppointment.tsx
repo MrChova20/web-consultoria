@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+
 const ScheduleAppointment: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -7,54 +9,78 @@ const ScheduleAppointment: React.FC = () => {
     company: '',
     date: '',
     time: '',
-    mode: 'online', // Online por defecto
+    mode: 'online',
     topic: ''
   });
 
   const [meetingLink, setMeetingLink] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setError(null);
   };
 
-  const generateGoogleMeetLink = () => {
-    return 'https://meet.google.com/new';
+  const isBusinessHour = (dateStr: string, timeStr: string) => {
+    const datetime = new Date(`${dateStr}T${timeStr}`);
+    const day = datetime.getDay(); // 0 = domingo, 1 = lunes, ..., 6 = sábado
+    const hour = datetime.getHours();
+    return day >= 1 && day <= 5 && ((hour >= 9 && hour < 14) || (hour >= 16 && hour < 19));
+  };
+
+  const isPastDate = (dateStr: string, timeStr: string) => {
+    const now = new Date();
+    const selected = new Date(`${dateStr}T${timeStr}`);
+    return selected < now;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    let meetLink = null;
 
+    if (isPastDate(formData.date, formData.time)) {
+      setError('❌ No puedes agendar una cita en el pasado.');
+      return;
+    }
+
+    if (!isBusinessHour(formData.date, formData.time)) {
+      setError('❌ Solo puedes agendar citas de lunes a viernes, entre 9-14h y 16-19h.');
+      return;
+    }
+
+    let meetLink = null;
     if (formData.mode === 'online') {
-      meetLink = generateGoogleMeetLink();
+      meetLink = 'https://meet.google.com/new';
       setMeetingLink(meetLink);
     }
 
-    setSubmitted(true);
-
-    const emailBody = `Hola ${formData.name},\n\nTu reunión ha sido agendada:\n\n` +
-      `📅 Fecha: ${formData.date}\n🕒 Hora: ${formData.time}\n🏢 Empresa: ${formData.company}\n📌 Tema: ${formData.topic}\n\n` +
-      (formData.mode === 'online'
-        ? `🔗 Link de reunión: ${meetLink}\n`
-        : `📍 Dirección: Carrer Rausell 6, 1º, Gandia, Valencia\n`) +
-      `\nSi necesitas modificar la cita, contáctanos.\n\nSaludos,\nSoftware Gandia`;
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      company: formData.company,
+      date: formData.date,
+      time: formData.time,
+      mode: formData.mode,
+      topic: formData.topic
+    };
 
     try {
-      await fetch('http://localhost:5000/api/send-email', {
+      const response = await fetch(`${API_BASE_URL}/send-email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          to: formData.email, // Se envía al usuario
-          cc: 'softwaregandia@gmail.com', // Se envía una copia a softwaregandia
-          subject: 'Confirmación de Cita - Software Gandia',
-          text: emailBody
-        })
+        body: JSON.stringify(payload)
       });
 
+      if (!response.ok) {
+        const errData = await response.json();
+        throw new Error(errData.error || 'Error desconocido');
+      }
+
+      setSubmitted(true);
       console.log('Correo enviado correctamente');
-    } catch (error) {
-      console.error('Error enviando correo:', error);
+    } catch (err: any) {
+      console.error('Error enviando correo:', err);
+      setError(`❌ ${err.message}`);
     }
   };
 
@@ -71,6 +97,7 @@ const ScheduleAppointment: React.FC = () => {
         {!submitted ? (
           <>
             <h2 className="text-2xl font-bold text-center mb-6">Agenda tu Cita</h2>
+            {error && <p className="text-red-500 text-sm text-center mb-4">{error}</p>}
             <form onSubmit={handleSubmit} className="space-y-4">
               <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Nombre" required className="w-full p-2 bg-gray-700 border border-gray-600 rounded" />
               <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Correo Electrónico" required className="w-full p-2 bg-gray-700 border border-gray-600 rounded" />
@@ -94,7 +121,7 @@ const ScheduleAppointment: React.FC = () => {
             <p>🕒 <strong>Hora:</strong> {formData.time}</p>
             <p>🏢 <strong>Empresa:</strong> {formData.company}</p>
             <p>📌 <strong>Tema:</strong> {formData.topic}</p>
-            
+
             {formData.mode === 'online' ? (
               <>
                 <p>🔗 <strong>Reunión Online:</strong></p>
