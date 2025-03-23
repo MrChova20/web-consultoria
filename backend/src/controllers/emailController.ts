@@ -1,50 +1,49 @@
+// backend/src/controllers/emailController.ts
 import { Request, Response } from 'express';
 import { sendEmail } from '../services/emailService';
-import { isValidAppointment } from '../utils/timeValidation';
 
 export const sendAppointmentEmail = async (req: Request, res: Response) => {
-  const { name, email, company, date, time, topic, mode } = req.body;
+  const { name, email, phone, company, date, time, mode, topic } = req.body;
 
-  // Validar que los campos requeridos existen
-  if (!name || !email || !company || !date || !time || !topic || !mode) {
-    return res.status(400).json({ error: 'Faltan campos obligatorios.' });
+  if (!name || !email || !phone || !company || !date || !time || !topic) {
+    return res.status(400).json({ error: 'Faltan datos obligatorios en el formulario.' });
   }
 
-  // Validar que la cita es válida (dentro del horario y no en el pasado)
-  if (!isValidAppointment(date, time)) {
-    return res.status(400).json({ error: 'La cita debe ser en horario comercial y no en el pasado.' });
+  const isPast = new Date(`${date}T${time}`) < new Date();
+  const isWeekend = [0, 6].includes(new Date(`${date}T${time}`).getDay());
+  const hour = new Date(`${date}T${time}`).getHours();
+  const isOutOfBusinessHours = !((hour >= 9 && hour < 14) || (hour >= 16 && hour < 19));
+
+  if (isPast || isWeekend || isOutOfBusinessHours) {
+    return res.status(400).json({ error: 'La cita debe estar en horario comercial y no puede ser en el pasado.' });
   }
 
-  const locationInfo =
-    mode === 'online'
-      ? `🔗 Enlace: https://meet.google.com/new`
-      : `📍 Dirección: Carrer Rausell 6, 1º, Gandia, Valencia`;
+  const location = mode === 'online' ? 'https://meet.google.com/new' : 'Carrer Rausell 6, 1º, Gandia, Valencia';
+  const formattedMode = mode === 'online' ? '🔗 Enlace: ' + location : '📍 Dirección: ' + location;
 
-  const message = `
-Hola ${name},
+  const message = `Hola ${name},
 
 Tu cita ha sido confirmada:
 
 📅 Fecha: ${date}
 🕒 Hora: ${time}
+📞 Teléfono: ${phone}
 🏢 Empresa: ${company}
 📌 Tema: ${topic}
-${locationInfo}
+${formattedMode}
 
-Gracias por confiar en Software Gandia.
-`;
+Gracias por confiar en Gandia Software.`;
 
   try {
     await sendEmail({
       to: email,
       cc: 'softwaregandia@gmail.com',
-      subject: 'Confirmación de Cita - Software Gandia',
+      subject: 'Confirmación de Cita - Gandia Software',
       text: message
     });
-
     res.status(200).json({ message: 'Correo enviado correctamente' });
-  } catch (err) {
-    console.error('Error al enviar el correo:', err);
+  } catch (error) {
+    console.error(error);
     res.status(500).json({ error: 'Error al enviar el correo' });
   }
 };
