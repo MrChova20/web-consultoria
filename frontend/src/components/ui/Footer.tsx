@@ -1,7 +1,13 @@
-const Footer = () => {
-    return (
-      <footer className="w-full bg-gray-900 text-gray-300 py-10 mt-auto">
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+import React from 'react';
+
+interface FooterProps {
+  contactEmail?: string;
+}
+
+const Footer: React.FC<FooterProps> = ({ contactEmail = "softwaregandia@gmail.com" }) => {
+  return (
+    <footer className="w-full bg-gray-900 text-gray-300 py-10 mt-auto">
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left">
         
         {/* Columna 1 - Logo y descripción */}
         <div>
@@ -11,24 +17,13 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Columna 2 - Enlaces Rápidos */}
-        <div>
-          <h3 className="text-xl font-semibold text-white">Enlaces Rápidos</h3>
-          <ul className="mt-3 space-y-2">
-            <li><a href="#services" className="hover:text-blue-400 transition">Servicios</a></li>
-            <li><a href="#about" className="hover:text-blue-400 transition">Sobre Nosotros</a></li>
-            <li><a href="#contact" className="hover:text-blue-400 transition">Contacto</a></li>
-          </ul>
-        </div>
-
-        {/* Columna 3 - Contacto */}
+        {/* Columna 2 - Contacto */}
         <div>
           <h3 className="text-xl font-semibold text-white">Contacto</h3>
           <p className="mt-3 text-sm">📍 Gandia, Valencia</p>
-          <p className="text-sm">📧 info@gandiasoftware.com</p>
+          <p className="text-sm">📧 <a href={`mailto:${contactEmail}`} className="hover:text-blue-400">{contactEmail}</a></p>
           <p className="text-sm">📞 +34 601 745 344</p>
         </div>
-
       </div>
 
       {/* Línea divisoria */}
@@ -36,8 +31,7 @@ const Footer = () => {
         © {new Date().getFullYear()} Gandia Software. Todos los derechos reservados.
       </div>
     </footer>
-    );
-  };
-  
-  export default Footer;
-  
+  );
+};
+
+export default Footer;
