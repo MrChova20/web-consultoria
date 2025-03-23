@@ -1,0 +1,29 @@
+/* phone-dark-theme.css */
+
+.react-phone-number-input {
+  background-color: #374151; /* bg-gray-700 */
+  color: white;
+  border: 1px solid #4b5563; /* border-gray-600 */
+  border-radius: 0.375rem; /* rounded */
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.react-phone-number-input__input {
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.react-phone-number-input__country-select {
+  background-color: #374151;
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.react-phone-number-input__icon {
+  fill: white;
+}
