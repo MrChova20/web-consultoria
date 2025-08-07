@@ -55,7 +55,7 @@ const App: React.FC = () => {
                     className="min-h-screen bg-cover bg-center flex items-center justify-center"
                     style={{
                       backgroundImage:
-                        "url('https://images.unsplash.com/photo-1587825140708-dfaf72ae4b1b?q=80&w=1920&auto=format&fit=crop')",
+                        "url('https://lexsasabogadas.com/wp-content/uploads/2024/03/fotografos_20191010_163331.jpg')",
                     }}
                   >
                     <div className="bg-black/70 p-10 rounded-xl text-center max-w-3xl">
