@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "eslint.config.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,5 +16,16 @@
   "bugs": {
     "url": "https://github.com/MrChova20/web-consultoria/issues"
   },
-  "homepage": "https://github.com/MrChova20/web-consultoria#readme"
+  "homepage": "https://github.com/MrChova20/web-consultoria#readme",
+  "dependencies": {
+    "framer-motion": "^12.23.12",
+    "lucide-react": "^0.537.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7"
+  }
 }
