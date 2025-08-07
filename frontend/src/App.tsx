@@ -88,7 +88,7 @@ const App: React.FC = () => {
                   {/* Imagen del ICAV */}
                   <section className="px-6 md:px-20 text-center">
                     <img
-                      src="https://www.icav.es/uploads/galerias/galeria_1/foto_6379.jpg"
+                      src="https://www.icav.es/bd/imagenes/imagen3737g.jpg"
                       alt="Sede ICAV"
                       className="rounded-xl shadow-xl mx-auto max-w-4xl"
                     />
