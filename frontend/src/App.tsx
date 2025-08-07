@@ -36,11 +36,16 @@ const App: React.FC = () => {
             <Route path="/" element={
               <div className="space-y-32">
                 {/* Hero */}
-                <section
-                  className="min-h-screen bg-cover bg-center flex items-center justify-center"
-                  style={{ backgroundImage: "url('https://www.icav.es/uploads/galerias/galeria_1/foto_6379.jpg')" }}
-                >
-                  <div className="bg-black/70 p-10 rounded-xl text-center max-w-3xl">
+                <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="absolute w-full h-full object-cover"
+                    src="https://assets.mixkit.co/videos/preview/mixkit-technology-background-with-glowing-blue-light-lines-2013-large.mp4"
+                  />
+                  <div className="relative z-10 bg-black/70 p-10 rounded-xl text-center max-w-3xl">
                     <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-5xl font-extrabold text-blue-400">
                       LegalTech para Abogados del ICAV
                     </motion.h1>
@@ -51,6 +56,18 @@ const App: React.FC = () => {
                       Solicita una consultoría
                     </a>
                   </div>
+                </section>
+
+                {/* ICAV Imagen */}
+                <section className="px-6 md:px-20 text-center">
+                  <img
+                    src="https://www.icav.es/uploads/galerias/galeria_1/foto_6379.jpg"
+                    alt="Sede ICAV"
+                    className="rounded-xl shadow-xl mx-auto max-w-4xl"
+                  />
+                  <p className="text-gray-400 mt-6 max-w-3xl mx-auto">
+                    Contamos con experiencia trabajando directamente con el ICAV, incluyendo soporte en migraciones de correo y sistemas como AKA, así como colaboraciones con despachos jurídicos.
+                  </p>
                 </section>
 
                 {/* Servicios Especializados */}
