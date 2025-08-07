@@ -9,7 +9,7 @@ const App: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    document.title = "Gandia Software LegalTech | Peritaje Informático y Consultoría Jurídica";
+    document.title = "Gandia Software LegalTech | Peritajes Informáticos y Soporte ICAV";
   }, []);
 
   return (
@@ -38,61 +38,56 @@ const App: React.FC = () => {
                 {/* Hero */}
                 <section
                   className="min-h-screen bg-cover bg-center flex items-center justify-center"
-                  style={{ backgroundImage: "url('https://images.unsplash.com/photo-1581091215367-5fe95b6b835c?q=80')" }}
+                  style={{ backgroundImage: "url('https://www.icav.es/uploads/galerias/galeria_1/foto_6379.jpg')" }}
                 >
                   <div className="bg-black/70 p-10 rounded-xl text-center max-w-3xl">
                     <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-5xl font-extrabold text-blue-400">
-                      Expertos en Peritaje Informático y LegalTech
+                      LegalTech para Abogados del ICAV
                     </motion.h1>
                     <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }} className="mt-6 text-lg text-gray-300">
-                      Asistimos a despachos y abogados del ICAV en casos tecnológicos complejos: peritajes, ciberseguridad, propiedad intelectual, protección de datos y más.
+                      Peritaje informático, ciberseguridad, recuperación de pruebas, y soporte IT para despachos jurídicos.
                     </motion.p>
                     <a href="/schedule-appointment#form" className="inline-block mt-8 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-lg font-semibold text-white">
-                      Solicita una reunión
+                      Solicita una consultoría
                     </a>
                   </div>
                 </section>
 
-                {/* Servicios */}
+                {/* Servicios Especializados */}
                 <section className="px-6 md:px-20 text-center">
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">Servicios Especializados</h2>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">Servicios Especializados para Abogados</h2>
                   <div className="grid md:grid-cols-3 gap-10">
-                    <ServiceCard title="Peritaje Informático Judicial (Ratificación en Sala)" />
-                    <ServiceCard title="Consultoría LegalTech para Abogados del ICAV" />
-                    <ServiceCard title="Ciberseguridad y Análisis Forense" />
-                    <ServiceCard title="Recuperación de Evidencias Digitales" />
-                    <ServiceCard title="Protección de Datos y Adaptación al RGPD" />
-                    <ServiceCard title="Blockchain Legal y Custodia de Pruebas" />
-                    <ServiceCard title="Automatización Legal con IA y Smart Contracts" />
-                    <ServiceCard title="Software a Medida para Despachos Jurídicos" />
+                    <ServiceCard title="Peritaje Informático Judicial" description="Ratificación en sala, informes periciales técnicos comprensibles para jueces y abogados." />
+                    <ServiceCard title="Ciberseguridad Jurídica" description="Análisis forense, brechas de seguridad, ataques a sistemas informáticos y recuperación de datos." />
+                    <ServiceCard title="Migración de Correo y Soporte ICAV" description="Experiencia con el sistema AKA y la migración segura del correo del Colegio." />
+                    <ServiceCard title="Recuperación de Evidencias Digitales" description="WhatsApp, correos, imágenes, historiales de navegación, conversaciones y archivos eliminados." />
+                    <ServiceCard title="Consultoría RGPD y LegalTech" description="Implantación del Reglamento General de Protección de Datos, soluciones tecnológicas jurídicas." />
+                    <ServiceCard title="Desarrollo a Medida para Despachos" description="Automatización de tareas, gestión documental, firmas electrónicas y plataformas para abogados." />
                   </div>
-                  <p className="mt-8 text-gray-400 max-w-3xl mx-auto">
-                    En todos nuestros servicios, contamos con un equipo técnico y jurídico que garantiza resultados legalmente válidos y técnicamente sólidos.
+                  <p className="mt-10 text-gray-400 max-w-3xl mx-auto">
+                    Ayudamos a abogados y procuradores a comprender y utilizar la tecnología en beneficio de sus clientes, con informes claros, respaldos técnicos sólidos y comunicación directa.
                   </p>
                 </section>
 
-                {/* Por qué nosotros */}
-                <section className="bg-gray-900 py-16 px-6 md:px-20 text-center text-white">
-                  <h3 className="text-3xl md:text-4xl font-bold mb-6">¿Por qué trabajar con Gandia Software LegalTech?</h3>
-                  <p className="text-lg text-gray-300 max-w-4xl mx-auto">
-                    Porque entendemos tanto de software como de derecho. Hemos trabajado con abogados, jueces y empresas tecnológicas. Dominamos los procesos judiciales, sabemos cómo presentar un informe técnico ante un tribunal y lo traducimos al lenguaje jurídico necesario.
-                  </p>
+                {/* Ejemplos de Periciales */}
+                <section className="bg-gray-900 py-20 px-6 md:px-20">
+                  <h3 className="text-3xl md:text-4xl font-bold text-white text-center mb-10">Ejemplos de Periciales Informáticas</h3>
+                  <ul className="text-lg text-gray-300 list-disc max-w-4xl mx-auto space-y-4">
+                    <li>Autenticación y autoría de correos electrónicos.</li>
+                    <li>Demostración de acceso no autorizado a cuentas o sistemas.</li>
+                    <li>Recuperación de mensajes eliminados de WhatsApp o SMS.</li>
+                    <li>Análisis de navegación o contenido descargado desde un equipo.</li>
+                    <li>Verificación de manipulación de documentos digitales.</li>
+                    <li>Extracción de evidencias de discos duros, móviles o servidores.</li>
+                  </ul>
                 </section>
 
-                {/* Sobre Pablo */}
-                <section className="bg-gray-800 py-16 px-6 md:px-20 text-center">
-                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">¿Quién está detrás?</h3>
-                  <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                    Gandia Software está liderada por Pablo Chova Aparisi, Ingeniero de Software, Perito Informático y Consultor LegalTech. Contamos con un equipo multidisciplinar especializado en derecho, tecnología y ciberseguridad.
-                  </p>
-                </section>
-
-                {/* CTA final */}
+                {/* CTA */}
                 <section className="bg-blue-600 py-16 px-6 md:px-20 text-center text-white">
-                  <h3 className="text-3xl md:text-4xl font-bold">¿Eres abogado y necesitas soporte técnico en un caso?</h3>
-                  <p className="mt-4 text-lg">Hablemos sin compromiso. Somos expertos en derecho tecnológico.</p>
+                  <h3 className="text-3xl md:text-4xl font-bold">¿Eres abogado del ICAV y necesitas soporte técnico?</h3>
+                  <p className="mt-4 text-lg">Llevamos años colaborando con despachos y peritos oficiales. Habla con un consultor especializado hoy mismo.</p>
                   <a href="/schedule-appointment#form" className="mt-6 inline-block px-6 py-3 bg-black hover:bg-gray-800 rounded-lg text-lg font-semibold text-white">
-                    Solicita una consultoría gratuita
+                    Solicita una reunión personalizada
                   </a>
                 </section>
               </div>
@@ -108,9 +103,10 @@ const App: React.FC = () => {
   );
 };
 
-const ServiceCard = ({ title }: { title: string }) => (
+const ServiceCard = ({ title, description }: { title: string; description: string }) => (
   <div className="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition transform">
-    <h4 className="text-xl font-semibold text-white">{title}</h4>
+    <h4 className="text-xl font-semibold text-white mb-2">{title}</h4>
+    <p className="text-gray-400 text-sm">{description}</p>
   </div>
 );
 
