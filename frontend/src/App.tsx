@@ -36,27 +36,22 @@ const App: React.FC = () => {
             <Route path="/" element={
               <div className="space-y-32">
                 {/* Hero */}
-                <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="absolute w-full h-full object-cover"
-                    src="https://images.app.goo.gl/9AC1eGBwu57NbuJj9"
-                  />
-                  <div className="relative z-10 bg-black/70 p-10 rounded-xl text-center max-w-3xl">
-                    <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-5xl font-extrabold text-blue-400">
-                      LegalTech para Abogados del ICAV
-                    </motion.h1>
-                    <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }} className="mt-6 text-lg text-gray-300">
-                      Peritaje informático, ciberseguridad, recuperación de pruebas, y soporte IT para despachos jurídicos.
-                    </motion.p>
-                    <a href="/schedule-appointment#form" className="inline-block mt-8 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-lg font-semibold text-white">
-                      Solicita una consultoría
-                    </a>
-                  </div>
-                </section>
+                <section
+  className="min-h-screen bg-cover bg-center flex items-center justify-center"
+  style={{ backgroundImage: "url('https://upload.wikimedia.org/wikipedia/commons/6/6b/Sede_ICAV_2.jpg')" }}
+>
+  <div className="bg-black/70 p-10 rounded-xl text-center max-w-3xl">
+    <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-5xl font-extrabold text-blue-400">
+      LegalTech para Abogados del ICAV
+    </motion.h1>
+    <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }} className="mt-6 text-lg text-gray-300">
+      Peritaje informático, ciberseguridad, recuperación de pruebas, y soporte IT para despachos jurídicos.
+    </motion.p>
+    <a href="/schedule-appointment#form" className="inline-block mt-8 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-lg font-semibold text-white">
+      Solicita una consultoría
+    </a>
+  </div>
+</section>
 
                 {/* ICAV Imagen */}
                 <section className="px-6 md:px-20 text-center">
