@@ -199,7 +199,7 @@ const App: React.FC = () => {
           </Routes>
         </main>
 
-        <Footer contactEmail="legaltech@gandiasoftware.com" />
+        <Footer contactEmail="softwaregandia@gmail.com" />
       </div>
     </Router>
   );
