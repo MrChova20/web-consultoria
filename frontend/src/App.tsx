@@ -43,7 +43,7 @@ const App: React.FC = () => {
                     loop
                     playsInline
                     className="absolute w-full h-full object-cover"
-                    src="https://assets.mixkit.co/videos/preview/mixkit-technology-background-with-glowing-blue-light-lines-2013-large.mp4"
+                    src="https://images.app.goo.gl/9AC1eGBwu57NbuJj9"
                   />
                   <div className="relative z-10 bg-black/70 p-10 rounded-xl text-center max-w-3xl">
                     <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-5xl font-extrabold text-blue-400">
