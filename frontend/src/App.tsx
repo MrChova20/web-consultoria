@@ -65,7 +65,7 @@ const App: React.FC = () => {
                         transition={{ duration: 0.7 }}
                         className="text-5xl font-extrabold text-blue-400"
                       >
-                        LegalTech para Abogados del ICAV
+                        Software y Peritaje informatico Judicial y servicios para Abogados 
                       </motion.h1>
                       <motion.p
                         initial={{ opacity: 0, y: 20 }}
