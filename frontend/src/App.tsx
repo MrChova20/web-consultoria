@@ -65,7 +65,7 @@ const App: React.FC = () => {
                         transition={{ duration: 0.7 }}
                         className="text-5xl font-extrabold text-blue-400"
                       >
-                        Software y Peritaje informatico Judicial y servicios para Abogados 
+                        Software y Peritaje Informático Judicial para Abogados
                       </motion.h1>
                       <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -85,13 +85,17 @@ const App: React.FC = () => {
                     </div>
                   </section>
 
-                  {/* Imagen del ICAV */}
+                  {/* Logo del ICAV (pequeño, como marca) */}
                   <section className="px-6 md:px-20 text-center">
-                    <img
-                      src="https://www.icav.es/bd/imagenes/imagen3737g.jpg"
-                      alt="Sede ICAV"
-                      className="rounded-xl shadow-xl mx-auto max-w-4xl"
-                    />
+                    <div className="mx-auto w-full max-w-sm overflow-hidden">
+                      <img
+                        src="https://www.icav.es/bd/imagenes/imagen3737g.jpg"
+                        alt="Logo / Sede ICAV"
+                        className="mx-auto h-16 sm:h-20 md:h-24 w-auto object-contain"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
                     <p className="text-gray-400 mt-6 max-w-3xl mx-auto">
                       Contamos con experiencia trabajando directamente con el
                       ICAV, incluyendo soporte en migraciones de correo y
