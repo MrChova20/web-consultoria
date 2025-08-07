@@ -97,9 +97,9 @@ const App: React.FC = () => {
                       />
                     </div>
                     <p className="text-gray-400 mt-6 max-w-3xl mx-auto">
-                      Contamos con experiencia trabajando directamente con el
+                      Contamos con experiencia con el entorno del
                       ICAV, incluyendo soporte en migraciones de correo y
-                      sistemas como AKA, así como colaboraciones con despachos
+                      sistemas como AKA, así como instalaciones que requieren los despachos
                       jurídicos.
                     </p>
                   </section>
