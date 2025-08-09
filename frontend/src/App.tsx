@@ -10,37 +10,40 @@ const App: React.FC = () => {
 
   useEffect(() => {
     document.title =
-      'Gandia Software  | Peritajes Informáticos y Soporte Informático juridico';
+      'Gandia Software | Peritajes Informáticos y Soporte Informático Jurídico';
   }, []);
 
   return (
     <Router>
-      <div className="min-h-screen w-screen bg-gray-950 text-white flex flex-col">
-        <header className="fixed top-0 left-0 w-full bg-black backdrop-blur-md z-50 flex justify-between items-center px-6 md:px-12 py-4 shadow-xl">
+      <div className="min-h-screen w-screen bg-slate-950 text-slate-100 flex flex-col">
+        {/* HEADER */}
+        <header className="fixed top-0 left-0 w-full bg-slate-900/90 backdrop-blur-md z-50 flex justify-between items-center px-6 md:px-12 py-4 border-b border-slate-800/60">
           <Link
             to="/"
-            className="text-3xl font-extrabold tracking-tight text-blue-400"
+            className="text-2xl md:text-3xl font-extrabold tracking-tight text-amber-400"
           >
             Gandia Software
           </Link>
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+            <Link to="/" className="hover:text-amber-300 transition-colors">Inicio</Link>
+            <Link to="/schedule-appointment#form" className="hover:text-amber-300 transition-colors">Contacto</Link>
+          </nav>
           <div className="md:hidden">
-            <button onClick={() => setMenuOpen(!menuOpen)}>
-              {menuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="p-1 rounded-lg hover:bg-slate-800/60 transition-colors"
+              aria-label="Abrir menú"
+            >
+              {menuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </button>
           </div>
         </header>
 
+        {/* MOBILE MENU */}
         {menuOpen && (
-          <div className="fixed top-16 left-0 w-full bg-black z-40 flex flex-col items-center py-6 space-y-4 text-lg">
-            <Link to="/" onClick={() => setMenuOpen(false)}>
-              Inicio
-            </Link>
-            <Link
-              to="/schedule-appointment#form"
-              onClick={() => setMenuOpen(false)}
-            >
-              Contacto
-            </Link>
+          <div className="fixed top-16 left-0 w-full bg-slate-900/95 z-40 flex flex-col items-center py-6 space-y-4 text-lg border-b border-slate-800">
+            <Link to="/" onClick={() => setMenuOpen(false)}>Inicio</Link>
+            <Link to="/schedule-appointment#form" onClick={() => setMenuOpen(false)}>Contacto</Link>
           </div>
         )}
 
@@ -49,153 +52,144 @@ const App: React.FC = () => {
             <Route
               path="/"
               element={
-                <div className="space-y-32">
-                  {/* Hero con fondo profesional */}
+                <div className="space-y-28 md:space-y-32">
+                  {/* HERO */}
                   <section
-                    className="min-h-screen bg-cover bg-center flex items-center justify-center"
+                    className="relative min-h-screen bg-cover bg-center flex items-center justify-center"
                     style={{
                       backgroundImage:
                         "url('https://lexsasabogadas.com/wp-content/uploads/2024/03/fotografos_20191010_163331.jpg')",
                     }}
                   >
-                    <div className="bg-black/70 p-10 rounded-xl text-center max-w-3xl">
+                    {/* Overlay para contraste */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/60 to-slate-950/70" />
+                    <div className="relative z-10 bg-slate-950/50 p-8 md:p-10 rounded-2xl text-center max-w-3xl shadow-2xl ring-1 ring-slate-800/60">
                       <motion.h1
-                        initial={{ opacity: 0, y: -20 }}
+                        initial={{ opacity: 0, y: -16 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7 }}
-                        className="text-5xl font-extrabold text-blue-400"
+                        transition={{ duration: 0.6 }}
+                        className="text-4xl md:text-5xl font-extrabold leading-tight"
                       >
-                        Software y Peritaje Informático Judicial para Abogados
+                        <span className="text-amber-400">Peritaje Informático</span> y
+                        Servicios IT para Abogados
                       </motion.h1>
                       <motion.p
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.9 }}
-                        className="mt-6 text-lg text-gray-300"
+                        transition={{ duration: 0.75 }}
+                        className="mt-5 text-base md:text-lg text-slate-300"
                       >
-                        Peritaje informático, ciberseguridad, recuperación de
-                        pruebas, y soporte IT para despachos jurídicos.
+                        Informes periciales, ciberseguridad, recuperación de evidencias y
+                        soporte técnico integral para despachos jurídicos.
                       </motion.p>
-                      <a
-                        href="/schedule-appointment#form"
-                        className="inline-block mt-8 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-lg font-semibold text-white"
-                      >
-                        Solicita una consultoría
-                      </a>
+                      <div className="mt-8 flex items-center justify-center gap-4">
+                        <a
+                          href="/schedule-appointment#form"
+                          className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
+                        >
+                          Solicita una consultoría
+                        </a>
+                        <a
+                          href="#servicios"
+                          className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-transparent border border-slate-700 hover:border-amber-500 hover:text-amber-300 font-semibold transition-colors"
+                        >
+                          Ver servicios
+                        </a>
+                      </div>
                     </div>
                   </section>
 
-                  {/* Logo del ICAV (pequeño, como marca) */}
+                  {/* LOGO / SELLO ICAV - pequeño, responsive */}
                   <section className="px-6 md:px-20 text-center">
-                    <div className="mx-auto w-full max-w-sm overflow-hidden">
+                    <div className="mx-auto w-full max-w-xs">
                       <img
-                        src=""
-                        alt="Logo / Sede ICAV"
-                        className="mx-auto h-16 sm:h-20 md:h-24 w-auto object-contain"
+                        src="https://www.icav.es/bd/imagenes/imagen3737g.jpg"
+                        alt="ICAV"
+                        className="mx-auto h-14 sm:h-16 md:h-20 w-auto object-contain"
                         loading="lazy"
                         decoding="async"
                       />
                     </div>
-                    <p className="text-gray-400 mt-6 max-w-3xl mx-auto">
-                      Contamos con experiencia con el entorno 
-                      Judicial, incluyendo soporte en migraciones de correo y
-                      sistemas como AKA, así como instalaciones que requieren los despachos
-                      jurídicos.
+                    <p className="text-slate-300 mt-5 max-w-3xl mx-auto text-sm md:text-base">
+                      Experiencia directa con entornos jurídicos: migraciones de correo,
+                      soporte a despachos y trabajo con sistemas como <strong>AKA</strong>.
                     </p>
                   </section>
 
-                  {/* Servicios Especializados */}
-                  <section className="px-6 md:px-20 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">
+                  {/* SERVICIOS */}
+                  <section id="servicios" className="px-6 md:px-20 text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-10">
                       Servicios Especializados para Abogados
                     </h2>
-                    <div className="grid md:grid-cols-3 gap-10">
+                    <div className="grid md:grid-cols-3 gap-6 md:gap-8">
                       <ServiceCard
                         title="Peritaje Informático Judicial"
-                        description="Ratificación en sala, informes periciales técnicos comprensibles para jueces y abogados."
+                        description="Informes claros y ratificación en sala. Metodología forense y cadena de custodia."
                       />
                       <ServiceCard
                         title="Ciberseguridad Jurídica"
-                        description="Análisis forense, brechas de seguridad, ataques a sistemas informáticos y recuperación de datos."
+                        description="Análisis forense, detección de brechas, respuesta a incidentes y endurecimiento."
                       />
                       <ServiceCard
-                        title="Migración de Correo y Soporte para Despachos Jurídicos"
-                        description="Experiencia con el sistema AKA y la migración segura del correo del Colegio."
+                        title="Migración de Correo en Despachos"
+                        description="Planificación, ejecución segura y soporte post-migración. Experiencia con AKA."
                       />
                       <ServiceCard
                         title="Recuperación de Evidencias Digitales"
-                        description="WhatsApp, correos, imágenes, historiales de navegación, conversaciones y archivos eliminados."
+                        description="WhatsApp, email, navegación, metadatos y archivos eliminados."
                       />
                       <ServiceCard
                         title="Consultoría RGPD y LegalTech"
-                        description="Implantación del Reglamento General de Protección de Datos, soluciones tecnológicas jurídicas."
+                        description="Evaluaciones de impacto, política de privacidad y soluciones tecnológicas."
                       />
                       <ServiceCard
-                        title="Desarrollo a Medida para Despachos"
-                        description="Automatización de tareas, gestión documental, firmas electrónicas y plataformas para abogados."
+                        title="Software a Medida para Despachos"
+                        description="Automatización de tareas, gestión documental, flujos y firma electrónica."
                       />
                     </div>
-                    <p className="mt-10 text-gray-400 max-w-3xl mx-auto">
-                      Ayudamos a abogados y procuradores a comprender y utilizar
-                      la tecnología en beneficio de sus clientes, con informes
-                      claros, respaldos técnicos sólidos y comunicación directa.
+                    <p className="mt-10 text-slate-300 max-w-3xl mx-auto">
+                      Traducimos lo técnico a lenguaje jurídico, entregando evidencias robustas
+                      y accionables.
                     </p>
                   </section>
 
-                  {/* Ejemplos de Periciales */}
-                  <section className="bg-gray-900 py-20 px-6 md:px-20">
-                    <h3 className="text-3xl md:text-4xl font-bold text-white text-center mb-10">
+                  {/* EJEMPLOS DE PERICIALES */}
+                  <section className="bg-slate-900/70 border-y border-slate-800 py-16 px-6 md:px-20">
+                    <h3 className="text-3xl md:text-4xl font-bold text-slate-100 text-center mb-8">
                       Ejemplos de Periciales Informáticas
                     </h3>
-                    <ul className="text-lg text-gray-300 list-disc max-w-4xl mx-auto space-y-4">
-                      <li>
-                        Autenticación y autoría de correos electrónicos.
-                      </li>
-                      <li>
-                        Demostración de acceso no autorizado a cuentas o
-                        sistemas.
-                      </li>
-                      <li>
-                        Recuperación de mensajes eliminados de WhatsApp o SMS.
-                      </li>
-                      <li>
-                        Análisis de navegación o contenido descargado desde un
-                        equipo.
-                      </li>
-                      <li>
-                        Verificación de manipulación de documentos digitales.
-                      </li>
-                      <li>
-                        Extracción de evidencias de discos duros, móviles o
-                        servidores.
-                      </li>
+                    <ul className="text-base md:text-lg text-slate-300 list-disc max-w-4xl mx-auto space-y-3 pl-6">
+                      <li>Autenticación y autoría de correos electrónicos.</li>
+                      <li>Acreditación de accesos no autorizados y su trazabilidad.</li>
+                      <li>Recuperación de mensajes eliminados (WhatsApp, SMS, email).</li>
+                      <li>Análisis de navegación, descargas y actividad en equipos.</li>
+                      <li>Detección de manipulación/alteración de documentos.</li>
+                      <li>Extracción de evidencias en móviles, discos y servidores.</li>
                     </ul>
                   </section>
 
-                  {/* CTA */}
-                  <section className="bg-blue-600 py-16 px-6 md:px-20 text-center text-white">
-                    <h3 className="text-3xl md:text-4xl font-bold">
-                      ¿Eres abogado del ICAV y necesitas soporte técnico?
-                    </h3>
-                    <p className="mt-4 text-lg">
-                      Llevamos años colaborando con despachos y peritos
-                      oficiales. Habla con un consultor especializado hoy mismo.
-                    </p>
-                    <a
-                      href="/schedule-appointment#form"
-                      className="mt-6 inline-block px-6 py-3 bg-black hover:bg-gray-800 rounded-lg text-lg font-semibold text-white"
-                    >
-                      Solicita una reunión personalizada
-                    </a>
+                  {/* CTA FINAL */}
+                  <section className="py-16 px-6 md:px-20 text-center">
+                    <div className="mx-auto max-w-4xl rounded-2xl border border-slate-800 bg-slate-900/50 p-8 md:p-10 shadow-xl">
+                      <h3 className="text-2xl md:text-3xl font-bold">
+                        ¿Necesitas soporte técnico o un peritaje para tu caso?
+                      </h3>
+                      <p className="mt-4 text-slate-300">
+                        Agenda una llamada y cuéntanos tu situación. Te orientamos sin compromiso.
+                      </p>
+                      <a
+                        href="/schedule-appointment#form"
+                        className="mt-7 inline-flex items-center justify-center px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
+                      >
+                        Solicitar reunión
+                      </a>
+                    </div>
                   </section>
                 </div>
               }
             />
 
-            <Route
-              path="/schedule-appointment"
-              element={<ScheduleAppointment />}
-            />
+            <Route path="/schedule-appointment" element={<ScheduleAppointment />} />
           </Routes>
         </main>
 
@@ -212,9 +206,9 @@ const ServiceCard = ({
   title: string;
   description: string;
 }) => (
-  <div className="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition transform">
-    <h4 className="text-xl font-semibold text-white mb-2">{title}</h4>
-    <p className="text-gray-400 text-sm">{description}</p>
+  <div className="bg-slate-900/70 border border-slate-800 p-6 rounded-2xl shadow-lg hover:shadow-amber-500/10 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all">
+    <h4 className="text-lg font-semibold text-slate-100 mb-2">{title}</h4>
+    <p className="text-slate-300 text-sm leading-relaxed">{description}</p>
   </div>
 );
 
