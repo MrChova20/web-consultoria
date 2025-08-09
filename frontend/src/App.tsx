@@ -10,7 +10,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     document.title =
-      'Gandia Software LegalTech | Peritajes Informáticos y Soporte ICAV';
+      'Gandia Software  | Peritajes Informáticos y Soporte Informático juridico';
   }, []);
 
   return (
@@ -89,7 +89,7 @@ const App: React.FC = () => {
                   <section className="px-6 md:px-20 text-center">
                     <div className="mx-auto w-full max-w-sm overflow-hidden">
                       <img
-                        src="https://www.icav.es/bd/imagenes/imagen3737g.jpg"
+                        src=""
                         alt="Logo / Sede ICAV"
                         className="mx-auto h-16 sm:h-20 md:h-24 w-auto object-contain"
                         loading="lazy"
@@ -97,8 +97,8 @@ const App: React.FC = () => {
                       />
                     </div>
                     <p className="text-gray-400 mt-6 max-w-3xl mx-auto">
-                      Contamos con experiencia con el entorno del
-                      ICAV, incluyendo soporte en migraciones de correo y
+                      Contamos con experiencia con el entorno 
+                      Judicial, incluyendo soporte en migraciones de correo y
                       sistemas como AKA, así como instalaciones que requieren los despachos
                       jurídicos.
                     </p>
@@ -119,7 +119,7 @@ const App: React.FC = () => {
                         description="Análisis forense, brechas de seguridad, ataques a sistemas informáticos y recuperación de datos."
                       />
                       <ServiceCard
-                        title="Migración de Correo y Soporte ICAV"
+                        title="Migración de Correo y Soporte para Despachos Jurídicos"
                         description="Experiencia con el sistema AKA y la migración segura del correo del Colegio."
                       />
                       <ServiceCard
