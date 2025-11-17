@@ -1,217 +1,249 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import ScheduleAppointment from './ScheduleAppointment';
-import Footer from './components/ui/Footer';
-import BulkEmailDashboard from './BulkEmailDashboard';
+import React from "react";
 
-const App: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    document.title =
-      'Gandia Software | Peritajes Informáticos y Soporte Informático Jurídico';
-  }, []);
-
+const SoftwareGandiaLanding: React.FC = () => {
   return (
-    <Router>
-      <div className="min-h-screen w-screen bg-slate-950 text-slate-100 flex flex-col">
-        {/* HEADER */}
-        <header className="fixed top-0 left-0 w-full bg-slate-900/90 backdrop-blur-md z-50 flex justify-between items-center px-6 md:px-12 py-4 border-b border-slate-800/60">
-          <Link
-            to="/"
-            className="text-2xl md:text-3xl font-extrabold tracking-tight text-amber-400"
-          >
-            Gandia Software
-          </Link>
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <Link to="/" className="hover:text-amber-300 transition-colors">Inicio</Link>
-            <Link to="/schedule-appointment#form" className="hover:text-amber-300 transition-colors">Contacto</Link>
-        {/*    <Link to="/envios" className="hover:text-amber-300 transition-colors">Envío masivo</Link>*/}
+    <div className="w-screen min-h-screen overflow-x-hidden bg-slate-950 text-slate-100">
+
+      {/* NAVBAR */}
+      <header className="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-20 w-full">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
+
+          {/* LOGO */}
+          <div className="flex items-center gap-2">
+            <div className="w-9 h-9 rounded-xl bg-blue-600/20 border border-blue-400 flex items-center justify-center font-bold text-blue-300 text-lg">
+              SG
+            </div>
+            <div>
+              <div className="text-sm font-semibold tracking-wide">
+                Software Gandía
+              </div>
+              <div className="text-[11px] text-slate-400 leading-none">
+                Peritaje • Software • Hostelería
+              </div>
+            </div>
+          </div>
+
+          {/* NAV */}
+          <nav className="hidden md:flex gap-6 text-sm text-slate-300">
+            <a href="#peritaje" className="hover:text-blue-300">Peritaje informático</a>
+            <a href="#software" className="hover:text-blue-300">Software empresarial</a>
+            <a href="#hosteleria" className="hover:text-blue-300">Hostelería</a>
+            <a href="#verifactu" className="hover:text-blue-300">Verifactu</a>
           </nav>
-          <div className="md:hidden">
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="p-1 rounded-lg hover:bg-slate-800/60 transition-colors"
-              aria-label="Abrir menú"
-            >
-              {menuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
-            </button>
+
+          <a
+            href="#contacto"
+            className="text-xs md:text-sm px-4 py-2 rounded-full bg-blue-600 hover:bg-blue-700 transition text-white font-medium"
+          >
+            Solicitar presupuesto
+          </a>
+        </div>
+      </header>
+
+      {/* HERO */}
+      <section className="w-full border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
+
+          {/* TEXT */}
+          <div>
+            <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-5">
+              Tecnología profesional,{" "}
+              <span className="text-blue-400">peritaje informático</span> y
+              software a medida para empresas.
+            </h1>
+
+            <p className="text-sm md:text-base text-slate-300 mb-8 max-w-xl">
+              En <strong>Software Gandía</strong> diseñamos soluciones digitales avanzadas:
+              peritaje informático con validez judicial, CRM y ERP a medida, 
+              control de stock, sistemas para hostelería con kioscos por mesa 
+              e implantación de Verifactu. Tecnología diseñada para hacer crecer su empresa.
+            </p>
+
+            {/* BOTONES ACTUALIZADOS */}
+            <div className="flex flex-wrap gap-3 mb-6">
+
+              {/* PRINCIPAL */}
+              <a
+                href="#contacto"
+                className="px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-sm font-medium text-white shadow-sm shadow-blue-900/50"
+              >
+                Solicitar presupuesto sin compromiso
+              </a>
+
+              {/* SECUNDARIO */}
+              <a
+                href="#servicios"
+                className="px-5 py-2.5 rounded-full border border-blue-400 text-white hover:bg-blue-600 hover:border-blue-600 text-sm font-medium transition"
+              >
+                Ver servicios
+              </a>
+
+            </div>
+
+            <ul className="text-xs text-slate-400 space-y-1">
+              <li>• Enfoque empresarial y resultados medibles</li>
+              <li>• Trato directo, sin intermediarios</li>
+              <li>• Proyectos llave en mano y soporte continuo</li>
+            </ul>
           </div>
-        </header>
 
-        {/* MOBILE MENU */}
-        {menuOpen && (
-          <div className="fixed top-16 left-0 w-full bg-slate-900/95 z-40 flex flex-col items-center py-6 space-y-4 text-lg border-b border-slate-800">
-            <Link to="/" onClick={() => setMenuOpen(false)}>Inicio</Link>
-            <Link to="/schedule-appointment#form" onClick={() => setMenuOpen(false)}>Contacto</Link>
-          {/* MOBILE MENU   <Link to="/envios" onClick={() => setMenuOpen(false)}>Envío masivo</Link> */}
+          {/* FEATURES BOX */}
+          <div className="rounded-3xl border border-slate-800 bg-slate-900/60 p-6 shadow-xl">
+            <div className="text-xs font-semibold text-slate-300 mb-3">
+              Principales áreas de trabajo
+            </div>
+
+            <div className="space-y-4 text-xs">
+              <Feature
+                title="Peritaje informático judicial"
+                subtitle="Informes válidos en juzgado · Análisis forense · Ratificación"
+              />
+              <Feature
+                title="CRM y ERP a medida"
+                subtitle="Procesos internos · clientes · finanzas en un solo sistema"
+              />
+              <Feature
+                title="Hostelería digital"
+                subtitle="Kioscos por mesa · TPV · comandas automáticas"
+              />
+              <Feature
+                title="Verifactu & cumplimiento"
+                subtitle="Integración total con su sistema de facturación"
+              />
+            </div>
+
+            <div className="mt-4 text-[11px] text-slate-500">
+              Tecnología desarrollada en Gandía, para empresas de toda España.
+            </div>
           </div>
-        )}
+        </div>
+      </section>
 
-        <main className="pt-20">
-          <Routes>
-            {/* LANDING */}
-            <Route
-              path="/"
-              element={
-                <div className="space-y-28 md:space-y-32">
-                  {/* HERO */}
-                  <section
-                    className="relative min-h-screen bg-cover bg-center flex items-center justify-center"
-                    style={{
-                      backgroundImage:
-                        "url('https://lexsasabogadas.com/wp-content/uploads/2024/03/fotografos_20191010_163331.jpg')",
-                    }}
-                  >
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/60 to-slate-950/70" />
-                    <div className="relative z-10 bg-slate-950/50 p-8 md:p-10 rounded-2xl text-center max-w-3xl shadow-2xl ring-1 ring-slate-800/60">
-                      <motion.h1
-                        initial={{ opacity: 0, y: -16 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="text-4xl md:text-5xl font-extrabold leading-tight"
-                      >
-                        <span className="text-amber-400">Peritaje Informático</span> y
-                        Servicios IT para Abogados
-                      </motion.h1>
-                      <motion.p
-                        initial={{ opacity: 0, y: 16 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.75 }}
-                        className="mt-5 text-base md:text-lg text-slate-300"
-                      >
-                        Informes periciales, ciberseguridad, recuperación de evidencias y
-                        soporte técnico integral para despachos jurídicos.
-                      </motion.p>
-                      <div className="mt-8 flex items-center justify-center gap-4">
-                        <a
-                          href="/schedule-appointment#form"
-                          className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
-                        >
-                          Solicita una consultoría
-                        </a>
-                        <a
-                          href="#servicios"
-                          className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-transparent border border-slate-700 hover:border-amber-500 hover:text-amber-300 font-semibold transition-colors"
-                        >
-                          Ver servicios
-                        </a>
-                      </div>
-                    </div>
-                  </section>
+      {/* SERVICIOS */}
+      <section id="servicios" className="w-full border-b border-slate-800 bg-slate-950">
+        <div className="max-w-7xl mx-auto px-4 py-12">
+          <h2 className="text-xl md:text-2xl font-semibold mb-8">
+            ¿Qué hacemos en Software Gandía?
+          </h2>
 
-                  {/* LOGO / SELLO ICAV */}
-                  <section className="px-6 md:px-20 text-center">
-                    <div className="mx-auto w-full max-w-xs">
-                      <img
-                        src="https://www.icav.es/bd/imagenes/imagen3737g.jpg"
-                        alt="ICAV"
-                        className="mx-auto h-14 sm:h-16 md:h-20 w-auto object-contain"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                    <p className="text-slate-300 mt-5 max-w-3xl mx-auto text-sm md:text-base">
-                      Experiencia directa con entornos jurídicos: migraciones de correo,
-                      soporte a despachos y trabajo con sistemas como <strong>AKA</strong>.
-                    </p>
-                  </section>
-
-                  {/* SERVICIOS */}
-                  <section id="servicios" className="px-6 md:px-20 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-10">
-                      Servicios Especializados para Abogados
-                    </h2>
-                    <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-                      <ServiceCard
-                        title="Peritaje Informático Judicial"
-                        description="Informes claros y ratificación en sala. Metodología forense y cadena de custodia."
-                      />
-                      <ServiceCard
-                        title="Ciberseguridad Jurídica"
-                        description="Análisis forense, detección de brechas, respuesta a incidentes y endurecimiento."
-                      />
-                      <ServiceCard
-                        title="Migración de Correo en Despachos"
-                        description="Planificación, ejecución segura y soporte post-migración. Experiencia con AKA."
-                      />
-                      <ServiceCard
-                        title="Recuperación de Evidencias Digitales"
-                        description="WhatsApp, email, navegación, metadatos y archivos eliminados."
-                      />
-                      <ServiceCard
-                        title="Consultoría RGPD y LegalTech"
-                        description="Evaluaciones de impacto, política de privacidad y soluciones tecnológicas."
-                      />
-                      <ServiceCard
-                        title="Software a Medida para Despachos"
-                        description="Automatización de tareas, gestión documental, flujos y firma electrónica."
-                      />
-                    </div>
-                    <p className="mt-10 text-slate-300 max-w-3xl mx-auto">
-                      Traducimos lo técnico a lenguaje jurídico, entregando evidencias robustas
-                      y accionables.
-                    </p>
-                  </section>
-
-                  {/* CTA FINAL */}
-                  <section className="py-16 px-6 md:px-20 text-center">
-                    <div className="mx-auto max-w-4xl rounded-2xl border border-slate-800 bg-slate-900/50 p-8 md:p-10 shadow-xl">
-                      <h3 className="text-2xl md:text-3xl font-bold">
-                        ¿Necesitas soporte técnico o un peritaje para tu caso?
-                      </h3>
-                      <p className="mt-4 text-slate-300">
-                        Agenda una llamada y cuéntanos tu situación. Te orientamos sin compromiso.
-                      </p>
-
-                      <div className="mt-7 flex items-center justify-center gap-4">
-                        <a
-                          href="/schedule-appointment#form"
-                          className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
-                        >
-                          Solicitar reunión
-                        </a>
-
-                        {/* Botón nuevo que lleva al panel de envíos */}
-                        <Link
-                          to="/envios"
-                          className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-transparent border border-slate-700 hover:border-amber-500 hover:text-amber-300 font-semibold transition-colors"
-                        >
-                          Envío masivo
-                        </Link>
-                      </div>
-                    </div>
-                  </section>
-                </div>
-              }
+          <div className="grid md:grid-cols-4 gap-5 text-sm">
+            <Service
+              title="Peritaje informático"
+              text="Informes periciales, evidencias y análisis forense válidos en juzgado."
             />
+            <Service
+              title="Software empresarial"
+              text="CRM, ERP, control de stock e integraciones avanzadas."
+            />
+            <Service
+              title="Soluciones para hostelería"
+              text="Digitalización de restaurantes: kioscos, TPV y comandas."
+            />
+            <Service
+              title="Verifactu y normativa"
+              text="Implantación, integración y soporte continuo."
+            />
+          </div>
+        </div>
+      </section>
 
-            {/* RUTAS */}
-            <Route path="/schedule-appointment" element={<ScheduleAppointment />} />
-            <Route path="/envios" element={<BulkEmailDashboard />} />
-          </Routes>
-        </main>
+      {/* CONTACTO */}
+      <section id="contacto" className="bg-slate-950 border-t border-slate-800">
+        <div className="max-w-4xl mx-auto px-4 py-16">
+          <h2 className="text-2xl font-semibold mb-3">
+            Solicite información o presupuesto.
+          </h2>
 
-        <Footer contactEmail="softwaregandia@gmail.com" />
-      </div>
-    </Router>
+          <p className="text-sm text-slate-300 mb-8 max-w-lg">
+            Cuéntenos brevemente qué necesita y le responderemos en menos de 24 horas.
+          </p>
+
+          <form className="grid md:grid-cols-2 gap-4 text-sm">
+            <Input label="Nombre" placeholder="Nombre y apellidos" />
+            <Input label="Empresa" placeholder="Nombre de su empresa" />
+            <Input label="Email" type="email" placeholder="correo@ejemplo.com" />
+            <Input label="Teléfono" placeholder="+34 ..." />
+
+            <div className="flex flex-col gap-1 md:col-span-2">
+              <label className="text-slate-300">Servicio de interés</label>
+              <select className="rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-slate-100 text-sm outline-none focus:border-blue-400">
+                <option>Peritaje informático</option>
+                <option>Software empresarial (CRM / ERP / Stock)</option>
+                <option>Soluciones para hostelería</option>
+                <option>Verifactu</option>
+                <option>Otro / Consultoría</option>
+              </select>
+            </div>
+
+            <div className="flex flex-col gap-1 md:col-span-2">
+              <label className="text-slate-300">Mensaje</label>
+              <textarea
+                className="rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-slate-100 text-sm outline-none focus:border-blue-400 min-h-[120px]"
+                placeholder="Explíquenos brevemente qué necesita."
+              />
+            </div>
+
+            <div className="md:col-span-2">
+              <button
+                type="submit"
+                className="px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-sm font-medium text-white"
+              >
+                Enviar solicitud
+              </button>
+              <p className="text-[11px] text-slate-500 mt-2">
+                Nos pondremos en contacto con usted muy pronto.
+              </p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="border-t border-slate-800 bg-slate-950">
+        <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
+          <p>© {new Date().getFullYear()} Software Gandía — Todos los derechos reservados.</p>
+          <p>Consultoría tecnológica, peritaje informático y software empresarial.</p>
+        </div>
+      </footer>
+    </div>
   );
 };
 
-const ServiceCard = ({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) => (
-  <div className="bg-slate-900/70 border border-slate-800 p-6 rounded-2xl shadow-lg hover:shadow-amber-500/10 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all">
-    <h4 className="text-lg font-semibold text-slate-100 mb-2">{title}</h4>
-    <p className="text-slate-300 text-sm leading-relaxed">{description}</p>
+/* ---------------------------------- */
+/* COMPONENTES REUTILIZABLES */
+/* ---------------------------------- */
+
+const Feature = ({ title, subtitle }: { title: string; subtitle: string }) => (
+  <div className="border border-slate-800 rounded-xl px-4 py-3 bg-slate-900/40">
+    <div className="text-xs font-semibold text-slate-100">{title}</div>
+    <div className="text-[11px] text-slate-400">{subtitle}</div>
   </div>
 );
 
-export default App;
+const Service = ({ title, text }: { title: string; text: string }) => (
+  <div className="border border-slate-800 rounded-2xl p-4 bg-slate-900/60">
+    <div className="text-sm font-semibold mb-1 text-slate-100">{title}</div>
+    <div className="text-xs text-slate-400">{text}</div>
+  </div>
+);
+
+const Input = ({
+  label,
+  type = "text",
+  placeholder,
+}: {
+  label: string;
+  type?: string;
+  placeholder: string;
+}) => (
+  <div className="flex flex-col gap-1">
+    <label className="text-slate-300">{label}</label>
+    <input
+      type={type}
+      className="rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-slate-100 text-sm outline-none focus:border-blue-400"
+      placeholder={placeholder}
+    />
+  </div>
+);
+
+export default SoftwareGandiaLanding;
