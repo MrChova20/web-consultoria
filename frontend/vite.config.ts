@@ -12,4 +12,9 @@ export default defineConfig({
   css: {
     postcss: './postcss.config.js',
   },
+  server: {
+    proxy: {
+      '/api': 'http://localhost:5000', // 🔑 redirige /api → backend
+    },
+  },
 });

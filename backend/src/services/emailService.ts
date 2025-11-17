@@ -1,40 +1,37 @@
 import nodemailer from "nodemailer";
-import dotenv from "dotenv";
-
-dotenv.config();
+import "dotenv/config";
 
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: process.env.MAIL_HOST || "smtp.gmail.com",
+  port: Number(process.env.MAIL_PORT || 465),
+  secure: (process.env.MAIL_SECURE || "true") === "true",
+  pool: true,
+  maxConnections: 1,
+  maxMessages: Infinity,
+  rateDelta: Number(process.env.MAIL_RATE_DELTA || 1000),
+  rateLimit: Number(process.env.MAIL_RATE_LIMIT || 1),
   auth: {
     user: process.env.MAIL_USER,
     pass: process.env.MAIL_PASS,
   },
 });
 
-interface EmailData {
-  to: string;
-  cc?: string;
-  subject: string;
-  text?: string;  // ahora opcional
-  html?: string;  // nuevo soporte HTML
-  context?: Record<string, string>; // para placeholders (ej: { nombre: "Juan" })
-}
-
-// función para reemplazar placeholders tipo {{nombre}}
-const personalize = (tpl: string, ctx: Record<string, string> = {}) =>
-  tpl.replace(/{{\s*(\w+)\s*}}/g, (_, key) => ctx[key] ?? "");
-
-export const sendEmail = async ({ to, cc, subject, text, html, context = {} }: EmailData) => {
-  // si el usuario pasa text o html con placeholders, los sustituimos
-  const finalText = text ? personalize(text, context) : undefined;
-  const finalHtml = html ? personalize(html, context) : undefined;
-
-  await transporter.sendMail({
-    from: process.env.MAIL_USER,
+export async function sendEmail({
+  to, cc, subject, html, text,
+}: {
+  to: string; cc?: string; subject: string; html?: string; text?: string;
+}) {
+  return transporter.sendMail({
+    from: process.env.MAIL_FROM || process.env.MAIL_USER,
     to,
     cc,
-    subject: personalize(subject, context), // también soporta {{nombre}} en asunto
-    text: finalText,
-    html: finalHtml,
+    subject,
+    html,
+    text,
   });
-};
+}
+
+export async function verifySmtp() {
+  await transporter.verify();
+  console.log("📮 SMTP listo");
+}

@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import ScheduleAppointment from './ScheduleAppointment';
 import Footer from './components/ui/Footer';
+import BulkEmailDashboard from './BulkEmailDashboard';
 
 const App: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,6 +28,7 @@ const App: React.FC = () => {
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
             <Link to="/" className="hover:text-amber-300 transition-colors">Inicio</Link>
             <Link to="/schedule-appointment#form" className="hover:text-amber-300 transition-colors">Contacto</Link>
+        {/*    <Link to="/envios" className="hover:text-amber-300 transition-colors">Envío masivo</Link>*/}
           </nav>
           <div className="md:hidden">
             <button
@@ -44,11 +46,13 @@ const App: React.FC = () => {
           <div className="fixed top-16 left-0 w-full bg-slate-900/95 z-40 flex flex-col items-center py-6 space-y-4 text-lg border-b border-slate-800">
             <Link to="/" onClick={() => setMenuOpen(false)}>Inicio</Link>
             <Link to="/schedule-appointment#form" onClick={() => setMenuOpen(false)}>Contacto</Link>
+          {/* MOBILE MENU   <Link to="/envios" onClick={() => setMenuOpen(false)}>Envío masivo</Link> */}
           </div>
         )}
 
         <main className="pt-20">
           <Routes>
+            {/* LANDING */}
             <Route
               path="/"
               element={
@@ -61,7 +65,7 @@ const App: React.FC = () => {
                         "url('https://lexsasabogadas.com/wp-content/uploads/2024/03/fotografos_20191010_163331.jpg')",
                     }}
                   >
-                    {/* Overlay para contraste */}
+                    {/* Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/60 to-slate-950/70" />
                     <div className="relative z-10 bg-slate-950/50 p-8 md:p-10 rounded-2xl text-center max-w-3xl shadow-2xl ring-1 ring-slate-800/60">
                       <motion.h1
@@ -99,7 +103,7 @@ const App: React.FC = () => {
                     </div>
                   </section>
 
-                  {/* LOGO / SELLO ICAV - pequeño, responsive */}
+                  {/* LOGO / SELLO ICAV */}
                   <section className="px-6 md:px-20 text-center">
                     <div className="mx-auto w-full max-w-xs">
                       <img
@@ -153,21 +157,6 @@ const App: React.FC = () => {
                     </p>
                   </section>
 
-                  {/* EJEMPLOS DE PERICIALES */}
-                  <section className="bg-slate-900/70 border-y border-slate-800 py-16 px-6 md:px-20">
-                    <h3 className="text-3xl md:text-4xl font-bold text-slate-100 text-center mb-8">
-                      Ejemplos de Periciales Informáticas
-                    </h3>
-                    <ul className="text-base md:text-lg text-slate-300 list-disc max-w-4xl mx-auto space-y-3 pl-6">
-                      <li>Autenticación y autoría de correos electrónicos.</li>
-                      <li>Acreditación de accesos no autorizados y su trazabilidad.</li>
-                      <li>Recuperación de mensajes eliminados (WhatsApp, SMS, email).</li>
-                      <li>Análisis de navegación, descargas y actividad en equipos.</li>
-                      <li>Detección de manipulación/alteración de documentos.</li>
-                      <li>Extracción de evidencias en móviles, discos y servidores.</li>
-                    </ul>
-                  </section>
-
                   {/* CTA FINAL */}
                   <section className="py-16 px-6 md:px-20 text-center">
                     <div className="mx-auto max-w-4xl rounded-2xl border border-slate-800 bg-slate-900/50 p-8 md:p-10 shadow-xl">
@@ -177,19 +166,32 @@ const App: React.FC = () => {
                       <p className="mt-4 text-slate-300">
                         Agenda una llamada y cuéntanos tu situación. Te orientamos sin compromiso.
                       </p>
-                      <a
-                        href="/schedule-appointment#form"
-                        className="mt-7 inline-flex items-center justify-center px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
-                      >
-                        Solicitar reunión
-                      </a>
+
+                      <div className="mt-7 flex items-center justify-center gap-4">
+                        <a
+                          href="/schedule-appointment#form"
+                          className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
+                        >
+                          Solicitar reunión
+                        </a>
+
+                        {/* Botón nuevo que lleva al panel de envíos */}
+                        <Link
+                          to="/envios"
+                          className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-transparent border border-slate-700 hover:border-amber-500 hover:text-amber-300 font-semibold transition-colors"
+                        >
+                          Envío masivo
+                        </Link>
+                      </div>
                     </div>
                   </section>
                 </div>
               }
             />
 
+            {/* RUTAS */}
             <Route path="/schedule-appointment" element={<ScheduleAppointment />} />
+            <Route path="/envios" element={<BulkEmailDashboard />} />
           </Routes>
         </main>
 

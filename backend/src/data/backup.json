@@ -189,10 +189,6 @@
     "nombre": "LUIS BELTRÁN ALAMAR SIMÓ",
     "email": "luisalamar@salvatierra-abogados.com"
   },
-  { "nombre": "Pablo",
-    "email": "pablochova02@gmail.com"
-
-  },
   {
     "nombre": "MARCELINO ALAMAR VALLBONA",
     "email": "abogados@alamar.es"
@@ -433,7 +429,10 @@
     "nombre": "MARÍA SUCESO ALEGRE GÓMEZ",
     "email": "suceso@msalegre.es"
   },
-
+  {
+    "nombre": "MARÍA ALEIXANDRE ARANEGUI",
+    "email": "maria.aleixandre@icav.es"
+  },
   {
     "nombre": "ÁLVARO ALEIXANDRE ORTI",
     "email": "alvaroaleixandre@icav.es"
@@ -641,9 +640,6 @@
   {
     "nombre": "LUIS MIGUEL ALVENTOSA DEL RIO",
     "email": "luis.alventosa@icav.es"
-  },  {
-    "nombre": "Alejandro Chova",
-    "email": "a.chovaaparisi@icav.es"
   },
   {
     "nombre": "IGNACIO MARÍA AMAT LLOMBART",
@@ -2645,7 +2641,10 @@
     "nombre": "BRUNO CAMPS MASCARÓS",
     "email": "brunocamps@icav.es"
   },
-
+  {
+    "nombre": "EMILIA CANDELA REIG",
+    "email": "ecandela@icav.es"
+  },
   {
     "nombre": "ALEJANDRO JAVIER CANDELA VILLAGRASA",
     "email": "acandela@icav.es"
