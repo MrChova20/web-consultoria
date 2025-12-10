@@ -108,7 +108,7 @@
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex justify-between items-center">
                 {/* Logo */}
-                <a href="https://app.landingsite.ai/" className="flex-shrink-0">
+                <a href="/" className="flex-shrink-0">
                   <img
                     src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/18f07e52-5899-4a55-70e8-eb4b9cb81300/public"
                     alt="Software Gandia"
@@ -119,31 +119,31 @@
                 {/* Desktop Navigation */}
                 <nav className="hidden lg:flex items-center space-x-8">
                   <a
-                    href="https://app.landingsite.ai/quienes-somos"
+                    href="/quienes-somos"
                     className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] transition-colors duration-200 font-medium"
                   >
                     Quiénes Somos
                   </a>
                   <a
-                    href="https://app.landingsite.ai/nuestros-servicios"
+                    href="/nuestros-servicios"
                     className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] transition-colors duration-200 font-medium"
                   >
                     Nuestros Servicios
                   </a>
                   <a
-                    href="https://app.landingsite.ai/proyectos-realizados"
+                    href="/proyectos-realizados"
                     className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] transition-colors duration-200 font-medium"
                   >
                     Proyectos Realizados
                   </a>
                   <a
-                    href="https://app.landingsite.ai/blog"
+                    href="/blog"
                     className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] transition-colors duration-200 font-medium"
                   >
                     Blog
                   </a>
                   <a
-                    href="https://app.landingsite.ai/contacto"
+                    href="/contacto"
                     className="bg-[var(--primary-color)] text-[var(--primary-button-text-color)] px-6 py-3 rounded-[var(--button-rounded-radius)] hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-200 font-semibold shadow-md hover:shadow-lg"
                   >
                     Solicitar Presupuesto
@@ -164,31 +164,31 @@
               >
                 <div className="flex flex-col space-y-3">
                   <a
-                    href="https://app.landingsite.ai/quienes-somos"
+                    href="/quienes-somos"
                     className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] transition-colors duration-200 font-medium py-2"
                   >
                     Quiénes Somos
                   </a>
                   <a
-                    href="https://app.landingsite.ai/nuestros-servicios"
+                    href="/nuestros-servicios"
                     className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] transition-colors duration-200 font-medium py-2"
                   >
                     Nuestros Servicios
                   </a>
                   <a
-                    href="https://app.landingsite.ai/proyectos-realizados"
+                    href="/proyectos-realizados"
                     className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] transition-colors duration-200 font-medium py-2"
                   >
                     Proyectos Realizados
                   </a>
                   <a
-                    href="https://app.landingsite.ai/blog"
+                    href="/blog"
                     className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] transition-colors duration-200 font-medium py-2"
                   >
                     Blog
                   </a>
                   <a
-                    href="https://app.landingsite.ai/contacto"
+                    href="/contacto"
                     className="bg-[var(--primary-color)] text-[var(--primary-button-text-color)] px-6 py-3 rounded-[var(--button-rounded-radius)] hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-200 font-semibold text-center mt-2"
                   >
                     Solicitar Presupuesto
@@ -265,7 +265,7 @@
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
                     <a
-                      href="https://app.landingsite.ai/contacto"
+                      href="/contacto"
                       className="inline-flex items-center justify-center bg-[var(--primary-color)] text-[var(--primary-button-text-color)] px-8 py-4 rounded-[var(--button-rounded-radius)] hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-200 font-semibold text-lg shadow-lg hover:shadow-xl group"
                     >
                       Solicita tu presupuesto
@@ -275,7 +275,7 @@
                       />
                     </a>
                     <a
-                      href="https://app.landingsite.ai/nuestros-servicios"
+                      href="/nuestros-servicios"
                       className="inline-flex items-center justify-center bg-white text-[var(--primary-color)] px-8 py-4 rounded-[var(--button-rounded-radius)] border-2 border-[var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-white transition-all duration-200 font-semibold text-lg shadow-md"
                     >
                       Ver nuestros servicios
@@ -358,7 +358,7 @@
                     creados específicamente para las necesidades de tu empresa.
                   </p>
                   <a
-                    href="https://app.landingsite.ai/nuestros-servicios"
+                    href="/nuestros-servicios"
                     className="inline-flex items-center text-[var(--primary-color)] font-semibold hover:gap-2 transition-all duration-200"
                   >
                     Saber más
@@ -381,7 +381,7 @@
                     la automatización inteligente de tus procesos internos.
                   </p>
                   <a
-                    href="https://app.landingsite.ai/nuestros-servicios"
+                    href="/nuestros-servicios"
                     className="inline-flex items-center text-[var(--primary-color)] font-semibold hover:gap-2 transition-all duration-200"
                   >
                     Saber más
@@ -404,7 +404,7 @@
                     trabajen de forma coordinada y eficiente.
                   </p>
                   <a
-                    href="https://app.landingsite.ai/nuestros-servicios"
+                    href="/nuestros-servicios"
                     className="inline-flex items-center text-[var(--primary-color)] font-semibold hover:gap-2 transition-all duration-200"
                   >
                     Saber más
@@ -427,7 +427,7 @@
                     perfecta para alcanzar tus objetivos.
                   </p>
                   <a
-                    href="https://app.landingsite.ai/nuestros-servicios"
+                    href="/nuestros-servicios"
                     className="inline-flex items-center text-[var(--primary-color)] font-semibold hover:gap-2 transition-all duration-200"
                   >
                     Saber más
@@ -450,7 +450,7 @@
                     soporte técnico para garantizar el funcionamiento óptimo.
                   </p>
                   <a
-                    href="https://app.landingsite.ai/nuestros-servicios"
+                    href="/nuestros-servicios"
                     className="inline-flex items-center text-[var(--primary-color)] font-semibold hover:gap-2 transition-all duration-200"
                   >
                     Saber más
@@ -473,7 +473,7 @@
                     tiempo real desde un único lugar centralizado.
                   </p>
                   <a
-                    href="https://app.landingsite.ai/nuestros-servicios"
+                    href="/nuestros-servicios"
                     className="inline-flex items-center text-[var(--primary-color)] font-semibold hover:gap-2 transition-all duration-200"
                   >
                     Saber más
@@ -591,7 +591,7 @@
                   {/* CTA */}
                   <div className="pt-6">
                     <a
-                      href="https://app.landingsite.ai/quienes-somos"
+                      href="/quienes-somos"
                       className="inline-flex items-center bg-white text-[var(--primary-color)] px-8 py-4 rounded-[var(--button-rounded-radius)] hover:shadow-2xl transition-all duration-200 font-semibold text-lg group"
                     >
                       Conoce más sobre nosotros
@@ -722,7 +722,7 @@
                     personalizada sin compromiso
                   </p>
                   <a
-                    href="https://app.landingsite.ai/contacto"
+                    href="/contacto"
                     className="inline-flex items-center bg-[var(--primary-color)] text-[var(--primary-button-text-color)] px-8 py-4 rounded-[var(--button-rounded-radius)] hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-200 font-semibold text-lg shadow-lg hover:shadow-xl group"
                   >
                     Solicitar consultoría gratuita
@@ -808,7 +808,7 @@
                   {/* CTA */}
                   <div className="pt-4">
                     <a
-                      href="https://app.landingsite.ai/proyectos-realizados"
+                      href="/proyectos-realizados"
                       className="inline-flex items-center text-[var(--primary-color)] font-semibold text-lg hover:gap-2 transition-all duration-200"
                     >
                       Ver más proyectos realizados
@@ -860,7 +860,7 @@
                 {/* Brand Column */}
                 <div className="sm:col-span-2 lg:col-span-1">
                   <a
-                    href="https://app.landingsite.ai/"
+                    href="/"
                     className="inline-block mb-6"
                   >
                     <img
@@ -876,25 +876,25 @@
                   </p>
                   <div className="flex gap-4">
                     <a
-                      href="https://app.landingsite.ai/website-preview?id=441092da-3c97-444a-b340-69e8d5360bd4#"
+                      href="/website-preview?id=441092da-3c97-444a-b340-69e8d5360bd4#"
                       className="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-[var(--primary-color)] transition-all duration-200"
                     >
                       <i className="fab fa-linkedin-in" aria-hidden="true" />
                     </a>
                     <a
-                      href="https://app.landingsite.ai/website-preview?id=441092da-3c97-444a-b340-69e8d5360bd4#"
+                      href="/website-preview?id=441092da-3c97-444a-b340-69e8d5360bd4#"
                       className="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-[var(--primary-color)] transition-all duration-200"
                     >
                       <i className="fab fa-facebook-f" aria-hidden="true" />
                     </a>
                     <a
-                      href="https://app.landingsite.ai/website-preview?id=441092da-3c97-444a-b340-69e8d5360bd4#"
+                      href="/website-preview?id=441092da-3c97-444a-b340-69e8d5360bd4#"
                       className="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-[var(--primary-color)] transition-all duration-200"
                     >
                       <i className="fab fa-twitter" aria-hidden="true" />
                     </a>
                     <a
-                      href="https://app.landingsite.ai/website-preview?id=441092da-3c97-444a-b340-69e8d5360bd4#"
+                      href="/website-preview?id=441092da-3c97-444a-b340-69e8d5360bd4#"
                       className="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-[var(--primary-color)] transition-all duration-200"
                     >
                       <i className="fab fa-instagram" aria-hidden="true" />
@@ -909,7 +909,7 @@
                   <ul className="space-y-3">
                     <li>
                       <a
-                        href="https://app.landingsite.ai/"
+                        href="/"
                         className="font-[var(--font-family-body)] text-[var(--gray-text-color)] hover:text-white transition-colors duration-200 flex items-center gap-2 group"
                       >
                         <i
@@ -921,7 +921,7 @@
                     </li>
                     <li>
                       <a
-                        href="https://app.landingsite.ai/quienes-somos"
+                        href="/quienes-somos"
                         className="font-[var(--font-family-body)] text-[var(--gray-text-color)] hover:text-white transition-colors duration-200 flex items-center gap-2 group"
                       >
                         <i
@@ -933,7 +933,7 @@
                     </li>
                     <li>
                       <a
-                        href="https://app.landingsite.ai/nuestros-servicios"
+                        href="/nuestros-servicios"
                         className="font-[var(--font-family-body)] text-[var(--gray-text-color)] hover:text-white transition-colors duration-200 flex items-center gap-2 group"
                       >
                         <i
@@ -945,7 +945,7 @@
                     </li>
                     <li>
                       <a
-                        href="https://app.landingsite.ai/proyectos-realizados"
+                        href="/proyectos-realizados"
                         className="font-[var(--font-family-body)] text-[var(--gray-text-color)] hover:text-white transition-colors duration-200 flex items-center gap-2 group"
                       >
                         <i
@@ -965,7 +965,7 @@
                   <ul className="space-y-3">
                     <li>
                       <a
-                        href="https://app.landingsite.ai/blog"
+                        href="/blog"
                         className="font-[var(--font-family-body)] text-[var(--gray-text-color)] hover:text-white transition-colors duration-200 flex items-center gap-2 group"
                       >
                         <i
@@ -977,7 +977,7 @@
                     </li>
                     <li>
                       <a
-                        href="https://app.landingsite.ai/contacto"
+                        href="/contacto"
                         className="font-[var(--font-family-body)] text-[var(--gray-text-color)] hover:text-white transition-colors duration-200 flex items-center gap-2 group"
                       >
                         <i
@@ -989,7 +989,7 @@
                     </li>
                     <li>
                       <a
-                        href="https://app.landingsite.ai/privacidad-y-aviso-legal"
+                        href="/privacidad-y-aviso-legal"
                         className="font-[var(--font-family-body)] text-[var(--gray-text-color)] hover:text-white transition-colors duration-200 flex items-center gap-2 group"
                       >
                         <i
