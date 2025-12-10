@@ -1024,10 +1024,10 @@
                         aria-hidden="true"
                       />
                       <a
-                        href="mailto:info@softwaregandia.com"
+                        href="mailto:softwaregandia@gmail.com"
                         className="font-[var(--font-family-body)] text-[var(--gray-text-color)] hover:text-white transition-colors duration-200"
                       >
-                        info@softwaregandia.com
+                        softwaregandia@gmail.com
                       </a>
                     </li>
                     <li className="flex items-start gap-3">
@@ -1036,10 +1036,10 @@
                         aria-hidden="true"
                       />
                       <a
-                        href="tel:+34600000000"
+                        href="tel:+34601745344"
                         className="font-[var(--font-family-body)] text-[var(--gray-text-color)] hover:text-white transition-colors duration-200"
                       >
-                        +34 600 000 000
+                        +34 601 74 53 44
                       </a>
                     </li>
                   </ul>
