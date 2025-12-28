@@ -1,8 +1,4 @@
-
-  function App() {
-      return (
-    <>
-
+<>
   {/* saved from url=(0012)about:srcdoc */}
   <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,7 +10,7 @@
   />
   <link
     id="google-fonts-link"
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   />
   <style
@@ -57,7 +53,7 @@
   <style
     dangerouslySetInnerHTML={{
       __html:
-        ":root { --accent-color: #FF5722; --accent2-color: #4CAF50; --accent3-color: #FFC107; --accent4-color: #3F51B5; --primary-color: #0049C9; --dark-text-color: #212121; --gray-text-color: #9E9E9E; --button-padding-x: 12px; --button-padding-y: 8px; --font-family-body: 'Open Sans', sans-serif; --light-text-color: #FAFAFA; --dark-border-color: #444444; --light-border-color: #ECECEC; --font-family-heading: 'Poppins', sans-serif; --button-rounded-radius: 6px; --dark-background-color: #121212; --light-background-color: #E6F0FF; --medium-background-color: #C9E4FF; --primary-button-text-color: #FFFFFF; --secondary-button-bg-color: #EFEFEF; --secondary-button-text-color: #333333; --primary-button-hover-bg-color: #003CA9; --primary-button-hover-text-color: #FFFFFF; --secondary-button-hover-bg-color: #D1D1D1; --secondary-button-hover-text-color: #333333; }"
+        ":root { --accent-color: #F39C12; --accent2-color: #1ABC9C; --accent3-color: #E74C3C; --accent4-color: #9B59B6; --primary-color: #2574A9; --dark-text-color: #333333; --gray-text-color: #888888; --button-padding-x: 16px; --button-padding-y: 10px; --font-family-body: 'Roboto', sans-serif; --light-text-color: #FFFFFF; --dark-border-color: #555555; --light-border-color: #D1D1D1; --font-family-heading: 'Barlow', sans-serif; --button-rounded-radius: 8px; --dark-background-color: #1A1A1A; --light-background-color: #EFF6FB; --medium-background-color: #D7EAF6; --primary-button-text-color: #FFFFFF; --secondary-button-bg-color: #F2F2F2; --secondary-button-text-color: #2574A9; --primary-button-hover-bg-color: #1A5276; --primary-button-hover-text-color: #FFFFFF; --secondary-button-hover-bg-color: #E6E6E6; --secondary-button-hover-text-color: #1A5276; }"
     }}
   />
   <style
@@ -66,52 +62,50 @@
         "\n\n.hovered-element {\n  outline: #3871E0 dashed 2px;\n}\n\n.clicked-element {\n  outline: #3871E0 solid 2px;\n}\n\n.clicked-code-section {\n  border: #3B82F6 solid 2px;\n}\n"
     }}
   />
-  <title>
-    Software Gandia: Soluciones Tecnológicas Personalizadas en La Safor
-  </title>
+  <title>IA Telefónica para Empresas | Automatiza tus Llamadas 24/7</title>
   <meta
     name="description"
-    content="En Software Gandia desarrollamos soluciones de software personalizadas para empresas en Gandía y la comarca de La Safor. Optimizamos procesos e impulsamos la transformación digital."
+    content="Nunca más pierdas una llamada. IA ultra-humanizada que atiende tu teléfono, agenda citas y capta clientes 24/7. Solución especializada para negocios locales y pymes."
   />
   <meta name="language" content="es" />
   <meta
     property="og:title"
-    content="Software Gandia: Soluciones Tecnológicas Personalizadas en La Safor"
+    content="IA Telefónica para Empresas | Automatiza tus Llamadas 24/7"
   />
   <meta
     property="og:description"
-    content="En Software Gandia desarrollamos soluciones de software personalizadas para empresas en Gandía y la comarca de La Safor. Optimizamos procesos e impulsamos la transformación digital."
+    content="Nunca más pierdas una llamada. IA ultra-humanizada que atiende tu teléfono, agenda citas y capta clientes 24/7. Solución especializada para negocios locales y pymes."
   />
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta
     name="twitter:title"
-    content="Software Gandia: Soluciones Tecnológicas Personalizadas en La Safor"
+    content="IA Telefónica para Empresas | Automatiza tus Llamadas 24/7"
   />
   <meta
     name="twitter:description"
-    content="En Software Gandia desarrollamos soluciones de software personalizadas para empresas en Gandía y la comarca de La Safor. Optimizamos procesos e impulsamos la transformación digital."
+    content="Nunca más pierdas una llamada. IA ultra-humanizada que atiende tu teléfono, agenda citas y capta clientes 24/7. Solución especializada para negocios locales y pymes."
   />
   <style
     dangerouslySetInnerHTML={{
       __html:
-        '*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:\'\'}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.-bottom-6{bottom:-1.5rem}.-left-6{left:-1.5rem}.-right-6{right:-1.5rem}.-top-2{top:-0.5rem}.-top-6{top:-1.5rem}.bottom-0{bottom:0px}.left-0{left:0px}.left-1\\/2{left:50%}.right-0{right:0px}.top-0{top:0px}.top-16{top:4rem}.-z-10{z-index:-10}.z-10{z-index:10}.z-50{z-index:50}.order-1{order:1}.order-2{order:2}.order-first{order:-9999}.mx-12{margin-left:3rem;margin-right:3rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-12{margin-bottom:3rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-1{margin-left:0.25rem}.ml-2{margin-left:0.5rem}.mr-2{margin-right:0.5rem}.mt-1{margin-top:0.25rem}.mt-12{margin-top:3rem}.mt-16{margin-top:4rem}.mt-2{margin-top:0.5rem}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-1{height:0.25rem}.h-10{height:2.5rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-16{height:4rem}.h-20{height:5rem}.h-24{height:6rem}.h-28{height:7rem}.h-32{height:8rem}.h-6{height:1.5rem}.h-72{height:18rem}.h-8{height:2rem}.h-80{height:20rem}.h-96{height:24rem}.h-full{height:100%}.w-10{width:2.5rem}.w-12{width:3rem}.w-14{width:3.5rem}.w-16{width:4rem}.w-20{width:5rem}.w-24{width:6rem}.w-32{width:8rem}.w-6{width:1.5rem}.w-72{width:18rem}.w-8{width:2rem}.w-80{width:20rem}.w-96{width:24rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-7xl{max-width:80rem}.flex-shrink-0{flex-shrink:0}.-translate-x-1\\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-x-1\\/3{--tw-translate-x:33.333333%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-y-1\\/3{--tw-translate-y:33.333333%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-12{gap:3rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-8{gap:2rem}.space-x-8 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(2rem * var(--tw-space-x-reverse));margin-left:calc(2rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-2xl{border-radius:1rem}.rounded-\\[var\\(--button-rounded-radius\\)\\]{border-radius:var(--button-rounded-radius)}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-t{border-top-width:1px}.border-\\[var\\(--light-border-color\\)\\]{border-color:var(--light-border-color)}.border-\\[var\\(--primary-color\\)\\]{border-color:var(--primary-color)}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.border-opacity-10{--tw-border-opacity:0.1}.bg-\\[var\\(--accent-color\\)\\]{background-color:var(--accent-color)}.bg-\\[var\\(--accent2-color\\)\\]{background-color:var(--accent2-color)}.bg-\\[var\\(--accent3-color\\)\\]{background-color:var(--accent3-color)}.bg-\\[var\\(--accent4-color\\)\\]{background-color:var(--accent4-color)}.bg-\\[var\\(--dark-background-color\\)\\]{background-color:var(--dark-background-color)}.bg-\\[var\\(--light-background-color\\)\\]{background-color:var(--light-background-color)}.bg-\\[var\\(--primary-color\\)\\]{background-color:var(--primary-color)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-opacity-10{--tw-bg-opacity:0.1}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.bg-gradient-to-t{background-image:linear-gradient(to top, var(--tw-gradient-stops))}.from-\\[var\\(--light-background-color\\)\\]{--tw-gradient-from:var(--light-background-color) var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\\[var\\(--primary-color\\)\\]{--tw-gradient-from:var(--primary-color) var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-\\[var\\(--accent2-color\\)\\]{--tw-gradient-to:rgb(255 255 255 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--accent2-color) var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-\\[var\\(--accent-color\\)\\]{--tw-gradient-to:var(--accent-color) var(--tw-gradient-to-position)}.to-\\[var\\(--accent4-color\\)\\]{--tw-gradient-to:var(--accent4-color) var(--tw-gradient-to-position)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.to-white{--tw-gradient-to:#fff var(--tw-gradient-to-position)}.object-cover{object-fit:cover}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.pb-4{padding-bottom:1rem}.pt-2{padding-top:0.5rem}.pt-4{padding-top:1rem}.pt-6{padding-top:1.5rem}.pt-8{padding-top:2rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-\\[var\\(--font-family-body\\)\\]{font-weight:var(--font-family-body)}.font-\\[var\\(--font-family-heading\\)\\]{font-weight:var(--font-family-heading)}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.text-\\[var\\(--accent-color\\)\\]{color:var(--accent-color)}.text-\\[var\\(--accent2-color\\)\\]{color:var(--accent2-color)}.text-\\[var\\(--accent3-color\\)\\]{color:var(--accent3-color)}.text-\\[var\\(--dark-text-color\\)\\]{color:var(--dark-text-color)}.text-\\[var\\(--gray-text-color\\)\\]{color:var(--gray-text-color)}.text-\\[var\\(--primary-button-text-color\\)\\]{color:var(--primary-button-text-color)}.text-\\[var\\(--primary-color\\)\\]{color:var(--primary-color)}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-10{opacity:0.1}.opacity-20{opacity:0.2}.opacity-5{opacity:0.05}.opacity-90{opacity:0.9}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.\\[font-family\\:var\\(--font-family-body\\)\\]{font-family:var(--font-family-body)}.hover\\:-translate-y-2:hover{--tw-translate-y:-0.5rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\\:gap-2:hover{gap:0.5rem}.hover\\:bg-\\[var\\(--primary-button-hover-bg-color\\)\\]:hover{background-color:var(--primary-button-hover-bg-color)}.hover\\:bg-\\[var\\(--primary-color\\)\\]:hover{background-color:var(--primary-color)}.hover\\:bg-opacity-15:hover{--tw-bg-opacity:0.15}.hover\\:text-\\[var\\(--primary-color\\)\\]:hover{color:var(--primary-color)}.hover\\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\\:shadow-2xl:hover{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\\:shadow-xl:hover{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.group:hover .group-hover\\:translate-x-1{--tw-translate-x:0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\\:shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}@media (min-width: 640px){.sm\\:col-span-2{grid-column:span 2 / span 2}.sm\\:mb-16{margin-bottom:4rem}.sm\\:block{display:block}.sm\\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\\:flex-row{flex-direction:row}.sm\\:space-y-8 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2rem * var(--tw-space-y-reverse))}.sm\\:p-12{padding:3rem}.sm\\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\\:py-16{padding-top:4rem;padding-bottom:4rem}.sm\\:py-20{padding-top:5rem;padding-bottom:5rem}.sm\\:text-left{text-align:left}.sm\\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\\:text-4xl{font-size:2.25rem;line-height:2.5rem}.sm\\:text-5xl{font-size:3rem;line-height:1}.sm\\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width: 1024px){.lg\\:order-1{order:1}.lg\\:order-2{order:2}.lg\\:order-last{order:9999}.lg\\:col-span-1{grid-column:span 1 / span 1}.lg\\:block{display:block}.lg\\:flex{display:flex}.lg\\:hidden{display:none}.lg\\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\\:gap-12{gap:3rem}.lg\\:gap-16{gap:4rem}.lg\\:px-8{padding-left:2rem;padding-right:2rem}.lg\\:py-24{padding-top:6rem;padding-bottom:6rem}.lg\\:py-28{padding-top:7rem;padding-bottom:7rem}.lg\\:pl-8{padding-left:2rem}.lg\\:text-5xl{font-size:3rem;line-height:1}.lg\\:text-6xl{font-size:3.75rem;line-height:1}}'
+        '*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:\'\'}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.pointer-events-none{pointer-events:none}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.-bottom-6{bottom:-1.5rem}.-left-6{left:-1.5rem}.-right-2{right:-0.5rem}.-right-6{right:-1.5rem}.-top-2{top:-0.5rem}.-top-6{top:-1.5rem}.bottom-0{bottom:0px}.bottom-10{bottom:2.5rem}.bottom-20{bottom:5rem}.left-0{left:0px}.left-1\\/2{left:50%}.left-1\\/4{left:25%}.left-10{left:2.5rem}.left-20{left:5rem}.left-6{left:1.5rem}.right-0{right:0px}.right-1\\/4{right:25%}.right-10{right:2.5rem}.right-20{right:5rem}.top-0{top:0px}.top-1\\/2{top:50%}.top-10{top:2.5rem}.top-20{top:5rem}.top-24{top:6rem}.top-6{top:1.5rem}.z-10{z-index:10}.z-20{z-index:20}.z-50{z-index:50}.order-1{order:1}.order-2{order:2}.mx-auto{margin-left:auto;margin-right:auto}.-mr-16{margin-right:-4rem}.-mt-16{margin-top:-4rem}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-2{margin-left:0.5rem}.mr-2{margin-right:0.5rem}.mt-1{margin-top:0.25rem}.mt-10{margin-top:2.5rem}.mt-12{margin-top:3rem}.mt-16{margin-top:4rem}.mt-2{margin-top:0.5rem}.mt-20{margin-top:5rem}.mt-4{margin-top:1rem}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-1{height:0.25rem}.h-10{height:2.5rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-16{height:4rem}.h-20{height:5rem}.h-28{height:7rem}.h-32{height:8rem}.h-64{height:16rem}.h-72{height:18rem}.h-8{height:2rem}.h-96{height:24rem}.h-\\[500px\\]{height:500px}.h-auto{height:auto}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-1\\/3{width:33.333333%}.w-10{width:2.5rem}.w-12{width:3rem}.w-14{width:3.5rem}.w-16{width:4rem}.w-20{width:5rem}.w-32{width:8rem}.w-64{width:16rem}.w-72{width:18rem}.w-8{width:2rem}.w-96{width:24rem}.w-\\[500px\\]{width:500px}.w-full{width:100%}.w-px{width:1px}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-5xl{max-width:64rem}.max-w-7xl{max-width:80rem}.max-w-xl{max-width:36rem}.flex-shrink-0{flex-shrink:0}.origin-left{transform-origin:left}.-translate-x-1\\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.scale-x-0{--tw-scale-x:0;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-12{gap:3rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-x-8 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(2rem * var(--tw-space-x-reverse));margin-left:calc(2rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-y-8 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-\\[\\#2574A9\\]{--tw-border-opacity:1;border-color:rgb(37 116 169 / var(--tw-border-opacity, 1))}.border-\\[\\#D1D1D1\\]{--tw-border-opacity:1;border-color:rgb(209 209 209 / var(--tw-border-opacity, 1))}.border-\\[\\#D7EAF6\\]{--tw-border-opacity:1;border-color:rgb(215 234 246 / var(--tw-border-opacity, 1))}.border-\\[var\\(--light-border-color\\)\\]{border-color:var(--light-border-color)}.border-gray-800{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.border-white\\/20{border-color:rgb(255 255 255 / 0.2)}.border-white\\/30{border-color:rgb(255 255 255 / 0.3)}.bg-\\[\\#1A5276\\]{--tw-bg-opacity:1;background-color:rgb(26 82 118 / var(--tw-bg-opacity, 1))}.bg-\\[\\#1ABC9C\\]{--tw-bg-opacity:1;background-color:rgb(26 188 156 / var(--tw-bg-opacity, 1))}.bg-\\[\\#1ABC9C\\]\\/10{background-color:rgb(26 188 156 / 0.1)}.bg-\\[\\#2574A9\\]{--tw-bg-opacity:1;background-color:rgb(37 116 169 / var(--tw-bg-opacity, 1))}.bg-\\[\\#2574A9\\]\\/10{background-color:rgb(37 116 169 / 0.1)}.bg-\\[\\#E74C3C\\]\\/10{background-color:rgb(231 76 60 / 0.1)}.bg-\\[\\#EFF6FB\\]{--tw-bg-opacity:1;background-color:rgb(239 246 251 / var(--tw-bg-opacity, 1))}.bg-\\[\\#F39C12\\]{--tw-bg-opacity:1;background-color:rgb(243 156 18 / var(--tw-bg-opacity, 1))}.bg-\\[var\\(--accent-color\\)\\]{background-color:var(--accent-color)}.bg-\\[var\\(--dark-background-color\\)\\]{background-color:var(--dark-background-color)}.bg-\\[var\\(--primary-color\\)\\]{background-color:var(--primary-color)}.bg-transparent{background-color:transparent}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\\/10{background-color:rgb(255 255 255 / 0.1)}.bg-white\\/20{background-color:rgb(255 255 255 / 0.2)}.bg-white\\/30{background-color:rgb(255 255 255 / 0.3)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-l{background-image:linear-gradient(to left, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.bg-gradient-to-t{background-image:linear-gradient(to top, var(--tw-gradient-stops))}.from-\\[\\#1A1A1A\\]{--tw-gradient-from:#1A1A1A var(--tw-gradient-from-position);--tw-gradient-to:rgb(26 26 26 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\\[\\#1ABC9C\\]{--tw-gradient-from:#1ABC9C var(--tw-gradient-from-position);--tw-gradient-to:rgb(26 188 156 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\\[\\#2574A9\\]{--tw-gradient-from:#2574A9 var(--tw-gradient-from-position);--tw-gradient-to:rgb(37 116 169 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\\[\\#2574A9\\]\\/20{--tw-gradient-from:rgb(37 116 169 / 0.2) var(--tw-gradient-from-position);--tw-gradient-to:rgb(37 116 169 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\\[\\#9B59B6\\]{--tw-gradient-from:#9B59B6 var(--tw-gradient-from-position);--tw-gradient-to:rgb(155 89 182 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\\[\\#E74C3C\\]{--tw-gradient-from:#E74C3C var(--tw-gradient-from-position);--tw-gradient-to:rgb(231 76 60 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\\[\\#EFF6FB\\]{--tw-gradient-from:#EFF6FB var(--tw-gradient-from-position);--tw-gradient-to:rgb(239 246 251 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\\[\\#F39C12\\]{--tw-gradient-from:#F39C12 var(--tw-gradient-from-position);--tw-gradient-to:rgb(243 156 18 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\\[var\\(--accent-color\\)\\]{--tw-gradient-from:var(--accent-color) var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\\[var\\(--accent2-color\\)\\]{--tw-gradient-from:var(--accent2-color) var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\\[var\\(--accent4-color\\)\\]{--tw-gradient-from:var(--accent4-color) var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\\[var\\(--light-background-color\\)\\]{--tw-gradient-from:var(--light-background-color) var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\\[var\\(--primary-color\\)\\]{--tw-gradient-from:var(--primary-color) var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-white{--tw-gradient-from:#fff var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-white\\/10{--tw-gradient-from:rgb(255 255 255 / 0.1) var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-\\[\\#1A5276\\]{--tw-gradient-to:rgb(26 82 118 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #1A5276 var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-\\[\\#1ABC9C\\]{--tw-gradient-to:rgb(26 188 156 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #1ABC9C var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-\\[var\\(--accent2-color\\)\\]{--tw-gradient-to:rgb(255 255 255 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--accent2-color) var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), transparent var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-white{--tw-gradient-to:rgb(255 255 255 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #fff var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-\\[\\#15967E\\]{--tw-gradient-to:#15967E var(--tw-gradient-to-position)}.to-\\[\\#16A085\\]{--tw-gradient-to:#16A085 var(--tw-gradient-to-position)}.to-\\[\\#1A5276\\]{--tw-gradient-to:#1A5276 var(--tw-gradient-to-position)}.to-\\[\\#1ABC9C\\]{--tw-gradient-to:#1ABC9C var(--tw-gradient-to-position)}.to-\\[\\#333333\\]{--tw-gradient-to:#333333 var(--tw-gradient-to-position)}.to-\\[\\#7D3C8E\\]{--tw-gradient-to:#7D3C8E var(--tw-gradient-to-position)}.to-\\[\\#8E44AD\\]{--tw-gradient-to:#8E44AD var(--tw-gradient-to-position)}.to-\\[\\#C0392B\\]{--tw-gradient-to:#C0392B var(--tw-gradient-to-position)}.to-\\[\\#D68910\\]{--tw-gradient-to:#D68910 var(--tw-gradient-to-position)}.to-\\[\\#D7EAF6\\]{--tw-gradient-to:#D7EAF6 var(--tw-gradient-to-position)}.to-\\[\\#E67E22\\]{--tw-gradient-to:#E67E22 var(--tw-gradient-to-position)}.to-\\[\\#EFF6FB\\]{--tw-gradient-to:#EFF6FB var(--tw-gradient-to-position)}.to-\\[\\#F39C12\\]{--tw-gradient-to:#F39C12 var(--tw-gradient-to-position)}.to-\\[var\\(--accent-color\\)\\]{--tw-gradient-to:var(--accent-color) var(--tw-gradient-to-position)}.to-\\[var\\(--medium-background-color\\)\\]{--tw-gradient-to:var(--medium-background-color) var(--tw-gradient-to-position)}.to-\\[var\\(--primary-button-hover-bg-color\\)\\]{--tw-gradient-to:var(--primary-button-hover-bg-color) var(--tw-gradient-to-position)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.to-white{--tw-gradient-to:#fff var(--tw-gradient-to-position)}.to-white\\/5{--tw-gradient-to:rgb(255 255 255 / 0.05) var(--tw-gradient-to-position)}.p-1{padding:0.25rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-10{padding-left:2.5rem;padding-right:2.5rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.pb-4{padding-bottom:1rem}.pb-8{padding-bottom:2rem}.pt-12{padding-top:3rem}.pt-16{padding-top:4rem}.pt-4{padding-top:1rem}.pt-6{padding-top:1.5rem}.pt-8{padding-top:2rem}.text-left{text-align:left}.text-center{text-align:center}.font-\\[\\\'Barlow\\\'\\]{font-family:\'Barlow\'}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-\\[var\\(--font-family-heading\\)\\]{font-weight:var(--font-family-heading)}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-wider{letter-spacing:0.05em}.text-\\[\\#1ABC9C\\]{--tw-text-opacity:1;color:rgb(26 188 156 / var(--tw-text-opacity, 1))}.text-\\[\\#2574A9\\]{--tw-text-opacity:1;color:rgb(37 116 169 / var(--tw-text-opacity, 1))}.text-\\[\\#333333\\]{--tw-text-opacity:1;color:rgb(51 51 51 / var(--tw-text-opacity, 1))}.text-\\[\\#888888\\]{--tw-text-opacity:1;color:rgb(136 136 136 / var(--tw-text-opacity, 1))}.text-\\[\\#E74C3C\\]{--tw-text-opacity:1;color:rgb(231 76 60 / var(--tw-text-opacity, 1))}.text-\\[\\#F39C12\\]{--tw-text-opacity:1;color:rgb(243 156 18 / var(--tw-text-opacity, 1))}.text-\\[var\\(--accent-color\\)\\]{color:var(--accent-color)}.text-\\[var\\(--accent2-color\\)\\]{color:var(--accent2-color)}.text-\\[var\\(--dark-text-color\\)\\]{color:var(--dark-text-color)}.text-\\[var\\(--gray-text-color\\)\\]{color:var(--gray-text-color)}.text-\\[var\\(--primary-button-text-color\\)\\]{color:var(--primary-button-text-color)}.text-\\[var\\(--primary-color\\)\\]{color:var(--primary-color)}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-white\\/70{color:rgb(255 255 255 / 0.7)}.text-white\\/80{color:rgb(255 255 255 / 0.8)}.text-white\\/90{color:rgb(255 255 255 / 0.9)}.opacity-10{opacity:0.1}.opacity-30{opacity:0.3}.opacity-5{opacity:0.05}.opacity-50{opacity:0.5}.opacity-80{opacity:0.8}.opacity-90{opacity:0.9}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.\\[font-family\\:var\\(--font-family-body\\)\\]{font-family:var(--font-family-body)}.hover\\:-translate-y-1:hover{--tw-translate-y:-0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\\:-translate-y-2:hover{--tw-translate-y:-0.5rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\\:border-\\[\\#1ABC9C\\]:hover{--tw-border-opacity:1;border-color:rgb(26 188 156 / var(--tw-border-opacity, 1))}.hover\\:border-\\[\\#2574A9\\]:hover{--tw-border-opacity:1;border-color:rgb(37 116 169 / var(--tw-border-opacity, 1))}.hover\\:border-\\[\\#9B59B6\\]:hover{--tw-border-opacity:1;border-color:rgb(155 89 182 / var(--tw-border-opacity, 1))}.hover\\:border-\\[\\#E74C3C\\]:hover{--tw-border-opacity:1;border-color:rgb(231 76 60 / var(--tw-border-opacity, 1))}.hover\\:border-\\[\\#F39C12\\]:hover{--tw-border-opacity:1;border-color:rgb(243 156 18 / var(--tw-border-opacity, 1))}.hover\\:bg-\\[\\#EFF6FB\\]:hover{--tw-bg-opacity:1;background-color:rgb(239 246 251 / var(--tw-bg-opacity, 1))}.hover\\:bg-\\[var\\(--light-background-color\\)\\]:hover{background-color:var(--light-background-color)}.hover\\:bg-\\[var\\(--primary-button-hover-bg-color\\)\\]:hover{background-color:var(--primary-button-hover-bg-color)}.hover\\:bg-white\\/10:hover{background-color:rgb(255 255 255 / 0.1)}.hover\\:text-\\[var\\(--primary-color\\)\\]:hover{color:var(--primary-color)}.hover\\:shadow-2xl:hover{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\\:shadow-xl:hover{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\\:shadow-white\\/50:hover{--tw-shadow-color:rgb(255 255 255 / 0.5);--tw-shadow:var(--tw-shadow-colored)}.group:hover .group-hover\\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\\:scale-x-100{--tw-scale-x:1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\\:bg-white\\/30{background-color:rgb(255 255 255 / 0.3)}@media (min-width: 640px){.sm\\:col-span-2{grid-column:span 2 / span 2}.sm\\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.sm\\:flex-row{flex-direction:row}.sm\\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\\:py-20{padding-top:5rem;padding-bottom:5rem}.sm\\:text-4xl{font-size:2.25rem;line-height:2.5rem}.sm\\:text-5xl{font-size:3rem;line-height:1}}@media (min-width: 768px){.md\\:block{display:block}.md\\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\\:flex-row{flex-direction:row}.md\\:text-left{text-align:left}}@media (min-width: 1024px){.lg\\:order-1{order:1}.lg\\:order-2{order:2}.lg\\:col-span-1{grid-column:span 1 / span 1}.lg\\:mx-0{margin-left:0px;margin-right:0px}.lg\\:block{display:block}.lg\\:flex{display:flex}.lg\\:hidden{display:none}.lg\\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\\:justify-start{justify-content:flex-start}.lg\\:gap-12{gap:3rem}.lg\\:gap-16{gap:4rem}.lg\\:gap-6{gap:1.5rem}.lg\\:gap-8{gap:2rem}.lg\\:p-12{padding:3rem}.lg\\:px-8{padding-left:2rem;padding-right:2rem}.lg\\:py-24{padding-top:6rem;padding-bottom:6rem}.lg\\:py-32{padding-top:8rem;padding-bottom:8rem}.lg\\:text-left{text-align:left}.lg\\:text-2xl{font-size:1.5rem;line-height:2rem}.lg\\:text-3xl{font-size:1.875rem;line-height:2.25rem}.lg\\:text-5xl{font-size:3rem;line-height:1}.lg\\:text-6xl{font-size:3.75rem;line-height:1}}'
     }}
   />
-  <div className="frame-root w-full min-h-screen">
-    <div className="frame-content w-full">
+  <div className="frame-root">
+    <div className="frame-content">
       <div className="[font-family:var(--font-family-body)]">
         <div>
           <header
             id="global-header"
-            className="code-section bg-white shadow-sm sticky top-0 z-50"
+            className="code-section bg-white shadow-md sticky top-0 z-50"
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center py-2">
                 {/* Logo */}
-                <a href="/" className="flex-shrink-0">
+                <a href="https://app.landingsite.ai/" className="flex-shrink-0">
                   <img
-                    src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/18f07e52-5899-4a55-70e8-eb4b9cb81300/public"
-                    alt="Software Gandia"
+                    src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/9bb9df68-b6ae-42cb-2d2e-80fb5d34bb00/public"
+                    alt="GANDIA SOFTWARE"
                     className="h-28 py-2"
                     data-logo=""
                   />
@@ -119,79 +113,79 @@
                 {/* Desktop Navigation */}
                 <nav className="hidden lg:flex items-center space-x-8">
                   <a
-                    href="/quienes-somos"
-                    className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] transition-colors duration-200 font-medium"
+                    href="https://app.landingsite.ai/acerca-de-nosotros"
+                    className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-medium transition-colors duration-200"
                   >
-                    Quiénes Somos
+                    Acerca de Nosotros
                   </a>
                   <a
-                    href="/nuestros-servicios"
-                    className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] transition-colors duration-200 font-medium"
+                    href="https://app.landingsite.ai/servicios"
+                    className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-medium transition-colors duration-200"
                   >
-                    Nuestros Servicios
+                    Servicios
                   </a>
                   <a
-                    href="/proyectos-realizados"
-                    className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] transition-colors duration-200 font-medium"
+                    href="https://app.landingsite.ai/proyectos"
+                    className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-medium transition-colors duration-200"
                   >
-                    Proyectos Realizados
+                    Proyectos
                   </a>
                   <a
-                    href="/blog"
-                    className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] transition-colors duration-200 font-medium"
+                    href="https://app.landingsite.ai/blog"
+                    className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-medium transition-colors duration-200"
                   >
                     Blog
                   </a>
                   <a
-                    href="/contacto"
-                    className="bg-[var(--primary-color)] text-[var(--primary-button-text-color)] px-6 py-3 rounded-[var(--button-rounded-radius)] hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-200 font-semibold shadow-md hover:shadow-lg"
+                    href="https://app.landingsite.ai/contacto"
+                    className="bg-[var(--primary-color)] text-[var(--primary-button-text-color)] px-6 py-3 rounded-lg hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-200 font-semibold shadow-md hover:shadow-lg"
                   >
-                    Solicitar Presupuesto
+                    Solicita tu Solución
                   </a>
                 </nav>
-                {/* Mobile Menu Toggle */}
+                {/* Mobile Menu Button */}
                 <button
                   data-landingsite-mobile-menu-toggle=""
-                  className="lg:hidden text-[var(--dark-text-color)] p-2"
+                  className="lg:hidden text-[var(--dark-text-color)] hover:text-[var(--primary-color)] transition-colors"
                 >
-                  <i className="fas fa-bars text-2xl" aria-hidden="true" />
+                  <i className="fa-solid fa-bars text-2xl" aria-hidden="true" />
                 </button>
               </div>
               {/* Mobile Navigation */}
               <nav
                 data-landingsite-mobile-menu=""
-                className="hidden lg:hidden pb-4 pt-2"
+                className="hidden lg:hidden pb-4"
               >
                 <div className="flex flex-col space-y-3">
                   <a
-                    href="/quienes-somos"
-                    className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] transition-colors duration-200 font-medium py-2"
+                    href="https://app.landingsite.ai/acerca-de-nosotros"
+                    className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-medium py-2 border-b border-[var(--light-border-color)] transition-colors duration-200"
                   >
-                    Quiénes Somos
+                    Acerca de Nosotros
                   </a>
                   <a
-                    href="/nuestros-servicios"
-                    className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] transition-colors duration-200 font-medium py-2"
+                    href="https://app.landingsite.ai/servicios"
+                    className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-medium py-2 border-b border-[var(--light-border-color)] transition-colors duration-200"
                   >
-                    Nuestros Servicios
+                    Servicios
                   </a>
                   <a
-                    href="/proyectos-realizados"
-                    className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] transition-colors duration-200 font-medium py-2"
+                    href="https://app.landingsite.ai/proyectos"
+                    className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-medium py-2 border-b border-[var(--light-border-color)] transition-colors duration-200"
                   >
-                    Proyectos Realizados
+                    Proyectos
                   </a>
                   <a
-                    href="/blog"
-                    className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] transition-colors duration-200 font-medium py-2"
+                    href="https://app.landingsite.ai/blog"
+                    className="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-medium py-2 border-b border-[var(--light-border-color)] transition-colors duration-200"
                   >
                     Blog
                   </a>
                   <a
-                    href="/contacto"
-                    className="bg-[var(--primary-color)] text-[var(--primary-button-text-color)] px-6 py-3 rounded-[var(--button-rounded-radius)] hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-200 font-semibold text-center mt-2"
+                    href="https://app.landingsite.ai/contacto"
+                    className="bg-[var(--primary-color)] text-[var(--primary-button-text-color)] px-6 py-3 rounded-lg hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-200 font-semibold text-center mt-2"
                   >
-                    Solicitar Presupuesto
+                    Solicita tu Solución
                   </a>
                 </div>
               </nav>
@@ -200,124 +194,121 @@
         </div>
         <div>
           <section
-            className="code-section relative bg-gradient-to-br from-[var(--light-background-color)] to-white overflow-hidden"
-            id="sos5p3"
+            className="code-section relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#EFF6FB] via-white to-[#D7EAF6]"
+            id="sh9u35"
           >
-            {/* Decorative Elements */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-[var(--primary-color)] opacity-5 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-[var(--accent2-color)] opacity-5 rounded-full blur-3xl" />
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute top-20 left-10 w-72 h-72 bg-[#2574A9] opacity-5 rounded-full blur-3xl" />
+              <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#1ABC9C] opacity-5 rounded-full blur-3xl" />
+            </div>
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative z-10">
               <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                {/* Content */}
-                <div className="order-2 lg:order-1 space-y-6 sm:space-y-8">
-                  <div className="space-y-4">
-                    <h1 className="font-[var(--font-family-heading)] text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--dark-text-color)] leading-tight">
-                      Digitaliza tu empresa con
-                      <span className="text-[var(--primary-color)]">
-                        software a medida
-                      </span>
-                    </h1>
-                    <p className="font-[var(--font-family-body)] text-lg sm:text-xl text-[var(--gray-text-color)] leading-relaxed">
-                      Soluciones tecnológicas personalizadas para pymes de la
-                      Safor. Automatiza procesos, mejora la productividad y
-                      elimina errores con herramientas creadas exclusivamente
-                      para tu negocio.
-                    </p>
-                  </div>
-                  {/* Value Props */}
-                  <div className="space-y-3">
-                    <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[var(--accent2-color)] flex items-center justify-center mt-1">
-                        <i
-                          className="fas fa-check text-white text-xs"
-                          aria-hidden="true"
-                        />
-                      </div>
-                      <p className="text-[var(--dark-text-color)] font-medium">
-                        Equipo local en Gandía con experiencia en desarrollo a
-                        medida
-                      </p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[var(--accent2-color)] flex items-center justify-center mt-1">
-                        <i
-                          className="fas fa-check text-white text-xs"
-                          aria-hidden="true"
-                        />
-                      </div>
-                      <p className="text-[var(--dark-text-color)] font-medium">
-                        Soluciones 100% personalizadas adaptadas a tu negocio
-                        real
-                      </p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[var(--accent2-color)] flex items-center justify-center mt-1">
-                        <i
-                          className="fas fa-check text-white text-xs"
-                          aria-hidden="true"
-                        />
-                      </div>
-                      <p className="text-[var(--dark-text-color)] font-medium">
-                        Acompañamiento continuo, mantenimiento y soporte técnico
-                      </p>
-                    </div>
-                  </div>
-                  {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                    <a
-                      href="/contacto"
-                      className="inline-flex items-center justify-center bg-[var(--primary-color)] text-[var(--primary-button-text-color)] px-8 py-4 rounded-[var(--button-rounded-radius)] hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-200 font-semibold text-lg shadow-lg hover:shadow-xl group"
-                    >
-                      Solicita tu presupuesto
+                <div className="text-center lg:text-left space-y-8">
+                  <div className="inline-block">
+                    <span className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full text-sm font-medium text-[#2574A9] shadow-md border border-[#D7EAF6]">
                       <i
-                        className="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"
+                        className="fas fa-sparkles text-[#F39C12]"
                         aria-hidden="true"
                       />
-                    </a>
-                    <a
-                      href="/nuestros-servicios"
-                      className="inline-flex items-center justify-center bg-white text-[var(--primary-color)] px-8 py-4 rounded-[var(--button-rounded-radius)] border-2 border-[var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-white transition-all duration-200 font-semibold text-lg shadow-md"
-                    >
-                      Ver nuestros servicios
-                    </a>
+                      IA Telefónica Ultra-Humanizada
+                    </span>
                   </div>
-                  {/* Trust Signal */}
-                  <p className="text-sm text-[var(--gray-text-color)] pt-2">
-                    <i
-                      className="fas fa-shield-alt text-[var(--accent2-color)] mr-2"
-                      aria-hidden="true"
-                    />
-                    Presupuesto sin compromiso · Consultoría gratuita inicial
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#333333] leading-tight font-['Barlow']">
+                    Nunca más pierdas
+                    <br />
+                    <span className="text-[#2574A9]">una llamada</span>
+                  </h1>
+                  <p className="text-xl lg:text-2xl text-[#333333] font-medium leading-relaxed">
+                    Una IA que atiende tu teléfono como si fuera tu mejor
+                    empleado.
                   </p>
+                  <p className="text-lg text-[#888888] leading-relaxed max-w-xl mx-auto lg:mx-0">
+                    Nuestra IA responde llamadas, agenda citas, resuelve dudas y
+                    capta clientes{" "}
+                    <span className="font-semibold text-[#2574A9]">24/7</span>{" "}
+                    con una voz tan humana que nadie nota que es un bot.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                    <button className="group relative px-8 py-4 bg-[#2574A9] text-white rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                      <span className="relative z-10 flex items-center justify-center gap-2">
+                        <i
+                          className="fas fa-calendar-check"
+                          aria-hidden="true"
+                        />
+                        Solicitar demo gratuita
+                      </span>
+                      <div className="absolute inset-0 bg-[#1A5276] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+                    </button>
+                    <button className="group px-8 py-4 bg-white text-[#2574A9] border-2 border-[#2574A9] rounded-lg font-semibold text-lg hover:bg-[#EFF6FB] transform hover:-translate-y-1 transition-all duration-300 shadow-md">
+                      <span className="flex items-center justify-center gap-2">
+                        <i className="fas fa-play-circle" aria-hidden="true" />
+                        Ver cómo funciona
+                      </span>
+                    </button>
+                  </div>
+                  <div className="flex items-center justify-center lg:justify-start gap-6 pt-6 text-sm text-[#888888]">
+                    <div className="flex items-center gap-2">
+                      <i
+                        className="fas fa-check-circle text-[#1ABC9C]"
+                        aria-hidden="true"
+                      />
+                      <span>Sin compromiso</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <i
+                        className="fas fa-check-circle text-[#1ABC9C]"
+                        aria-hidden="true"
+                      />
+                      <span>Setup en días</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <i
+                        className="fas fa-check-circle text-[#1ABC9C]"
+                        aria-hidden="true"
+                      />
+                      <span>Soporte 24/7</span>
+                    </div>
+                  </div>
                 </div>
-                {/* Image */}
-                <div className="order-1 lg:order-2 relative">
+                <div className="relative">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
                     <img
-                      src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/986a1318-782f-45c3-a86e-1f5594273c00/public"
-                      alt="Businessman using KPI dashboard.Management data System KPI connected in database for follow earnings,operations and sales data.Financial business data analytics graph dashboard"
-                      data-media='{"id":"2168215145","src":"iStock","type":"image"}'
-                      className="w-full h-full object-cover"
+                      src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/e29654c0-eeac-4a18-7339-40c699cb5f00/publicContain"
+                      alt="Customer service representative is working from his home office, smiling while using a headset and dual monitors to assist customers or clients"
+                      data-media='{"id":"2191092685","src":"iStock","type":"image"}'
+                      className="w-full h-auto"
                     />
-                    {/* Overlay gradient for better contrast */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--primary-color)] to-transparent opacity-20" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#2574A9]/20 to-transparent" />
                   </div>
-                  {/* Floating Badge */}
-                  <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-6 hidden sm:block">
-                    <div className="flex items-center gap-4">
-                      <div className="w-14 h-14 rounded-full bg-[var(--light-background-color)] flex items-center justify-center">
+                  <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-4 backdrop-blur-sm border border-[#D7EAF6]">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-[#1ABC9C] rounded-full flex items-center justify-center">
                         <i
-                          className="fas fa-code text-[var(--primary-color)] text-2xl"
+                          className="fas fa-phone-volume text-white text-xl"
                           aria-hidden="true"
                         />
                       </div>
                       <div>
-                        <p className="text-2xl font-bold text-[var(--dark-text-color)]">
+                        <p className="text-2xl font-bold text-[#333333]">
+                          24/7
+                        </p>
+                        <p className="text-xs text-[#888888]">Disponible</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute -top-6 -right-6 bg-white rounded-xl shadow-xl p-4 backdrop-blur-sm border border-[#D7EAF6]">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-[#F39C12] rounded-full flex items-center justify-center">
+                        <i
+                          className="fas fa-robot text-white text-xl"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div>
+                        <p className="text-2xl font-bold text-[#333333]">
                           100%
                         </p>
-                        <p className="text-sm text-[var(--gray-text-color)]">
-                          Personalizado
-                        </p>
+                        <p className="text-xs text-[#888888]">Humana</p>
                       </div>
                     </div>
                   </div>
@@ -326,277 +317,1105 @@
             </div>
           </section>
           <section
-            className="code-section bg-white py-16 sm:py-20 lg:py-24"
-            id="sva2bla"
+            className="code-section py-20 lg:py-32 bg-white relative overflow-hidden"
+            id="s58v7"
           >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              {/* Section Header */}
-              <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-                <h2 className="font-[var(--font-family-heading)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--dark-text-color)] mb-4">
-                  Soluciones tecnológicas para empresas de la Safor
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#EFF6FB] to-transparent opacity-50" />
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+              <div className="max-w-3xl mx-auto text-center mb-16">
+                <span className="inline-block px-4 py-2 bg-[#E74C3C]/10 text-[#E74C3C] rounded-full text-sm font-semibold mb-6">
+                  El problema
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#333333] mb-6 font-['Barlow']">
+                  Cada llamada perdida es dinero que se va
                 </h2>
-                <p className="font-[var(--font-family-body)] text-lg text-[var(--gray-text-color)]">
-                  Ayudamos a negocios de Gandía, Oliva, Tavernes, Daimús y
-                  Bellreguard a crecer mediante tecnología personalizada
+                <p className="text-xl text-[#888888] leading-relaxed">
+                  Cada llamada no atendida es un cliente perdido. Y cada minuto
+                  que tu equipo pasa al teléfono es tiempo que no dedica a hacer
+                  crecer el negocio.
                 </p>
               </div>
-              {/* Services Grid */}
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {/* Service 1 */}
-                <div className="group bg-gradient-to-br from-[var(--light-background-color)] to-white p-8 rounded-xl border border-[var(--light-border-color)] hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <div className="w-16 h-16 rounded-xl bg-[var(--primary-color)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div className="group bg-gradient-to-br from-white to-[#EFF6FB] p-8 rounded-2xl border border-[#D1D1D1] hover:border-[#E74C3C] hover:shadow-xl transition-all duration-300">
+                  <div className="w-14 h-14 bg-[#E74C3C]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <i
-                      className="fas fa-laptop-code text-white text-2xl"
+                      className="fas fa-phone-slash text-[#E74C3C] text-2xl"
                       aria-hidden="true"
                     />
                   </div>
-                  <h3 className="font-[var(--font-family-heading)] text-xl font-bold text-[var(--dark-text-color)] mb-3">
-                    Desarrollo a Medida
+                  <h3 className="text-xl font-bold text-[#333333] mb-3 font-['Barlow']">
+                    Llamadas perdidas
                   </h3>
-                  <p className="font-[var(--font-family-body)] text-[var(--gray-text-color)] leading-relaxed mb-4">
-                    Aplicaciones web, paneles de gestión y sistemas internos
-                    creados específicamente para las necesidades de tu empresa.
+                  <p className="text-[#888888] leading-relaxed">
+                    Fuera de horario, en fines de semana o cuando tu equipo está
+                    saturado, pierdes clientes potenciales.
                   </p>
-                  <a
-                    href="/nuestros-servicios"
-                    className="inline-flex items-center text-[var(--primary-color)] font-semibold hover:gap-2 transition-all duration-200"
-                  >
-                    Saber más
-                    <i className="fas fa-arrow-right ml-1" aria-hidden="true" />
-                  </a>
                 </div>
-                {/* Service 2 */}
-                <div className="group bg-gradient-to-br from-[var(--light-background-color)] to-white p-8 rounded-xl border border-[var(--light-border-color)] hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <div className="w-16 h-16 rounded-xl bg-[var(--accent2-color)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="group bg-gradient-to-br from-white to-[#EFF6FB] p-8 rounded-2xl border border-[#D1D1D1] hover:border-[#E74C3C] hover:shadow-xl transition-all duration-300">
+                  <div className="w-14 h-14 bg-[#E74C3C]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <i
-                      className="fas fa-cogs text-white text-2xl"
+                      className="fas fa-user-clock text-[#E74C3C] text-2xl"
                       aria-hidden="true"
                     />
                   </div>
-                  <h3 className="font-[var(--font-family-heading)] text-xl font-bold text-[var(--dark-text-color)] mb-3">
-                    Automatización de Procesos
+                  <h3 className="text-xl font-bold text-[#333333] mb-3 font-['Barlow']">
+                    Empleados saturados
                   </h3>
-                  <p className="font-[var(--font-family-body)] text-[var(--gray-text-color)] leading-relaxed mb-4">
-                    Elimina tareas repetitivas y reduce errores humanos mediante
-                    la automatización inteligente de tus procesos internos.
+                  <p className="text-[#888888] leading-relaxed">
+                    Tu equipo pierde productividad atendiendo llamadas
+                    repetitivas en vez de tareas importantes.
                   </p>
-                  <a
-                    href="/nuestros-servicios"
-                    className="inline-flex items-center text-[var(--primary-color)] font-semibold hover:gap-2 transition-all duration-200"
-                  >
-                    Saber más
-                    <i className="fas fa-arrow-right ml-1" aria-hidden="true" />
-                  </a>
                 </div>
-                {/* Service 3 */}
-                <div className="group bg-gradient-to-br from-[var(--light-background-color)] to-white p-8 rounded-xl border border-[var(--light-border-color)] hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <div className="w-16 h-16 rounded-xl bg-[var(--accent-color)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="group bg-gradient-to-br from-white to-[#EFF6FB] p-8 rounded-2xl border border-[#D1D1D1] hover:border-[#E74C3C] hover:shadow-xl transition-all duration-300">
+                  <div className="w-14 h-14 bg-[#E74C3C]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <i
-                      className="fas fa-link text-white text-2xl"
+                      className="fas fa-user-times text-[#E74C3C] text-2xl"
                       aria-hidden="true"
                     />
                   </div>
-                  <h3 className="font-[var(--font-family-heading)] text-xl font-bold text-[var(--dark-text-color)] mb-3">
-                    Integraciones
+                  <h3 className="text-xl font-bold text-[#333333] mb-3 font-['Barlow']">
+                    Clientes frustrados
                   </h3>
-                  <p className="font-[var(--font-family-body)] text-[var(--gray-text-color)] leading-relaxed mb-4">
-                    Conecta todas tus herramientas y plataformas para que
-                    trabajen de forma coordinada y eficiente.
+                  <p className="text-[#888888] leading-relaxed">
+                    Los clientes que no reciben respuesta rápida simplemente no
+                    vuelven a llamar. Buscan alternativas.
                   </p>
-                  <a
-                    href="/nuestros-servicios"
-                    className="inline-flex items-center text-[var(--primary-color)] font-semibold hover:gap-2 transition-all duration-200"
-                  >
-                    Saber más
-                    <i className="fas fa-arrow-right ml-1" aria-hidden="true" />
-                  </a>
                 </div>
-                {/* Service 4 */}
-                <div className="group bg-gradient-to-br from-[var(--light-background-color)] to-white p-8 rounded-xl border border-[var(--light-border-color)] hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <div className="w-16 h-16 rounded-xl bg-[var(--accent3-color)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="group bg-gradient-to-br from-white to-[#EFF6FB] p-8 rounded-2xl border border-[#D1D1D1] hover:border-[#E74C3C] hover:shadow-xl transition-all duration-300">
+                  <div className="w-14 h-14 bg-[#E74C3C]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <i
-                      className="fas fa-comments text-white text-2xl"
+                      className="fas fa-calendar-times text-[#E74C3C] text-2xl"
                       aria-hidden="true"
                     />
                   </div>
-                  <h3 className="font-[var(--font-family-heading)] text-xl font-bold text-[var(--dark-text-color)] mb-3">
-                    Consultoría Tecnológica
+                  <h3 className="text-xl font-bold text-[#333333] mb-3 font-['Barlow']">
+                    Agendas mal gestionadas
                   </h3>
-                  <p className="font-[var(--font-family-body)] text-[var(--gray-text-color)] leading-relaxed mb-4">
-                    Analizamos tu negocio y diseñamos la estrategia tecnológica
-                    perfecta para alcanzar tus objetivos.
+                  <p className="text-[#888888] leading-relaxed">
+                    Errores humanos, citas duplicadas, cancelaciones sin avisar.
+                    Un caos administrativo.
                   </p>
-                  <a
-                    href="/nuestros-servicios"
-                    className="inline-flex items-center text-[var(--primary-color)] font-semibold hover:gap-2 transition-all duration-200"
-                  >
-                    Saber más
-                    <i className="fas fa-arrow-right ml-1" aria-hidden="true" />
-                  </a>
                 </div>
-                {/* Service 5 */}
-                <div className="group bg-gradient-to-br from-[var(--light-background-color)] to-white p-8 rounded-xl border border-[var(--light-border-color)] hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <div className="w-16 h-16 rounded-xl bg-[var(--accent4-color)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="group bg-gradient-to-br from-white to-[#EFF6FB] p-8 rounded-2xl border border-[#D1D1D1] hover:border-[#E74C3C] hover:shadow-xl transition-all duration-300">
+                  <div className="w-14 h-14 bg-[#E74C3C]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <i
-                      className="fas fa-wrench text-white text-2xl"
+                      className="fas fa-euro-sign text-[#E74C3C] text-2xl"
                       aria-hidden="true"
                     />
                   </div>
-                  <h3 className="font-[var(--font-family-heading)] text-xl font-bold text-[var(--dark-text-color)] mb-3">
-                    Mantenimiento y Soporte
+                  <h3 className="text-xl font-bold text-[#333333] mb-3 font-['Barlow']">
+                    Coste elevado
                   </h3>
-                  <p className="font-[var(--font-family-body)] text-[var(--gray-text-color)] leading-relaxed mb-4">
-                    Actualizaciones continuas, resolución de incidencias y
-                    soporte técnico para garantizar el funcionamiento óptimo.
+                  <p className="text-[#888888] leading-relaxed">
+                    Contratar más personal para atender llamadas es caro. Y no
+                    resuelve el problema fuera de horario.
                   </p>
-                  <a
-                    href="/nuestros-servicios"
-                    className="inline-flex items-center text-[var(--primary-color)] font-semibold hover:gap-2 transition-all duration-200"
-                  >
-                    Saber más
-                    <i className="fas fa-arrow-right ml-1" aria-hidden="true" />
-                  </a>
                 </div>
-                {/* Service 6 */}
-                <div className="group bg-gradient-to-br from-[var(--light-background-color)] to-white p-8 rounded-xl border border-[var(--light-border-color)] hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <div className="w-16 h-16 rounded-xl bg-[var(--primary-color)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="group bg-gradient-to-br from-white to-[#EFF6FB] p-8 rounded-2xl border border-[#D1D1D1] hover:border-[#E74C3C] hover:shadow-xl transition-all duration-300">
+                  <div className="w-14 h-14 bg-[#E74C3C]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <i
-                      className="fas fa-chart-line text-white text-2xl"
+                      className="fas fa-hourglass-end text-[#E74C3C] text-2xl"
                       aria-hidden="true"
                     />
                   </div>
-                  <h3 className="font-[var(--font-family-heading)] text-xl font-bold text-[var(--dark-text-color)] mb-3">
-                    Paneles de Gestión
+                  <h3 className="text-xl font-bold text-[#333333] mb-3 font-['Barlow']">
+                    Tiempo desperdiciado
                   </h3>
-                  <p className="font-[var(--font-family-body)] text-[var(--gray-text-color)] leading-relaxed mb-4">
-                    Visualiza y controla toda la información de tu negocio en
-                    tiempo real desde un único lugar centralizado.
+                  <p className="text-[#888888] leading-relaxed">
+                    Responder las mismas preguntas una y otra vez consume
+                    recursos valiosos del negocio.
                   </p>
-                  <a
-                    href="/nuestros-servicios"
-                    className="inline-flex items-center text-[var(--primary-color)] font-semibold hover:gap-2 transition-all duration-200"
-                  >
-                    Saber más
-                    <i className="fas fa-arrow-right ml-1" aria-hidden="true" />
-                  </a>
                 </div>
               </div>
             </div>
           </section>
           <section
-            className="code-section bg-gradient-to-br from-[var(--primary-color)] to-[var(--accent4-color)] py-16 sm:py-20 lg:py-24 relative overflow-hidden"
-            id="s83x4yu"
+            className="code-section py-20 lg:py-32 bg-gradient-to-br from-[#2574A9] to-[#1A5276] text-white relative overflow-hidden"
+            id="sftefbza"
           >
-            {/* Decorative circles */}
-            <div className="absolute top-0 left-0 w-72 h-72 bg-white opacity-5 rounded-full -translate-x-1/2 -translate-y-1/2" />
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-white opacity-5 rounded-full translate-x-1/3 translate-y-1/3" />
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl" />
+              <div className="absolute bottom-10 left-10 w-72 h-72 bg-[#1ABC9C] rounded-full blur-3xl" />
+            </div>
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                {/* Image */}
-                <div className="relative">
+                <div className="order-2 lg:order-1">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                     <img
-                      src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/7e06d6a8-3c01-4a65-cdf7-eae47cefe700/public"
-                      alt="An Asian woman collaborates on a SaaS platform, writing code on multiple screens in a vibrant coworking environment, driving technology forward."
-                      data-media='{"id":"2206034053","src":"iStock","type":"image"}'
-                      className="w-full h-full object-cover"
+                      src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/4b74307a-cbc1-4aab-2aa6-d37a4be94e00/public"
+                      alt="AI powers big data analysis and automation workflows, showcasing neural networks and data streams for business. Artificial intelligence, machine learning, digital transformation and tech innovation."
+                      data-media='{"id":"2200128716","src":"iStock","type":"image"}'
+                      className="w-full h-auto"
                     />
                   </div>
-                  {/* Floating card */}
-                  <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-2xl p-6 hidden sm:block">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-[var(--accent2-color)] flex items-center justify-center">
+                </div>
+                <div className="order-1 lg:order-2 space-y-8">
+                  <div>
+                    <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-6">
+                      La solución
+                    </span>
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 font-['Barlow']">
+                      Una IA que actúa (y suena) como una persona real
+                    </h2>
+                    <p className="text-xl text-white/90 leading-relaxed mb-8">
+                      No es un robot. Es una voz inteligente entrenada para
+                      sonar y actuar como una persona real.
+                    </p>
+                  </div>
+                  <div className="space-y-6">
+                    <div className="flex gap-4 items-start group">
+                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-white/30 transition-all duration-300">
                         <i
-                          className="fas fa-users text-white text-xl"
+                          className="fas fa-phone-alt text-white text-xl"
                           aria-hidden="true"
                         />
                       </div>
                       <div>
-                        <p className="text-sm text-[var(--gray-text-color)]">
-                          Equipo
+                        <h3 className="text-xl font-bold mb-2 font-['Barlow']">
+                          Atiende llamadas automáticamente
+                        </h3>
+                        <p className="text-white/80 leading-relaxed">
+                          Responde al instante, sin tiempos de espera ni
+                          llamadas perdidas.
                         </p>
-                        <p className="text-lg font-bold text-[var(--dark-text-color)]">
-                          Local
+                      </div>
+                    </div>
+                    <div className="flex gap-4 items-start group">
+                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-white/30 transition-all duration-300">
+                        <i
+                          className="fas fa-comments text-white text-xl"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold mb-2 font-['Barlow']">
+                          Habla de forma natural y empática
+                        </h3>
+                        <p className="text-white/80 leading-relaxed">
+                          Conversaciones fluidas que generan confianza con tus
+                          clientes.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4 items-start group">
+                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-white/30 transition-all duration-300">
+                        <i
+                          className="fas fa-calendar-plus text-white text-xl"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold mb-2 font-['Barlow']">
+                          Agenda citas en tu calendario
+                        </h3>
+                        <p className="text-white/80 leading-relaxed">
+                          Integración directa con Google Calendar y otros
+                          sistemas.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4 items-start group">
+                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-white/30 transition-all duration-300">
+                        <i
+                          className="fas fa-question-circle text-white text-xl"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold mb-2 font-['Barlow']">
+                          Responde preguntas frecuentes
+                        </h3>
+                        <p className="text-white/80 leading-relaxed">
+                          Información sobre servicios, horarios, precios y más.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4 items-start group">
+                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-white/30 transition-all duration-300">
+                        <i
+                          className="fas fa-filter text-white text-xl"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold mb-2 font-['Barlow']">
+                          Deriva solo las llamadas importantes
+                        </h3>
+                        <p className="text-white/80 leading-relaxed">
+                          Tu equipo se centra en lo que realmente importa.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4 items-start group">
+                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-white/30 transition-all duration-300">
+                        <i
+                          className="fas fa-clock text-white text-xl"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold mb-2 font-['Barlow']">
+                          Funciona 24/7 sin descanso
+                        </h3>
+                        <p className="text-white/80 leading-relaxed">
+                          Disponible todos los días del año, a cualquier hora.
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                {/* Content */}
-                <div className="space-y-6 lg:pl-8">
-                  <div className="space-y-4">
-                    <h2 className="font-[var(--font-family-heading)] text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                      ¿Por qué elegir Software Gandia?
-                    </h2>
-                    <p className="font-[var(--font-family-body)] text-lg text-white opacity-90 leading-relaxed">
-                      Somos tu socio tecnológico local. Entendemos las
-                      necesidades específicas de las empresas de la Safor y
-                      creamos soluciones que realmente funcionan.
+              </div>
+            </div>
+          </section>
+          <section
+            className="code-section py-20 lg:py-32 bg-white"
+            id="s7icuad"
+          >
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-3xl mx-auto text-center mb-16">
+                <span className="inline-block px-4 py-2 bg-[#1ABC9C]/10 text-[#1ABC9C] rounded-full text-sm font-semibold mb-6">
+                  Capacidades
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#333333] mb-6 font-['Barlow']">
+                  Todo lo que la IA puede hacer por tu negocio
+                </h2>
+                <p className="text-xl text-[#888888] leading-relaxed">
+                  Una solución completa para automatizar la gestión telefónica
+                  de tu empresa
+                </p>
+              </div>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="bg-gradient-to-br from-[#EFF6FB] to-white p-6 rounded-2xl border border-[#D7EAF6] hover:shadow-xl hover:border-[#2574A9] transition-all duration-300 group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#2574A9] to-[#1A5276] rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                    <i
+                      className="fas fa-phone-volume text-white text-2xl"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-[#333333] mb-2 font-['Barlow']">
+                    Atender llamadas entrantes
+                  </h3>
+                  <p className="text-sm text-[#888888]">
+                    Respuesta inmediata y profesional
+                  </p>
+                </div>
+                <div className="bg-gradient-to-br from-[#EFF6FB] to-white p-6 rounded-2xl border border-[#D7EAF6] hover:shadow-xl hover:border-[#2574A9] transition-all duration-300 group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#1ABC9C] to-[#16A085] rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                    <i
+                      className="fas fa-calendar-check text-white text-2xl"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-[#333333] mb-2 font-['Barlow']">
+                    Agendar citas
+                  </h3>
+                  <p className="text-sm text-[#888888]">
+                    Reserva automática en tiempo real
+                  </p>
+                </div>
+                <div className="bg-gradient-to-br from-[#EFF6FB] to-white p-6 rounded-2xl border border-[#D7EAF6] hover:shadow-xl hover:border-[#2574A9] transition-all duration-300 group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#F39C12] to-[#E67E22] rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                    <i
+                      className="fas fa-edit text-white text-2xl"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-[#333333] mb-2 font-['Barlow']">
+                    Modificar citas
+                  </h3>
+                  <p className="text-sm text-[#888888]">
+                    Cambios y reprogramaciones al instante
+                  </p>
+                </div>
+                <div className="bg-gradient-to-br from-[#EFF6FB] to-white p-6 rounded-2xl border border-[#D7EAF6] hover:shadow-xl hover:border-[#2574A9] transition-all duration-300 group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#E74C3C] to-[#C0392B] rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                    <i
+                      className="fas fa-times-circle text-white text-2xl"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-[#333333] mb-2 font-['Barlow']">
+                    Cancelar citas
+                  </h3>
+                  <p className="text-sm text-[#888888]">
+                    Gestión completa del calendario
+                  </p>
+                </div>
+                <div className="bg-gradient-to-br from-[#EFF6FB] to-white p-6 rounded-2xl border border-[#D7EAF6] hover:shadow-xl hover:border-[#2574A9] transition-all duration-300 group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#9B59B6] to-[#8E44AD] rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                    <i
+                      className="fas fa-bell text-white text-2xl"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-[#333333] mb-2 font-['Barlow']">
+                    Confirmar citas
+                  </h3>
+                  <p className="text-sm text-[#888888]">
+                    Recordatorios automáticos
+                  </p>
+                </div>
+                <div className="bg-gradient-to-br from-[#EFF6FB] to-white p-6 rounded-2xl border border-[#D7EAF6] hover:shadow-xl hover:border-[#2574A9] transition-all duration-300 group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#2574A9] to-[#1A5276] rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                    <i
+                      className="fas fa-user-plus text-white text-2xl"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-[#333333] mb-2 font-['Barlow']">
+                    Captar datos
+                  </h3>
+                  <p className="text-sm text-[#888888]">
+                    Nombre, teléfono, email y motivo
+                  </p>
+                </div>
+                <div className="bg-gradient-to-br from-[#EFF6FB] to-white p-6 rounded-2xl border border-[#D7EAF6] hover:shadow-xl hover:border-[#2574A9] transition-all duration-300 group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#1ABC9C] to-[#16A085] rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                    <i
+                      className="fas fa-comments-question text-white text-2xl"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-[#333333] mb-2 font-['Barlow']">
+                    Responder FAQs
+                  </h3>
+                  <p className="text-sm text-[#888888]">
+                    Información instantánea y precisa
+                  </p>
+                </div>
+                <div className="bg-gradient-to-br from-[#EFF6FB] to-white p-6 rounded-2xl border border-[#D7EAF6] hover:shadow-xl hover:border-[#2574A9] transition-all duration-300 group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#F39C12] to-[#E67E22] rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                    <i
+                      className="fas fa-filter text-white text-2xl"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-[#333333] mb-2 font-['Barlow']">
+                    Filtrar llamadas
+                  </h3>
+                  <p className="text-sm text-[#888888]">
+                    Solo deriva las importantes
+                  </p>
+                </div>
+              </div>
+              <div className="mt-16 bg-gradient-to-r from-[#2574A9] to-[#1ABC9C] rounded-3xl p-8 lg:p-12 text-white text-center">
+                <div className="max-w-2xl mx-auto">
+                  <i
+                    className="fas fa-sync-alt text-5xl mb-6 opacity-80"
+                    aria-hidden="true"
+                  />
+                  <h3 className="text-2xl lg:text-3xl font-bold mb-4 font-['Barlow']">
+                    Integración total con tus sistemas
+                  </h3>
+                  <p className="text-lg text-white/90 mb-6">
+                    Google Calendar, CRM, herramientas de gestión y más. La IA
+                    se adapta a tu flujo de trabajo.
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-4 text-sm">
+                    <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full">
+                      Google Calendar
+                    </span>
+                    <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full">
+                      Outlook
+                    </span>
+                    <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full">
+                      Zapier
+                    </span>
+                    <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full">
+                      HubSpot
+                    </span>
+                    <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full">
+                      API personalizada
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            className="code-section py-20 lg:py-32 bg-gradient-to-br from-[#EFF6FB] to-white"
+            id="s4i809g"
+          >
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-3xl mx-auto text-center mb-16">
+                <span className="inline-block px-4 py-2 bg-[#2574A9]/10 text-[#2574A9] rounded-full text-sm font-semibold mb-6">
+                  Casos de uso
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#333333] mb-6 font-['Barlow']">
+                  Diseñado para tu sector
+                </h2>
+                <p className="text-xl text-[#888888] leading-relaxed">
+                  Automatización especializada para diferentes tipos de negocio
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#D7EAF6]">
+                  <div className="bg-gradient-to-br from-[#2574A9] to-[#1A5276] p-6 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
+                    <i
+                      className="fas fa-stethoscope text-white text-4xl mb-3 relative z-10"
+                      aria-hidden="true"
+                    />
+                    <h3 className="text-2xl font-bold text-white relative z-10 font-['Barlow']">
+                      Clínicas y centros médicos
+                    </h3>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-[#888888] leading-relaxed mb-4">
+                      Gestiona citas médicas, confirma consultas y responde
+                      dudas sobre servicios y horarios.
+                    </p>
+                    <div className="flex items-center gap-2 text-[#1ABC9C] font-semibold">
+                      <i className="fas fa-chart-line" aria-hidden="true" />
+                      <span className="text-sm">
+                        Automatiza el 80% de llamadas
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#D7EAF6]">
+                  <div className="bg-gradient-to-br from-[#1ABC9C] to-[#16A085] p-6 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
+                    <i
+                      className="fas fa-building text-white text-4xl mb-3 relative z-10"
+                      aria-hidden="true"
+                    />
+                    <h3 className="text-2xl font-bold text-white relative z-10 font-['Barlow']">
+                      Inmobiliarias
+                    </h3>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-[#888888] leading-relaxed mb-4">
+                      Agenda visitas a propiedades, captura datos de interesados
+                      y filtra clientes potenciales.
+                    </p>
+                    <div className="flex items-center gap-2 text-[#1ABC9C] font-semibold">
+                      <i className="fas fa-users" aria-hidden="true" />
+                      <span className="text-sm">Más leads cualificados</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#D7EAF6]">
+                  <div className="bg-gradient-to-br from-[#F39C12] to-[#E67E22] p-6 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
+                    <i
+                      className="fas fa-briefcase text-white text-4xl mb-3 relative z-10"
+                      aria-hidden="true"
+                    />
+                    <h3 className="text-2xl font-bold text-white relative z-10 font-['Barlow']">
+                      Despachos profesionales
+                    </h3>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-[#888888] leading-relaxed mb-4">
+                      Abogados, consultores, asesores. Agenda reuniones y
+                      gestiona consultas iniciales.
+                    </p>
+                    <div className="flex items-center gap-2 text-[#1ABC9C] font-semibold">
+                      <i className="fas fa-clock" aria-hidden="true" />
+                      <span className="text-sm">Ahorra tiempo valioso</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#D7EAF6]">
+                  <div className="bg-gradient-to-br from-[#9B59B6] to-[#8E44AD] p-6 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
+                    <i
+                      className="fas fa-cut text-white text-4xl mb-3 relative z-10"
+                      aria-hidden="true"
+                    />
+                    <h3 className="text-2xl font-bold text-white relative z-10 font-['Barlow']">
+                      Centros de estética
+                    </h3>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-[#888888] leading-relaxed mb-4">
+                      Reserva de tratamientos, confirmaciones y recordatorios
+                      automáticos a clientes.
+                    </p>
+                    <div className="flex items-center gap-2 text-[#1ABC9C] font-semibold">
+                      <i className="fas fa-percentage" aria-hidden="true" />
+                      <span className="text-sm">Reduce no-shows</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#D7EAF6]">
+                  <div className="bg-gradient-to-br from-[#E74C3C] to-[#C0392B] p-6 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
+                    <i
+                      className="fas fa-wrench text-white text-4xl mb-3 relative z-10"
+                      aria-hidden="true"
+                    />
+                    <h3 className="text-2xl font-bold text-white relative z-10 font-['Barlow']">
+                      Talleres y servicios técnicos
+                    </h3>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-[#888888] leading-relaxed mb-4">
+                      Programa revisiones, informa sobre presupuestos y gestiona
+                      urgencias eficientemente.
+                    </p>
+                    <div className="flex items-center gap-2 text-[#1ABC9C] font-semibold">
+                      <i className="fas fa-tools" aria-hidden="true" />
+                      <span className="text-sm">Mejor organización</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#D7EAF6]">
+                  <div className="bg-gradient-to-br from-[#2574A9] to-[#1ABC9C] p-6 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
+                    <i
+                      className="fas fa-utensils text-white text-4xl mb-3 relative z-10"
+                      aria-hidden="true"
+                    />
+                    <h3 className="text-2xl font-bold text-white relative z-10 font-['Barlow']">
+                      Restaurantes y hostelería
+                    </h3>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-[#888888] leading-relaxed mb-4">
+                      Reservas de mesas, información sobre menús y gestión de
+                      pedidos para llevar.
+                    </p>
+                    <div className="flex items-center gap-2 text-[#1ABC9C] font-semibold">
+                      <i className="fas fa-star" aria-hidden="true" />
+                      <span className="text-sm">Mejor experiencia cliente</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            className="code-section py-20 lg:py-32 bg-white relative overflow-hidden"
+            id="swpkc3j"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-[#EFF6FB] via-transparent to-[#D7EAF6] opacity-30" />
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+              <div className="max-w-3xl mx-auto text-center mb-16">
+                <span className="inline-block px-4 py-2 bg-[#1ABC9C]/10 text-[#1ABC9C] rounded-full text-sm font-semibold mb-6">
+                  Por qué funciona
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#333333] mb-6 font-['Barlow']">
+                  Si el cliente no sabe que es una IA,
+                  <br />
+                  la tecnología ha hecho bien su trabajo
+                </h2>
+              </div>
+              <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mb-16">
+                <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-[#D7EAF6] hover:border-[#2574A9] transition-all duration-300 group">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-[#2574A9] to-[#1A5276] rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <i
+                        className="fas fa-microphone-alt text-white text-2xl"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-[#333333] mb-2 font-['Barlow']">
+                        Voz natural y fluida
+                      </h3>
+                      <p className="text-[#888888] leading-relaxed">
+                        No suena robótica. Pausas naturales, entonación correcta
+                        y capacidad de entender contextos complejos.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-[#D7EAF6] hover:border-[#1ABC9C] transition-all duration-300 group">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-[#1ABC9C] to-[#16A085] rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <i
+                        className="fas fa-user-check text-white text-2xl"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-[#333333] mb-2 font-['Barlow']">
+                        Imperceptible como bot
+                      </h3>
+                      <p className="text-[#888888] leading-relaxed">
+                        Los clientes interactúan con confianza porque la
+                        experiencia es completamente humana.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-[#D7EAF6] hover:border-[#F39C12] transition-all duration-300 group">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-[#F39C12] to-[#E67E22] rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <i
+                        className="fas fa-cog text-white text-2xl"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-[#333333] mb-2 font-['Barlow']">
+                        Entrenada para tu negocio
+                      </h3>
+                      <p className="text-[#888888] leading-relaxed">
+                        Personalización total: aprende tu vocabulario,
+                        servicios, procesos y protocolos específicos.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-[#D7EAF6] hover:border-[#9B59B6] transition-all duration-300 group">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-[#9B59B6] to-[#8E44AD] rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <i
+                        className="fas fa-euro-sign text-white text-2xl"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-[#333333] mb-2 font-['Barlow']">
+                        Ahorro de costes real
+                      </h3>
+                      <p className="text-[#888888] leading-relaxed">
+                        Reduce hasta un 70% los costes de atención telefónica
+                        sin perder calidad en el servicio.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-[#D7EAF6] hover:border-[#E74C3C] transition-all duration-300 group">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-[#E74C3C] to-[#C0392B] rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <i
+                        className="fas fa-chart-line text-white text-2xl"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-[#333333] mb-2 font-['Barlow']">
+                        Aumento de conversión
+                      </h3>
+                      <p className="text-[#888888] leading-relaxed">
+                        Respuesta inmediata = más citas agendadas. Sin llamadas
+                        perdidas = más clientes captados.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-[#D7EAF6] hover:border-[#2574A9] transition-all duration-300 group">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-[#2574A9] to-[#1ABC9C] rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <i
+                        className="fas fa-shield-alt text-white text-2xl"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-[#333333] mb-2 font-['Barlow']">
+                        Fiabilidad garantizada
+                      </h3>
+                      <p className="text-[#888888] leading-relaxed">
+                        No se enferma, no se cansa, no comete errores. Siempre
+                        disponible, siempre precisa.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="max-w-4xl mx-auto bg-gradient-to-r from-[#2574A9] via-[#1ABC9C] to-[#F39C12] p-1 rounded-3xl">
+                <div className="bg-white rounded-3xl p-8 lg:p-12 text-center">
+                  <i
+                    className="fas fa-trophy text-6xl text-[#F39C12] mb-6"
+                    aria-hidden="true"
+                  />
+                  <h3 className="text-2xl lg:text-3xl font-bold text-[#333333] mb-4 font-['Barlow']">
+                    El resultado
+                  </h3>
+                  <p className="text-xl text-[#888888] leading-relaxed max-w-2xl mx-auto">
+                    Clientes más satisfechos, equipo más productivo, costes
+                    reducidos y más negocio captado. Todo funcionando de forma
+                    automática.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            className="code-section py-20 lg:py-32 bg-gradient-to-br from-[#1A1A1A] to-[#333333] text-white relative overflow-hidden"
+            id="sm7ytz"
+          >
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#2574A9] rounded-full blur-3xl" />
+              <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#1ABC9C] rounded-full blur-3xl" />
+            </div>
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+              <div className="max-w-3xl mx-auto text-center mb-16">
+                <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-6">
+                  Proceso simple
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 font-['Barlow']">
+                  Empieza en 3 pasos simples
+                </h2>
+                <p className="text-xl text-white/80 leading-relaxed">
+                  De la demo a la implementación en días, no meses
+                </p>
+              </div>
+              <div className="max-w-5xl mx-auto">
+                <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+                  <div className="relative">
+                    <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-[#2574A9] transition-all duration-300 h-full">
+                      <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-[#2574A9] to-[#1A5276] rounded-2xl flex items-center justify-center shadow-xl">
+                        <span className="text-3xl font-bold">1</span>
+                      </div>
+                      <div className="mb-6 mt-4">
+                        <i
+                          className="fas fa-search text-5xl text-[#2574A9]"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <h3 className="text-2xl font-bold mb-4 font-['Barlow']">
+                        Análisis inicial
+                      </h3>
+                      <p className="text-white/80 leading-relaxed">
+                        Estudiamos tu negocio, tipo de llamadas que recibes y
+                        necesidades específicas. Es rápido y sin compromiso.
+                      </p>
+                    </div>
+                    <div className="hidden md:block absolute top-1/2 -right-6 transform -translate-y-1/2 z-20">
+                      <i
+                        className="fas fa-arrow-right text-3xl text-[#2574A9]"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-[#1ABC9C] transition-all duration-300 h-full">
+                      <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-[#1ABC9C] to-[#16A085] rounded-2xl flex items-center justify-center shadow-xl">
+                        <span className="text-3xl font-bold">2</span>
+                      </div>
+                      <div className="mb-6 mt-4">
+                        <i
+                          className="fas fa-brain text-5xl text-[#1ABC9C]"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <h3 className="text-2xl font-bold mb-4 font-['Barlow']">
+                        Entrenamiento IA
+                      </h3>
+                      <p className="text-white/80 leading-relaxed">
+                        Configuramos y entrenamos la IA con la información de tu
+                        empresa: servicios, horarios, protocolos y vocabulario.
+                      </p>
+                    </div>
+                    <div className="hidden md:block absolute top-1/2 -right-6 transform -translate-y-1/2 z-20">
+                      <i
+                        className="fas fa-arrow-right text-3xl text-[#1ABC9C]"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-[#F39C12] transition-all duration-300 h-full">
+                      <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-[#F39C12] to-[#E67E22] rounded-2xl flex items-center justify-center shadow-xl">
+                        <span className="text-3xl font-bold">3</span>
+                      </div>
+                      <div className="mb-6 mt-4">
+                        <i
+                          className="fas fa-rocket text-5xl text-[#F39C12]"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <h3 className="text-2xl font-bold mb-4 font-['Barlow']">
+                        Activación
+                      </h3>
+                      <p className="text-white/80 leading-relaxed">
+                        La IA empieza a atender tus llamadas. Monitorizamos,
+                        ajustamos y optimizamos para garantizar resultados
+                        perfectos.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-16 text-center">
+                  <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
+                    <i
+                      className="fas fa-clock text-[#1ABC9C] text-xl"
+                      aria-hidden="true"
+                    />
+                    <span className="text-lg font-semibold">
+                      Tiempo total de implementación:
+                      <span className="text-[#1ABC9C]">3-7 días</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            className="code-section py-20 lg:py-32 bg-gradient-to-br from-[#2574A9] via-[#1A5276] to-[#1ABC9C] text-white relative overflow-hidden"
+            id="s85191i"
+          >
+            <div className="absolute inset-0">
+              <div className="absolute top-0 left-0 w-full h-full opacity-10">
+                <div className="absolute top-20 left-20 w-64 h-64 bg-white rounded-full blur-3xl" />
+                <div className="absolute bottom-20 right-20 w-96 h-96 bg-white rounded-full blur-3xl" />
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#F39C12] rounded-full blur-3xl" />
+              </div>
+            </div>
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+              <div className="max-w-4xl mx-auto text-center">
+                <div className="mb-8">
+                  <div className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 border border-white/30 mb-8">
+                    <i
+                      className="fas fa-gift text-[#F39C12] text-xl"
+                      aria-hidden="true"
+                    />
+                    <span className="text-lg font-semibold">
+                      Demo gratuita sin compromiso
+                    </span>
+                  </div>
+                </div>
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-['Barlow']">
+                  Empieza a automatizar tus llamadas hoy
+                </h2>
+                <p className="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto">
+                  Descubre cómo una IA puede transformar la gestión telefónica
+                  de tu negocio
+                </p>
+                <p className="text-lg text-white/80 mb-12 max-w-2xl mx-auto">
+                  Te mostramos cómo funcionaría en tu negocio específico. Sin
+                  compromiso, sin costes ocultos, sin letra pequeña.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+                  <button className="group relative px-10 py-5 bg-white text-[#2574A9] rounded-xl font-bold text-xl shadow-2xl hover:shadow-white/50 transform hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+                    <span className="relative z-10 flex items-center justify-center gap-3">
+                      <i
+                        className="fas fa-calendar-check text-2xl"
+                        aria-hidden="true"
+                      />
+                      Solicitar demo gratuita
+                    </span>
+                    <div className="absolute inset-0 bg-[#EFF6FB] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+                  </button>
+                  <button className="group px-10 py-5 bg-transparent text-white border-2 border-white rounded-xl font-bold text-xl hover:bg-white/10 backdrop-blur-sm transform hover:-translate-y-2 transition-all duration-300">
+                    <span className="flex items-center justify-center gap-3">
+                      <i className="fas fa-phone-alt" aria-hidden="true" />
+                      Hablar con el equipo
+                    </span>
+                  </button>
+                </div>
+                <div className="grid sm:grid-cols-3 gap-8 pt-12 border-t border-white/20">
+                  <div className="text-center">
+                    <i
+                      className="fas fa-check-circle text-4xl text-[#1ABC9C] mb-4"
+                      aria-hidden="true"
+                    />
+                    <p className="text-lg font-semibold mb-2">
+                      Sin permanencia
+                    </p>
+                    <p className="text-sm text-white/70">
+                      Cancela cuando quieras
                     </p>
                   </div>
-                  {/* Benefits */}
-                  <div className="space-y-4 pt-4">
-                    <div className="flex items-start gap-4 bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-5 hover:bg-opacity-15 transition-all duration-300">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-white flex items-center justify-center">
+                  <div className="text-center">
+                    <i
+                      className="fas fa-shield-check text-4xl text-[#1ABC9C] mb-4"
+                      aria-hidden="true"
+                    />
+                    <p className="text-lg font-semibold mb-2">Datos seguros</p>
+                    <p className="text-sm text-white/70">
+                      Cumplimiento RGPD total
+                    </p>
+                  </div>
+                  <div className="text-center">
+                    <i
+                      className="fas fa-headset text-4xl text-[#1ABC9C] mb-4"
+                      aria-hidden="true"
+                    />
+                    <p className="text-lg font-semibold mb-2">
+                      Soporte dedicado
+                    </p>
+                    <p className="text-sm text-white/70">
+                      Asistencia 24/7 en español
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-16 bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                  <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+                    <div className="flex items-center gap-3">
+                      <i
+                        className="fas fa-phone-volume text-3xl text-[#F39C12]"
+                        aria-hidden="true"
+                      />
+                      <div className="text-left">
+                        <p className="text-sm text-white/70">
+                          ¿Prefieres llamar?
+                        </p>
+                        <p className="text-xl font-bold">+34 900 123 456</p>
+                      </div>
+                    </div>
+                    <div className="hidden md:block w-px h-12 bg-white/30" />
+                    <div className="flex items-center gap-3">
+                      <i
+                        className="fas fa-envelope text-3xl text-[#F39C12]"
+                        aria-hidden="true"
+                      />
+                      <div className="text-left">
+                        <p className="text-sm text-white/70">O escríbenos a</p>
+                        <p className="text-xl font-bold">info@tuempresa.com</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            className="code-section bg-gradient-to-br from-[var(--primary-color)] to-[var(--primary-button-hover-bg-color)] py-16 sm:py-20 lg:py-24 relative overflow-hidden"
+            id="sv9rsuo"
+          >
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <svg
+                className="w-full h-full"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+              >
+                <defs>
+                  <pattern
+                    id="grid"
+                    width={10}
+                    height={10}
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <path
+                      d="M 10 0 L 0 0 0 10"
+                      fill="none"
+                      stroke="white"
+                      strokeWidth="0.5"
+                    />
+                  </pattern>
+                </defs>
+                <rect width={100} height={100} fill="url(#grid)" />
+              </svg>
+            </div>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                {/* Left: Image */}
+                <div className="order-2 lg:order-1">
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                    <img
+                      src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/1b7fd356-a2a9-4351-3c90-edcd3f80a500/public"
+                      alt="Programmer coding developer technology office software ux ui computer workspace"
+                      className="w-full h-auto"
+                      data-media='{"id":"2234097503","src":"iStock","type":"image"}'
+                    />
+                    {/* Overlay Badge */}
+                    <div className="absolute top-6 left-6 bg-white rounded-lg shadow-lg px-4 py-3">
+                      <div className="flex items-center gap-2">
                         <i
-                          className="fas fa-map-marker-alt text-[var(--primary-color)] text-xl"
+                          className="fa-solid fa-code text-[var(--primary-color)] text-xl"
+                          aria-hidden="true"
+                        />
+                        <span className="font-bold text-[var(--dark-text-color)]">
+                          Código Limpio y Escalable
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* Right: Content */}
+                <div className="order-1 lg:order-2 text-white">
+                  <h2 className="font-[var(--font-family-heading)] text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                    ¿Por Qué Elegir
+                    <span className="text-[var(--accent-color)]">
+                      GANDIA SOFTWARE
+                    </span>
+                    ?
+                  </h2>
+                  <p className="text-lg mb-8 opacity-90 leading-relaxed">
+                    Somos más que desarrolladores: somos tu socio tecnológico
+                    local. Entendemos los desafíos de los negocios en Gandía y
+                    creamos soluciones que realmente funcionan.
+                  </p>
+                  {/* Features List */}
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-white rounded-lg p-3 flex-shrink-0 shadow-lg">
+                        <i
+                          className="fa-solid fa-rocket text-[var(--primary-color)] text-2xl"
                           aria-hidden="true"
                         />
                       </div>
                       <div>
-                        <h3 className="font-[var(--font-family-heading)] text-xl font-bold text-white mb-2">
-                          Proximidad y disponibilidad
+                        <h3 className="font-bold text-xl mb-2">
+                          Entrega Rápida
                         </h3>
-                        <p className="text-white opacity-90">
-                          Equipo local en Gandía que entiende tu mercado y está
-                          disponible cuando lo necesitas
+                        <p className="opacity-90">
+                          Tu proyecto listo en 2-4 semanas. Sin esperas
+                          interminables, empiezas a digitalizar tu negocio de
+                          inmediato.
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-4 bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-5 hover:bg-opacity-15 transition-all duration-300">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-white flex items-center justify-center">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-white rounded-lg p-3 flex-shrink-0 shadow-lg">
                         <i
-                          className="fas fa-puzzle-piece text-[var(--accent2-color)] text-xl"
+                          className="fa-solid fa-handshake text-[var(--primary-color)] text-2xl"
                           aria-hidden="true"
                         />
                       </div>
                       <div>
-                        <h3 className="font-[var(--font-family-heading)] text-xl font-bold text-white mb-2">
-                          Soluciones únicas para ti
+                        <h3 className="font-bold text-xl mb-2">
+                          Atención Local y Cercana
                         </h3>
-                        <p className="text-white opacity-90">
-                          No vendemos productos estándar. Cada solución está
-                          diseñada desde cero para tu negocio
+                        <p className="opacity-90">
+                          Estamos en Gandía. Reuniones presenciales, soporte
+                          inmediato y un equipo que entiende tu mercado local.
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-4 bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-5 hover:bg-opacity-15 transition-all duration-300">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-white flex items-center justify-center">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-white rounded-lg p-3 flex-shrink-0 shadow-lg">
                         <i
-                          className="fas fa-handshake text-[var(--accent3-color)] text-xl"
+                          className="fa-solid fa-cogs text-[var(--primary-color)] text-2xl"
                           aria-hidden="true"
                         />
                       </div>
                       <div>
-                        <h3 className="font-[var(--font-family-heading)] text-xl font-bold text-white mb-2">
-                          Acompañamiento continuo
+                        <h3 className="font-bold text-xl mb-2">
+                          100% Personalizado
                         </h3>
-                        <p className="text-white opacity-90">
-                          No te dejamos solo después del lanzamiento. Estamos
-                          contigo en cada paso del camino
+                        <p className="opacity-90">
+                          No usamos plantillas genéricas. Cada línea de código
+                          se diseña específicamente para tu negocio y tus
+                          necesidades.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className="bg-white rounded-lg p-3 flex-shrink-0 shadow-lg">
+                        <i
+                          className="fa-solid fa-shield-halved text-[var(--primary-color)] text-2xl"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-xl mb-2">
+                          Seguridad y Cumplimiento
+                        </h3>
+                        <p className="opacity-90">
+                          RGPD, seguridad de datos y peritaje judicial
+                          informático. Tu información y la de tus clientes,
+                          protegidas.
                         </p>
                       </div>
                     </div>
                   </div>
-                  {/* CTA */}
-                  <div className="pt-6">
+                  <div className="mt-10">
                     <a
-                      href="/quienes-somos"
-                      className="inline-flex items-center bg-white text-[var(--primary-color)] px-8 py-4 rounded-[var(--button-rounded-radius)] hover:shadow-2xl transition-all duration-200 font-semibold text-lg group"
+                      href="https://app.landingsite.ai/acerca-de-nosotros"
+                      className="inline-flex items-center bg-white text-[var(--primary-color)] px-8 py-4 rounded-lg hover:bg-[var(--light-background-color)] transition-all duration-300 font-semibold shadow-lg"
                     >
-                      Conoce más sobre nosotros
+                      Conoce Nuestro Equipo{" "}
                       <i
-                        className="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"
+                        className="fa-solid fa-arrow-right ml-2"
                         aria-hidden="true"
                       />
                     </a>
@@ -607,245 +1426,172 @@
           </section>
           <section
             className="code-section bg-white py-16 sm:py-20 lg:py-24"
-            id="sep1i4b"
+            id="s9ty17v"
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* Section Header */}
-              <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+              <div className="text-center mb-16">
                 <h2 className="font-[var(--font-family-heading)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--dark-text-color)] mb-4">
-                  Cómo trabajamos contigo
+                  Nuestro
+                  <span className="text-[var(--primary-color)]">
+                    Proceso de Trabajo
+                  </span>
                 </h2>
-                <p className="font-[var(--font-family-body)] text-lg text-[var(--gray-text-color)]">
-                  Un proceso claro y transparente desde la primera reunión hasta
-                  el lanzamiento y más allá
+                <p className="text-lg text-[var(--gray-text-color)] max-w-2xl mx-auto">
+                  Un método probado que te lleva desde la idea hasta el
+                  lanzamiento en 4 pasos simples
                 </p>
               </div>
               {/* Process Steps */}
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-                {/* Connecting line for desktop */}
-                <div className="hidden lg:block absolute top-16 left-0 right-0 h-1 bg-gradient-to-r from-[var(--primary-color)] via-[var(--accent2-color)] to-[var(--accent-color)] mx-12" />
-                {/* Step 1 */}
-                <div className="relative text-center group">
-                  <div className="relative inline-flex items-center justify-center mb-6">
-                    <div className="absolute w-24 h-24 rounded-full bg-[var(--primary-color)] opacity-10 group-hover:scale-110 transition-transform duration-300" />
-                    <div className="relative w-20 h-20 rounded-full bg-[var(--primary-color)] flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 z-10">
-                      <i
-                        className="fas fa-search text-white text-2xl"
-                        aria-hidden="true"
-                      />
+              <div className="relative">
+                {/* Connecting Line (Desktop) */}
+                <div
+                  className="hidden lg:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-[var(--primary-color)] via-[var(--accent2-color)] to-[var(--accent-color)]"
+                  style={{ margin: "0 10%" }}
+                />
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+                  {/* Step 1 */}
+                  <div className="relative text-center group">
+                    <div className="relative inline-block mb-6">
+                      <div className="bg-gradient-to-br from-[var(--primary-color)] to-[var(--primary-button-hover-bg-color)] w-20 h-20 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative z-10">
+                        <i
+                          className="fa-solid fa-comments text-white text-3xl"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="absolute -top-2 -right-2 bg-[var(--accent-color)] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shadow-md z-20">
+                        1
+                      </div>
                     </div>
-                  </div>
-                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-[var(--primary-color)] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shadow-md">
-                    1
-                  </div>
-                  <h3 className="font-[var(--font-family-heading)] text-xl font-bold text-[var(--dark-text-color)] mb-3">
-                    Análisis
-                  </h3>
-                  <p className="font-[var(--font-family-body)] text-[var(--gray-text-color)]">
-                    Estudiamos tu negocio, procesos actuales y necesidades
-                    específicas
-                  </p>
-                </div>
-                {/* Step 2 */}
-                <div className="relative text-center group">
-                  <div className="relative inline-flex items-center justify-center mb-6">
-                    <div className="absolute w-24 h-24 rounded-full bg-[var(--accent2-color)] opacity-10 group-hover:scale-110 transition-transform duration-300" />
-                    <div className="relative w-20 h-20 rounded-full bg-[var(--accent2-color)] flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 z-10">
-                      <i
-                        className="fas fa-pencil-ruler text-white text-2xl"
-                        aria-hidden="true"
-                      />
-                    </div>
-                  </div>
-                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-[var(--accent2-color)] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shadow-md">
-                    2
-                  </div>
-                  <h3 className="font-[var(--font-family-heading)] text-xl font-bold text-[var(--dark-text-color)] mb-3">
-                    Diseño
-                  </h3>
-                  <p className="font-[var(--font-family-body)] text-[var(--gray-text-color)]">
-                    Creamos la arquitectura y diseño de tu solución
-                    personalizada
-                  </p>
-                </div>
-                {/* Step 3 */}
-                <div className="relative text-center group">
-                  <div className="relative inline-flex items-center justify-center mb-6">
-                    <div className="absolute w-24 h-24 rounded-full bg-[var(--accent3-color)] opacity-10 group-hover:scale-110 transition-transform duration-300" />
-                    <div className="relative w-20 h-20 rounded-full bg-[var(--accent3-color)] flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 z-10">
-                      <i
-                        className="fas fa-code text-white text-2xl"
-                        aria-hidden="true"
-                      />
-                    </div>
-                  </div>
-                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-[var(--accent3-color)] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shadow-md">
-                    3
-                  </div>
-                  <h3 className="font-[var(--font-family-heading)] text-xl font-bold text-[var(--dark-text-color)] mb-3">
-                    Desarrollo
-                  </h3>
-                  <p className="font-[var(--font-family-body)] text-[var(--gray-text-color)]">
-                    Construimos tu software con tecnologías modernas y robustas
-                  </p>
-                </div>
-                {/* Step 4 */}
-                <div className="relative text-center group">
-                  <div className="relative inline-flex items-center justify-center mb-6">
-                    <div className="absolute w-24 h-24 rounded-full bg-[var(--accent-color)] opacity-10 group-hover:scale-110 transition-transform duration-300" />
-                    <div className="relative w-20 h-20 rounded-full bg-[var(--accent-color)] flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 z-10">
-                      <i
-                        className="fas fa-rocket text-white text-2xl"
-                        aria-hidden="true"
-                      />
-                    </div>
-                  </div>
-                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-[var(--accent-color)] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shadow-md">
-                    4
-                  </div>
-                  <h3 className="font-[var(--font-family-heading)] text-xl font-bold text-[var(--dark-text-color)] mb-3">
-                    Lanzamiento
-                  </h3>
-                  <p className="font-[var(--font-family-body)] text-[var(--gray-text-color)]">
-                    Implementamos y te acompañamos en la puesta en marcha
-                  </p>
-                </div>
-              </div>
-              {/* Bottom CTA */}
-              <div className="mt-16 text-center bg-gradient-to-br from-[var(--light-background-color)] to-white rounded-2xl p-8 sm:p-12 border border-[var(--light-border-color)]">
-                <div className="max-w-2xl mx-auto">
-                  <h3 className="font-[var(--font-family-heading)] text-2xl sm:text-3xl font-bold text-[var(--dark-text-color)] mb-4">
-                    ¿Listo para modernizar tu negocio?
-                  </h3>
-                  <p className="font-[var(--font-family-body)] text-lg text-[var(--gray-text-color)] mb-6">
-                    Cuéntanos qué necesitas y te preparamos una propuesta
-                    personalizada sin compromiso
-                  </p>
-                  <a
-                    href="/contacto"
-                    className="inline-flex items-center bg-[var(--primary-color)] text-[var(--primary-button-text-color)] px-8 py-4 rounded-[var(--button-rounded-radius)] hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-200 font-semibold text-lg shadow-lg hover:shadow-xl group"
-                  >
-                    Solicitar consultoría gratuita
-                    <i
-                      className="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"
-                      aria-hidden="true"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section
-            className="code-section bg-gradient-to-br from-[var(--light-background-color)] to-white py-16 sm:py-20 lg:py-24"
-            id="slnrool"
-          >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                {/* Content */}
-                <div className="space-y-6">
-                  <div className="space-y-4">
-                    <div className="inline-flex items-center gap-2 bg-[var(--accent2-color)] bg-opacity-10 text-[var(--accent2-color)] px-4 py-2 rounded-full font-semibold text-sm">
-                      <i className="fas fa-lightbulb" aria-hidden="true" />
-                      <span>Proyecto destacado</span>
-                    </div>
-                    <h2 className="font-[var(--font-family-heading)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--dark-text-color)] leading-tight">
-                      Sistema de avisos para cortes de agua
-                    </h2>
-                    <p className="font-[var(--font-family-body)] text-lg text-[var(--gray-text-color)] leading-relaxed">
-                      Desarrollamos una solución completa para mejorar la
-                      comunicación entre entidades y vecinos, permitiendo
-                      notificar de forma rápida y eficiente sobre cortes del
-                      suministro de agua programados.
+                    <h3 className="font-[var(--font-family-heading)] text-xl font-bold text-[var(--dark-text-color)] mb-3">
+                      Consulta Inicial
+                    </h3>
+                    <p className="text-[var(--gray-text-color)]">
+                      Hablamos de tu negocio, tus objetivos y los desafíos que
+                      enfrentas. Reunión gratuita y sin compromiso.
                     </p>
                   </div>
-                  {/* Features */}
-                  <div className="space-y-3 pt-4">
-                    <div className="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm">
-                      <div className="w-10 h-10 rounded-lg bg-[var(--primary-color)] flex items-center justify-center flex-shrink-0">
+                  {/* Step 2 */}
+                  <div className="relative text-center group">
+                    <div className="relative inline-block mb-6">
+                      <div className="bg-gradient-to-br from-[var(--accent2-color)] to-[#15967E] w-20 h-20 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative z-10">
                         <i
-                          className="fas fa-bell text-white"
+                          className="fa-solid fa-pencil-ruler text-white text-3xl"
                           aria-hidden="true"
                         />
                       </div>
-                      <p className="text-[var(--dark-text-color)] font-medium">
-                        Notificaciones automáticas a los vecinos afectados
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm">
-                      <div className="w-10 h-10 rounded-lg bg-[var(--accent2-color)] flex items-center justify-center flex-shrink-0">
-                        <i
-                          className="fas fa-map text-white"
-                          aria-hidden="true"
-                        />
+                      <div className="absolute -top-2 -right-2 bg-[var(--accent-color)] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shadow-md z-20">
+                        2
                       </div>
-                      <p className="text-[var(--dark-text-color)] font-medium">
-                        Gestión por zonas geográficas y calles
-                      </p>
                     </div>
-                    <div className="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm">
-                      <div className="w-10 h-10 rounded-lg bg-[var(--accent3-color)] flex items-center justify-center flex-shrink-0">
-                        <i
-                          className="fas fa-chart-bar text-white"
-                          aria-hidden="true"
-                        />
-                      </div>
-                      <p className="text-[var(--dark-text-color)] font-medium">
-                        Panel de control para gestionar comunicaciones
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm">
-                      <div className="w-10 h-10 rounded-lg bg-[var(--accent-color)] flex items-center justify-center flex-shrink-0">
-                        <i
-                          className="fas fa-mobile-alt text-white"
-                          aria-hidden="true"
-                        />
-                      </div>
-                      <p className="text-[var(--dark-text-color)] font-medium">
-                        Acceso desde cualquier dispositivo móvil o desktop
-                      </p>
-                    </div>
+                    <h3 className="font-[var(--font-family-heading)] text-xl font-bold text-[var(--dark-text-color)] mb-3">
+                      Diseño y Planificación
+                    </h3>
+                    <p className="text-[var(--gray-text-color)]">
+                      Creamos un plan detallado con mockups visuales y
+                      funcionalidades. Aprobamos todo antes de escribir código.
+                    </p>
                   </div>
-                  {/* CTA */}
-                  <div className="pt-4">
-                    <a
-                      href="/proyectos-realizados"
-                      className="inline-flex items-center text-[var(--primary-color)] font-semibold text-lg hover:gap-2 transition-all duration-200"
-                    >
-                      Ver más proyectos realizados
-                      <i
-                        className="fas fa-arrow-right ml-1"
-                        aria-hidden="true"
-                      />
-                    </a>
+                  {/* Step 3 */}
+                  <div className="relative text-center group">
+                    <div className="relative inline-block mb-6">
+                      <div className="bg-gradient-to-br from-[var(--accent4-color)] to-[#7D3C8E] w-20 h-20 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative z-10">
+                        <i
+                          className="fa-solid fa-code text-white text-3xl"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="absolute -top-2 -right-2 bg-[var(--accent-color)] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shadow-md z-20">
+                        3
+                      </div>
+                    </div>
+                    <h3 className="font-[var(--font-family-heading)] text-xl font-bold text-[var(--dark-text-color)] mb-3">
+                      Desarrollo
+                    </h3>
+                    <p className="text-[var(--gray-text-color)]">
+                      Construimos tu solución con tecnología moderna y código
+                      limpio. Recibes actualizaciones constantes del progreso.
+                    </p>
+                  </div>
+                  {/* Step 4 */}
+                  <div className="relative text-center group">
+                    <div className="relative inline-block mb-6">
+                      <div className="bg-gradient-to-br from-[var(--accent-color)] to-[#D68910] w-20 h-20 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative z-10">
+                        <i
+                          className="fa-solid fa-rocket text-white text-3xl"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="absolute -top-2 -right-2 bg-[var(--accent-color)] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shadow-md z-20">
+                        4
+                      </div>
+                    </div>
+                    <h3 className="font-[var(--font-family-heading)] text-xl font-bold text-[var(--dark-text-color)] mb-3">
+                      Lanzamiento y Soporte
+                    </h3>
+                    <p className="text-[var(--gray-text-color)]">
+                      Lanzamos tu proyecto y te formamos en su uso. Soporte
+                      continuo para mantener todo funcionando perfectamente.
+                    </p>
                   </div>
                 </div>
-                {/* Image */}
-                <div className="relative order-first lg:order-last">
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                    <img
-                      src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/6e58281b-9f10-4515-1c49-8331082ed400/public"
-                      alt="Time management project planning business internet technology concept. Businessman using smartphone with Hourglass clock on laptop computer concept for time management."
-                      data-media='{"id":"2246575256","src":"iStock","type":"image"}'
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  {/* Floating badge */}
-                  <div className="absolute -top-6 -right-6 bg-white rounded-xl shadow-2xl p-6 hidden sm:block">
-                    <div className="text-center">
-                      <p className="text-3xl font-bold text-[var(--primary-color)] mb-1">
-                        <i className="fas fa-check-circle" aria-hidden="true" />
-                      </p>
-                      <p className="text-sm text-[var(--gray-text-color)] font-semibold">
-                        Proyecto
-                      </p>
-                      <p className="text-sm text-[var(--dark-text-color)] font-bold">
-                        Completado
+              </div>
+              {/* Stats Section */}
+              <div className="mt-20 bg-gradient-to-br from-[var(--light-background-color)] to-[var(--medium-background-color)] rounded-3xl p-8 lg:p-12">
+                <div className="grid sm:grid-cols-3 gap-8 text-center">
+                  <div className="group">
+                    <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                      <div className="text-4xl lg:text-5xl font-bold text-[var(--primary-color)] mb-2">
+                        2-4
+                      </div>
+                      <div className="text-sm text-[var(--gray-text-color)] uppercase tracking-wider">
+                        Semanas de Media
+                      </div>
+                      <p className="text-xs text-[var(--gray-text-color)] mt-2">
+                        Desde el inicio hasta el lanzamiento
                       </p>
                     </div>
                   </div>
-                  {/* Decorative element */}
-                  <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[var(--accent2-color)] rounded-2xl opacity-20 -z-10" />
+                  <div className="group">
+                    <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                      <div className="text-4xl lg:text-5xl font-bold text-[var(--accent2-color)] mb-2">
+                        100%
+                      </div>
+                      <div className="text-sm text-[var(--gray-text-color)] uppercase tracking-wider">
+                        Satisfacción
+                      </div>
+                      <p className="text-xs text-[var(--gray-text-color)] mt-2">
+                        Clientes contentos con resultados
+                      </p>
+                    </div>
+                  </div>
+                  <div className="group">
+                    <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                      <div className="text-4xl lg:text-5xl font-bold text-[var(--accent-color)] mb-2">
+                        24/7
+                      </div>
+                      <div className="text-sm text-[var(--gray-text-color)] uppercase tracking-wider">
+                        Soporte Técnico
+                      </div>
+                      <p className="text-xs text-[var(--gray-text-color)] mt-2">
+                        Asistencia cuando la necesites
+                      </p>
+                    </div>
+                  </div>
                 </div>
+              </div>
+              {/* CTA */}
+              <div className="text-center mt-12">
+                <a
+                  href="https://app.landingsite.ai/contacto"
+                  className="inline-flex items-center bg-[var(--primary-color)] text-[var(--primary-button-text-color)] px-8 py-4 rounded-lg hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
+                >
+                  Empieza tu Proyecto Ahora{" "}
+                  <i
+                    className="fa-solid fa-arrow-right ml-2"
+                    aria-hidden="true"
+                  />
+                </a>
               </div>
             </div>
           </section>
@@ -853,211 +1599,277 @@
         <div>
           <footer
             id="global-footer"
-            className="code-section bg-[var(--dark-background-color)] text-white"
+            className="code-section bg-[var(--dark-background-color)] text-white pt-16 pb-8"
           >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-                {/* Brand Column */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              {/* Main Footer Content */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+                {/* Company Info */}
                 <div className="sm:col-span-2 lg:col-span-1">
                   <a
-                    href="/"
+                    href="https://app.landingsite.ai/"
                     className="inline-block mb-6"
                   >
                     <img
-                      src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/18f07e52-5899-4a55-70e8-eb4b9cb81300/public"
-                      alt="Software Gandia"
+                      src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/9bb9df68-b6ae-42cb-2d2e-80fb5d34bb00/public"
+                      alt="GANDIA SOFTWARE"
                       className="h-28 py-2"
                       data-logo=""
                     />
                   </a>
-                  <p className="font-[var(--font-family-body)] text-[var(--gray-text-color)] mb-6 leading-relaxed">
-                    Desarrollo de software a medida para empresas de la Safor.
-                    Soluciones tecnológicas personalizadas desde Gandía.
+                  <p className="text-gray-400 mb-6 leading-relaxed">
+                    Digitalizamos negocios en Gandía con software a medida, webs
+                    profesionales y soluciones tecnológicas que generan
+                    resultados reales.
                   </p>
                   <div className="flex gap-4">
                     <a
-                      href="/website-preview?id=441092da-3c97-444a-b340-69e8d5360bd4#"
-                      className="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-[var(--primary-color)] transition-all duration-200"
+                      href="https://app.landingsite.ai/website-preview?id=40d934e3-17e3-4548-b0fa-56b0a6aedf08#"
+                      className="w-10 h-10 bg-[var(--primary-color)] rounded-full flex items-center justify-center hover:bg-[var(--primary-button-hover-bg-color)] transition-colors duration-300"
                     >
-                      <i className="fab fa-linkedin-in" aria-hidden="true" />
+                      <i
+                        className="fa-brands fa-facebook-f"
+                        aria-hidden="true"
+                      />
                     </a>
                     <a
-                      href="/website-preview?id=441092da-3c97-444a-b340-69e8d5360bd4#"
-                      className="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-[var(--primary-color)] transition-all duration-200"
+                      href="https://app.landingsite.ai/website-preview?id=40d934e3-17e3-4548-b0fa-56b0a6aedf08#"
+                      className="w-10 h-10 bg-[var(--primary-color)] rounded-full flex items-center justify-center hover:bg-[var(--primary-button-hover-bg-color)] transition-colors duration-300"
                     >
-                      <i className="fab fa-facebook-f" aria-hidden="true" />
+                      <i
+                        className="fa-brands fa-linkedin-in"
+                        aria-hidden="true"
+                      />
                     </a>
                     <a
-                      href="/website-preview?id=441092da-3c97-444a-b340-69e8d5360bd4#"
-                      className="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-[var(--primary-color)] transition-all duration-200"
+                      href="https://app.landingsite.ai/website-preview?id=40d934e3-17e3-4548-b0fa-56b0a6aedf08#"
+                      className="w-10 h-10 bg-[var(--primary-color)] rounded-full flex items-center justify-center hover:bg-[var(--primary-button-hover-bg-color)] transition-colors duration-300"
                     >
-                      <i className="fab fa-twitter" aria-hidden="true" />
+                      <i
+                        className="fa-brands fa-instagram"
+                        aria-hidden="true"
+                      />
                     </a>
                     <a
-                      href="/website-preview?id=441092da-3c97-444a-b340-69e8d5360bd4#"
-                      className="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-[var(--primary-color)] transition-all duration-200"
+                      href="https://app.landingsite.ai/website-preview?id=40d934e3-17e3-4548-b0fa-56b0a6aedf08#"
+                      className="w-10 h-10 bg-[var(--primary-color)] rounded-full flex items-center justify-center hover:bg-[var(--primary-button-hover-bg-color)] transition-colors duration-300"
                     >
-                      <i className="fab fa-instagram" aria-hidden="true" />
+                      <i className="fa-brands fa-twitter" aria-hidden="true" />
                     </a>
                   </div>
                 </div>
-                {/* Company Links */}
+                {/* Quick Links */}
                 <div>
-                  <h3 className="font-[var(--font-family-heading)] text-lg font-bold mb-4">
-                    Empresa
+                  <h3 className="font-[var(--font-family-heading)] text-lg font-bold mb-4 text-white">
+                    Enlaces Rápidos
                   </h3>
                   <ul className="space-y-3">
                     <li>
                       <a
-                        href="/"
-                        className="font-[var(--font-family-body)] text-[var(--gray-text-color)] hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+                        href="https://app.landingsite.ai/"
+                        className="text-gray-400 hover:text-[var(--primary-color)] transition-colors duration-200 flex items-center"
                       >
                         <i
-                          className="fas fa-chevron-right text-xs group-hover:translate-x-1 transition-transform"
+                          className="fa-solid fa-chevron-right text-xs mr-2"
                           aria-hidden="true"
                         />
-                        Inicio
+                        Página principal
                       </a>
                     </li>
                     <li>
                       <a
-                        href="/quienes-somos"
-                        className="font-[var(--font-family-body)] text-[var(--gray-text-color)] hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+                        href="https://app.landingsite.ai/acerca-de-nosotros"
+                        className="text-gray-400 hover:text-[var(--primary-color)] transition-colors duration-200 flex items-center"
                       >
                         <i
-                          className="fas fa-chevron-right text-xs group-hover:translate-x-1 transition-transform"
+                          className="fa-solid fa-chevron-right text-xs mr-2"
                           aria-hidden="true"
                         />
-                        Quiénes Somos
+                        Acerca de nosotros
                       </a>
                     </li>
                     <li>
                       <a
-                        href="/nuestros-servicios"
-                        className="font-[var(--font-family-body)] text-[var(--gray-text-color)] hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+                        href="https://app.landingsite.ai/servicios"
+                        className="text-gray-400 hover:text-[var(--primary-color)] transition-colors duration-200 flex items-center"
                       >
                         <i
-                          className="fas fa-chevron-right text-xs group-hover:translate-x-1 transition-transform"
+                          className="fa-solid fa-chevron-right text-xs mr-2"
                           aria-hidden="true"
                         />
-                        Nuestros Servicios
+                        Servicios
                       </a>
                     </li>
                     <li>
                       <a
-                        href="/proyectos-realizados"
-                        className="font-[var(--font-family-body)] text-[var(--gray-text-color)] hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+                        href="https://app.landingsite.ai/proyectos"
+                        className="text-gray-400 hover:text-[var(--primary-color)] transition-colors duration-200 flex items-center"
                       >
                         <i
-                          className="fas fa-chevron-right text-xs group-hover:translate-x-1 transition-transform"
+                          className="fa-solid fa-chevron-right text-xs mr-2"
                           aria-hidden="true"
                         />
-                        Proyectos Realizados
+                        Proyectos
                       </a>
                     </li>
-                  </ul>
-                </div>
-                {/* Resources Links */}
-                <div>
-                  <h3 className="font-[var(--font-family-heading)] text-lg font-bold mb-4">
-                    Recursos
-                  </h3>
-                  <ul className="space-y-3">
                     <li>
                       <a
-                        href="/blog"
-                        className="font-[var(--font-family-body)] text-[var(--gray-text-color)] hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+                        href="https://app.landingsite.ai/blog"
+                        className="text-gray-400 hover:text-[var(--primary-color)] transition-colors duration-200 flex items-center"
                       >
                         <i
-                          className="fas fa-chevron-right text-xs group-hover:translate-x-1 transition-transform"
+                          className="fa-solid fa-chevron-right text-xs mr-2"
                           aria-hidden="true"
                         />
                         Blog
                       </a>
                     </li>
+                  </ul>
+                </div>
+                {/* Services */}
+                <div>
+                  <h3 className="font-[var(--font-family-heading)] text-lg font-bold mb-4 text-white">
+                    Servicios
+                  </h3>
+                  <ul className="space-y-3">
                     <li>
                       <a
-                        href="/contacto"
-                        className="font-[var(--font-family-body)] text-[var(--gray-text-color)] hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+                        href="https://app.landingsite.ai/servicios"
+                        className="text-gray-400 hover:text-[var(--primary-color)] transition-colors duration-200 flex items-center"
                       >
                         <i
-                          className="fas fa-chevron-right text-xs group-hover:translate-x-1 transition-transform"
+                          className="fa-solid fa-chevron-right text-xs mr-2"
                           aria-hidden="true"
                         />
-                        Contacto
+                        Desarrollo Web
                       </a>
                     </li>
                     <li>
                       <a
-                        href="/privacidad-y-aviso-legal"
-                        className="font-[var(--font-family-body)] text-[var(--gray-text-color)] hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+                        href="https://app.landingsite.ai/servicios"
+                        className="text-gray-400 hover:text-[var(--primary-color)] transition-colors duration-200 flex items-center"
                       >
                         <i
-                          className="fas fa-chevron-right text-xs group-hover:translate-x-1 transition-transform"
+                          className="fa-solid fa-chevron-right text-xs mr-2"
                           aria-hidden="true"
                         />
-                        Privacidad y Aviso Legal
+                        Software a Medida
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://app.landingsite.ai/servicios"
+                        className="text-gray-400 hover:text-[var(--primary-color)] transition-colors duration-200 flex items-center"
+                      >
+                        <i
+                          className="fa-solid fa-chevron-right text-xs mr-2"
+                          aria-hidden="true"
+                        />
+                        Aplicaciones Móviles
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://app.landingsite.ai/servicios"
+                        className="text-gray-400 hover:text-[var(--primary-color)] transition-colors duration-200 flex items-center"
+                      >
+                        <i
+                          className="fa-solid fa-chevron-right text-xs mr-2"
+                          aria-hidden="true"
+                        />
+                        Peritaje Judicial
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://app.landingsite.ai/servicios"
+                        className="text-gray-400 hover:text-[var(--primary-color)] transition-colors duration-200 flex items-center"
+                      >
+                        <i
+                          className="fa-solid fa-chevron-right text-xs mr-2"
+                          aria-hidden="true"
+                        />
+                        Consultoría IT
                       </a>
                     </li>
                   </ul>
                 </div>
                 {/* Contact Info */}
                 <div>
-                  <h3 className="font-[var(--font-family-heading)] text-lg font-bold mb-4">
+                  <h3 className="font-[var(--font-family-heading)] text-lg font-bold mb-4 text-white">
                     Contacto
                   </h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3">
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-3 text-gray-400">
                       <i
-                        className="fas fa-map-marker-alt text-[var(--primary-color)] mt-1"
+                        className="fa-solid fa-map-marker-alt text-[var(--primary-color)] mt-1"
                         aria-hidden="true"
                       />
-                      <span className="font-[var(--font-family-body)] text-[var(--gray-text-color)]">
+                      <span>
                         Gandía, Valencia
                         <br />
-                        La Safor
+                        España
                       </span>
                     </li>
-                    <li className="flex items-start gap-3">
+                    <li className="flex items-start gap-3 text-gray-400">
                       <i
-                        className="fas fa-envelope text-[var(--primary-color)] mt-1"
+                        className="fa-solid fa-envelope text-[var(--primary-color)] mt-1"
                         aria-hidden="true"
                       />
                       <a
-                        href="mailto:softwaregandia@gmail.com"
-                        className="font-[var(--font-family-body)] text-[var(--gray-text-color)] hover:text-white transition-colors duration-200"
+                        href="mailto:info@gandiasoftware.com"
+                        className="hover:text-[var(--primary-color)] transition-colors"
                       >
-                        softwaregandia@gmail.com
+                        info@gandiasoftware.com
                       </a>
                     </li>
-                    <li className="flex items-start gap-3">
+                    <li className="flex items-start gap-3 text-gray-400">
                       <i
-                        className="fas fa-phone text-[var(--primary-color)] mt-1"
+                        className="fa-solid fa-phone text-[var(--primary-color)] mt-1"
                         aria-hidden="true"
                       />
                       <a
-                        href="tel:+34601745344"
-                        className="font-[var(--font-family-body)] text-[var(--gray-text-color)] hover:text-white transition-colors duration-200"
+                        href="tel:+34123456789"
+                        className="hover:text-[var(--primary-color)] transition-colors"
                       >
-                        +34 601 74 53 44
+                        +34 123 456 789
                       </a>
+                    </li>
+                    <li className="flex items-start gap-3 text-gray-400">
+                      <i
+                        className="fa-solid fa-clock text-[var(--primary-color)] mt-1"
+                        aria-hidden="true"
+                      />
+                      <span>Lun - Vie: 9:00 - 18:00</span>
                     </li>
                   </ul>
                 </div>
               </div>
-              {/* Bottom Bar */}
-              <div className="border-t border-white border-opacity-10 mt-12 pt-8">
-                <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-                  <p className="font-[var(--font-family-body)] text-[var(--gray-text-color)] text-sm text-center sm:text-left">
-                    © 2025 Software Gandia. Todos los derechos reservados.
+              {/* Divider */}
+              <div className="border-t border-gray-800 pt-8">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                  <p className="text-gray-400 text-sm text-center md:text-left">
+                    © 2025 GANDIA SOFTWARE. Todos los derechos reservados.
                   </p>
-                  <div className="flex items-center gap-2 text-[var(--gray-text-color)] text-sm">
-                    <span>Hecho con</span>
-                    <i
-                      className="fas fa-heart text-[var(--accent-color)]"
-                      aria-hidden="true"
-                    />
-                    <span>en Gandía</span>
+                  <div className="flex gap-6 text-sm">
+                    <a
+                      href="https://app.landingsite.ai/website-preview?id=40d934e3-17e3-4548-b0fa-56b0a6aedf08#"
+                      className="text-gray-400 hover:text-[var(--primary-color)] transition-colors"
+                    >
+                      Política de Privacidad
+                    </a>
+                    <a
+                      href="https://app.landingsite.ai/website-preview?id=40d934e3-17e3-4548-b0fa-56b0a6aedf08#"
+                      className="text-gray-400 hover:text-[var(--primary-color)] transition-colors"
+                    >
+                      Términos de Servicio
+                    </a>
+                    <a
+                      href="https://app.landingsite.ai/website-preview?id=40d934e3-17e3-4548-b0fa-56b0a6aedf08#"
+                      className="text-gray-400 hover:text-[var(--primary-color)] transition-colors"
+                    >
+                      Cookies
+                    </a>
                   </div>
                 </div>
               </div>
@@ -1066,10 +1878,6 @@
         </div>
       </div>
     </div>
-       <div className="frame-content" />
+    <div className="frame-content" />
   </div>
-    </>
-  );
-}
-
-export default App;
+</>
