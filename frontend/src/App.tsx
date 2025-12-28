@@ -1,4 +1,6 @@
-<>
+function App() {
+  return (
+    <>
   {/* saved from url=(0012)about:srcdoc */}
   <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1881,3 +1883,8 @@
     <div className="frame-content" />
   </div>
 </>
+   
+  );
+}
+
+export default App;
