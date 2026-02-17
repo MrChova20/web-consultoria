@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
+import { ArrowLeft, Calendar, CheckCircle, Copy, Mail, MapPin } from 'lucide-react';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
 
@@ -42,12 +44,12 @@ const ScheduleAppointment: React.FC = () => {
     e.preventDefault();
 
     if (isPastDate(formData.date, formData.time)) {
-      setError('❌ No puedes agendar una cita en el pasado.');
+      setError('No puedes agendar una cita en el pasado.');
       return;
     }
 
     if (!isBusinessHour(formData.date, formData.time)) {
-      setError('❌ Solo puedes agendar citas de lunes a viernes, entre 9-14h y 16-19h.');
+      setError('Solo puedes agendar citas de lunes a viernes, entre 9-14h y 16-19h.');
       return;
     }
 
@@ -57,9 +59,7 @@ const ScheduleAppointment: React.FC = () => {
       setMeetingLink(meetLink);
     }
 
-    const payload = {
-      ...formData
-    };
+    const payload = { ...formData };
 
     try {
       const response = await fetch(`${API_BASE_URL}/send-email`, {
@@ -74,57 +74,108 @@ const ScheduleAppointment: React.FC = () => {
       }
 
       setSubmitted(true);
-      console.log('Correo enviado correctamente');
-    } catch (err: any) {
-      console.error('Error enviando correo:', err);
-      setError(`❌ ${err.message}`);
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Error al enviar';
+      setError(message);
     }
   };
 
   const handleCopyLink = () => {
     if (meetingLink) {
       navigator.clipboard.writeText(meetingLink);
-      alert('¡Link copiado al portapapeles!');
+      alert('Link copiado al portapapeles.');
     }
   };
 
+  const inputClass = 'w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/30 transition-all';
+  const labelClass = 'block text-sm font-medium text-slate-300 mb-2';
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-      <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-lg">
+    <div className="min-h-[calc(100vh-5rem)] flex items-center justify-center py-16 px-4">
+      <div className="w-full max-w-lg rounded-2xl border border-white/10 bg-slate-900/50 backdrop-blur p-8 lg:p-10 shadow-2xl">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 text-slate-400 hover:text-cyan-400 text-sm font-medium mb-8 transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Volver al inicio
+        </Link>
+
         {!submitted ? (
           <>
-            <h2 className="text-2xl font-bold text-center mb-6">Agenda tu Cita</h2>
-            {error && <p className="text-red-500 text-sm text-center mb-4">{error}</p>}
-            <form onSubmit={handleSubmit} className="space-y-4 text-sm sm:text-base">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center">
+                <Calendar className="w-6 h-6 text-cyan-400" />
+              </div>
               <div>
-                <label htmlFor="name" className="block mb-1 text-gray-300">Nombre</label>
-                <input type="text" name="name" id="name" value={formData.name} onChange={handleChange} required className="w-full p-2 bg-gray-700 border border-gray-600 rounded" />
+                <h1 className="text-2xl font-display font-bold text-white">Agenda tu cita</h1>
+                <p className="text-slate-400 text-sm">Demo gratuita sin compromiso</p>
+              </div>
+            </div>
+
+            {error && (
+              <div className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                {error}
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div>
+                <label htmlFor="name" className={labelClass}>Nombre</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className={inputClass}
+                  placeholder="Tu nombre"
+                />
               </div>
 
               <div>
-                <label htmlFor="email" className="block mb-1 text-gray-300">Correo Electrónico</label>
-                <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} required className="w-full p-2 bg-gray-700 border border-gray-600 rounded" />
+                <label htmlFor="email" className={labelClass}>Correo electrónico</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className={inputClass}
+                  placeholder="tu@empresa.com"
+                />
               </div>
 
               <div>
-                <label htmlFor="phone" className="block mb-1 text-gray-300">Teléfono</label>
+                <label htmlFor="phone" className={labelClass}>Teléfono</label>
                 <PhoneInput
                   international
                   defaultCountry="ES"
                   value={formData.phone}
                   onChange={(value) => setFormData({ ...formData, phone: value || '' })}
-                  className="w-full bg-gray-700 border border-gray-600 rounded text-white [&_.PhoneInputInput]:bg-gray-700 [&_.PhoneInputInput]:text-white"
+                  className={`${inputClass} [&_.PhoneInputInput]:bg-transparent [&_.PhoneInputInput]:border-0 [&_.PhoneInputInput]:outline-none [&_.PhoneInputInput]:text-white`}
                 />
               </div>
 
               <div>
-                <label htmlFor="company" className="block mb-1 text-gray-300">Empresa</label>
-                <input type="text" name="company" id="company" value={formData.company} onChange={handleChange} required className="w-full p-2 bg-gray-700 border border-gray-600 rounded" />
+                <label htmlFor="company" className={labelClass}>Empresa</label>
+                <input
+                  type="text"
+                  name="company"
+                  id="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  required
+                  className={inputClass}
+                  placeholder="Nombre de tu empresa"
+                />
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="flex-1">
-                  <label htmlFor="date" className="block mb-1 text-gray-300">Fecha</label>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="date" className={labelClass}>Fecha</label>
                   <input
                     type="date"
                     name="date"
@@ -132,13 +183,12 @@ const ScheduleAppointment: React.FC = () => {
                     value={formData.date}
                     onChange={handleChange}
                     required
-                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded"
+                    className={inputClass}
                     min={new Date().toISOString().split('T')[0]}
                   />
                 </div>
-
-                <div className="flex-1">
-                  <label htmlFor="time" className="block mb-1 text-gray-300">Hora</label>
+                <div>
+                  <label htmlFor="time" className={labelClass}>Hora</label>
                   <input
                     type="time"
                     name="time"
@@ -146,70 +196,104 @@ const ScheduleAppointment: React.FC = () => {
                     value={formData.time}
                     onChange={handleChange}
                     required
-                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded"
+                    className={inputClass}
                     step="1800"
                     list="availableHours"
                   />
                   <datalist id="availableHours">
-                    <option value="09:00" />
-                    <option value="09:30" />
-                    <option value="10:00" />
-                    <option value="10:30" />
-                    <option value="11:00" />
-                    <option value="11:30" />
-                    <option value="12:00" />
-                    <option value="12:30" />
-                    <option value="13:00" />
-                    <option value="13:30" />
-                    <option value="16:00" />
-                    <option value="16:30" />
-                    <option value="17:00" />
-                    <option value="17:30" />
-                    <option value="18:00" />
-                    <option value="18:30" />
+                    {['09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '16:00', '16:30', '17:00', '17:30', '18:00', '18:30'].map((t) => (
+                      <option key={t} value={t} />
+                    ))}
                   </datalist>
                 </div>
               </div>
 
               <div>
-                <label htmlFor="mode" className="block mb-1 text-gray-300">Modo</label>
-                <select name="mode" id="mode" value={formData.mode} onChange={handleChange} className="w-full p-2 bg-gray-700 border border-gray-600 rounded">
-                  <option value="online">Reunión Online</option>
-                  <option value="presencial">Reunión Presencial</option>
+                <label htmlFor="mode" className={labelClass}>Modo</label>
+                <select
+                  name="mode"
+                  id="mode"
+                  value={formData.mode}
+                  onChange={handleChange}
+                  className={inputClass}
+                >
+                  <option value="online">Reunión online</option>
+                  <option value="presencial">Reunión presencial</option>
                 </select>
               </div>
 
               <div>
-                <label htmlFor="topic" className="block mb-1 text-gray-300">Tema a tratar</label>
-                <textarea name="topic" id="topic" value={formData.topic} onChange={handleChange} required className="w-full p-2 bg-gray-700 border border-gray-600 rounded" />
+                <label htmlFor="topic" className={labelClass}>Tema a tratar</label>
+                <textarea
+                  name="topic"
+                  id="topic"
+                  value={formData.topic}
+                  onChange={handleChange}
+                  required
+                  rows={3}
+                  className={inputClass}
+                  placeholder="¿En qué podemos ayudarte?"
+                />
               </div>
 
-              <button type="submit" className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded">
-                Agendar Cita
+              <button
+                type="submit"
+                className="w-full py-4 rounded-xl bg-cyan-500 text-slate-950 font-bold hover:bg-cyan-400 shadow-glow hover:shadow-glow-lg transition-all flex items-center justify-center gap-2"
+              >
+                Agendar cita
+                <CheckCircle className="w-5 h-5" />
               </button>
             </form>
           </>
         ) : (
-          <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">¡Tu cita ha sido agendada!</h2>
-            <p>📅 <strong>Fecha:</strong> {formData.date}</p>
-            <p>🕒 <strong>Hora:</strong> {formData.time}</p>
-            <p>🏢 <strong>Empresa:</strong> {formData.company}</p>
-            <p>📌 <strong>Tema:</strong> {formData.topic}</p>
+          <div className="text-center py-4">
+            <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 flex items-center justify-center mx-auto mb-6">
+              <CheckCircle className="w-8 h-8 text-emerald-400" />
+            </div>
+            <h2 className="text-2xl font-display font-bold text-white mb-2">Cita agendada</h2>
+            <p className="text-slate-400 mb-8">Revisa tu correo para más detalles.</p>
 
-            {formData.mode === 'online' ? (
-              <>
-                <p>🔗 <strong>Reunión Online:</strong></p>
-                <a href={meetingLink!} className="text-blue-400 underline" target="_blank" rel="noopener noreferrer">{meetingLink}</a>
-                <button onClick={handleCopyLink} className="mt-4 bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded">
-                  Copiar Link
+            <div className="text-left space-y-3 text-slate-300 mb-8 p-6 rounded-xl bg-white/5 border border-white/10">
+              <p className="flex items-center gap-2"><Calendar className="w-4 h-4 text-cyan-400" /> <strong>Fecha:</strong> {formData.date}</p>
+              <p className="flex items-center gap-2"><Calendar className="w-4 h-4 text-cyan-400" /> <strong>Hora:</strong> {formData.time}</p>
+              <p className="flex items-center gap-2"><Mail className="w-4 h-4 text-cyan-400" /> <strong>Empresa:</strong> {formData.company}</p>
+              <p className="flex items-center gap-2"><Mail className="w-4 h-4 text-cyan-400" /> <strong>Tema:</strong> {formData.topic}</p>
+            </div>
+
+            {formData.mode === 'online' && meetingLink ? (
+              <div className="space-y-3">
+                <p className="text-slate-400 text-sm">Reunión online:</p>
+                <a
+                  href={meetingLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-cyan-400 hover:text-cyan-300 text-sm break-all"
+                >
+                  {meetingLink}
+                </a>
+                <button
+                  type="button"
+                  onClick={handleCopyLink}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:bg-white/10 transition-colors text-sm"
+                >
+                  <Copy className="w-4 h-4" />
+                  Copiar link
                 </button>
-              </>
+              </div>
             ) : (
-              <p>📍 <strong>Dirección:</strong> Carrer Rausell 6, 1º, Gandia, Valencia</p>
+              <p className="flex items-center gap-2 text-slate-400 text-sm justify-center">
+                <MapPin className="w-4 h-4 text-cyan-400" />
+                Carrer Rausell 6, 1º, Gandia, Valencia
+              </p>
             )}
 
-            <p className="mt-4">📩 Revisa tu correo para más detalles.</p>
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 mt-8 text-cyan-400 hover:text-cyan-300 font-medium text-sm transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Volver al inicio
+            </Link>
           </div>
         )}
       </div>

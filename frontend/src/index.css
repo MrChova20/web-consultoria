@@ -2,18 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ajustes globales básicos */
 :root {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  line-height: 1.5;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  line-height: 1.6;
   font-weight: 400;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Que todo ocupe el ancho completo y no centre nada por defecto */
 html,
 body,
 #root {
@@ -23,40 +20,35 @@ body,
   min-height: 100%;
 }
 
-/* Fondo blanco por defecto (el diseño ya trae sus propios fondos con Tailwind) */
 body {
-  background-color: #ffffff;
-  color: #0f172a;
+  background-color: #0a0f1a;
+  color: #f1f5f9;
+  overflow-x: hidden;
 }
 
-/* Enlaces: que hereden el color del texto y no metan estilos raros */
 a {
   color: inherit;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: none;
 }
 
-/* Que la estructura de la landing ocupe todo el ancho */
-.frame-root,
-.frame-content {
-  width: 100%;
-  max-width: 100%;
+/* Scrollbar sutil */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-/* Sobrescribimos el contenedor de Tailwind para que no limite a 1280px */
-.max-w-7xl {
-  max-width: 100% !important;
+::-webkit-scrollbar-track {
+  background: #0f172a;
 }
 
-/* Y que .mx-auto no vuelva a centrar con márgenes laterales */
-.mx-auto {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
 }
 
-/* Evitar scroll horizontal feo si algo se escapa 1px */
-body {
-  overflow-x: hidden;
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
 }
