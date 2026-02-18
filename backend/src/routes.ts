@@ -1,12 +1,15 @@
 // backend/src/routes.ts
 import { Router, Request, Response } from "express";
-import { runBulkEmails } from "./controllers/emailController";
+import { runBulkEmails, sendAppointmentEmail } from "./controllers/emailController";
 import { getState, getLogs, onLog, offLog } from "./worker/bulkWorker";
 import { DEFAULT_SUBJECT, DEFAULT_HTML } from "./config/emailTemplate"; // 👈 importa la plantilla
 
 const router = Router();
 
 router.get("/health", (_req, res) => res.json({ ok: true, service: "email-api" }));
+
+// Formulario de agendar cita (landing)
+router.post("/send-email", sendAppointmentEmail);
 
 // Iniciar proceso masivo (usa SIEMPRE la plantilla fija del código)
 router.post("/email/run-bulk", runBulkEmails);

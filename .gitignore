@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .vercel
+
+# Build del frontend copiado al backend para VPS
+backend/public

@@ -4,7 +4,7 @@ import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 import { ArrowLeft, Calendar, CheckCircle, Copy, Mail, MapPin } from 'lucide-react';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? (import.meta.env.DEV ? 'http://localhost:5000/api' : '/api');
 
 const ScheduleAppointment: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -87,15 +87,15 @@ const ScheduleAppointment: React.FC = () => {
     }
   };
 
-  const inputClass = 'w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/30 transition-all';
-  const labelClass = 'block text-sm font-medium text-slate-300 mb-2';
+  const inputClass = 'w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30 transition-all';
+  const labelClass = 'block text-sm font-medium text-slate-700 mb-2';
 
   return (
-    <div className="min-h-[calc(100vh-5rem)] flex items-center justify-center py-16 px-4">
-      <div className="w-full max-w-lg rounded-2xl border border-white/10 bg-slate-900/50 backdrop-blur p-8 lg:p-10 shadow-2xl">
+    <div className="min-h-[calc(100vh-5rem)] flex items-center justify-center py-16 px-4 bg-slate-50">
+      <div className="w-full max-w-lg rounded-2xl border border-slate-200 bg-white p-8 lg:p-10 shadow-xl">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-slate-400 hover:text-cyan-400 text-sm font-medium mb-8 transition-colors"
+          className="inline-flex items-center gap-2 text-slate-600 hover:text-brand-600 text-sm font-medium mb-8 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           Volver al inicio
@@ -104,17 +104,17 @@ const ScheduleAppointment: React.FC = () => {
         {!submitted ? (
           <>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center">
-                <Calendar className="w-6 h-6 text-cyan-400" />
+              <div className="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center">
+                <Calendar className="w-6 h-6 text-brand-600" />
               </div>
               <div>
-                <h1 className="text-2xl font-display font-bold text-white">Agenda tu cita</h1>
-                <p className="text-slate-400 text-sm">Demo gratuita sin compromiso</p>
+                <h1 className="text-2xl font-display font-bold text-slate-900">Reserva tu demo</h1>
+                <p className="text-slate-600 text-sm">Para tu clínica de medicina estética · Sin compromiso</p>
               </div>
             </div>
 
             {error && (
-              <div className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+              <div className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">
                 {error}
               </div>
             )}
@@ -155,12 +155,12 @@ const ScheduleAppointment: React.FC = () => {
                   defaultCountry="ES"
                   value={formData.phone}
                   onChange={(value) => setFormData({ ...formData, phone: value || '' })}
-                  className={`${inputClass} [&_.PhoneInputInput]:bg-transparent [&_.PhoneInputInput]:border-0 [&_.PhoneInputInput]:outline-none [&_.PhoneInputInput]:text-white`}
+                  className={`${inputClass} [&_.PhoneInputInput]:bg-transparent [&_.PhoneInputInput]:border-0 [&_.PhoneInputInput]:outline-none [&_.PhoneInputInput]:text-slate-900`}
                 />
               </div>
 
               <div>
-                <label htmlFor="company" className={labelClass}>Empresa</label>
+                <label htmlFor="company" className={labelClass}>Clínica / Centro</label>
                 <input
                   type="text"
                   name="company"
@@ -169,7 +169,7 @@ const ScheduleAppointment: React.FC = () => {
                   onChange={handleChange}
                   required
                   className={inputClass}
-                  placeholder="Nombre de tu empresa"
+                  placeholder="Nombre de tu clínica o centro"
                 />
               </div>
 
@@ -238,7 +238,7 @@ const ScheduleAppointment: React.FC = () => {
 
               <button
                 type="submit"
-                className="w-full py-4 rounded-xl bg-cyan-500 text-slate-950 font-bold hover:bg-cyan-400 shadow-glow hover:shadow-glow-lg transition-all flex items-center justify-center gap-2"
+                className="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 to-brand-700 text-white font-bold shadow-lg hover:opacity-95 transition-all flex items-center justify-center gap-2"
               >
                 Agendar cita
                 <CheckCircle className="w-5 h-5" />
@@ -247,49 +247,49 @@ const ScheduleAppointment: React.FC = () => {
           </>
         ) : (
           <div className="text-center py-4">
-            <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 flex items-center justify-center mx-auto mb-6">
-              <CheckCircle className="w-8 h-8 text-emerald-400" />
+            <div className="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center mx-auto mb-6">
+              <CheckCircle className="w-8 h-8 text-emerald-600" />
             </div>
-            <h2 className="text-2xl font-display font-bold text-white mb-2">Cita agendada</h2>
-            <p className="text-slate-400 mb-8">Revisa tu correo para más detalles.</p>
+            <h2 className="text-2xl font-display font-bold text-slate-900 mb-2">Cita agendada</h2>
+            <p className="text-slate-600 mb-8">Revisa tu correo para más detalles.</p>
 
-            <div className="text-left space-y-3 text-slate-300 mb-8 p-6 rounded-xl bg-white/5 border border-white/10">
-              <p className="flex items-center gap-2"><Calendar className="w-4 h-4 text-cyan-400" /> <strong>Fecha:</strong> {formData.date}</p>
-              <p className="flex items-center gap-2"><Calendar className="w-4 h-4 text-cyan-400" /> <strong>Hora:</strong> {formData.time}</p>
-              <p className="flex items-center gap-2"><Mail className="w-4 h-4 text-cyan-400" /> <strong>Empresa:</strong> {formData.company}</p>
-              <p className="flex items-center gap-2"><Mail className="w-4 h-4 text-cyan-400" /> <strong>Tema:</strong> {formData.topic}</p>
+            <div className="text-left space-y-3 text-slate-700 mb-8 p-6 rounded-xl bg-slate-50 border border-slate-200">
+              <p className="flex items-center gap-2"><Calendar className="w-4 h-4 text-brand-600" /> <strong>Fecha:</strong> {formData.date}</p>
+              <p className="flex items-center gap-2"><Calendar className="w-4 h-4 text-brand-600" /> <strong>Hora:</strong> {formData.time}</p>
+              <p className="flex items-center gap-2"><Mail className="w-4 h-4 text-brand-600" /> <strong>Empresa:</strong> {formData.company}</p>
+              <p className="flex items-center gap-2"><Mail className="w-4 h-4 text-brand-600" /> <strong>Tema:</strong> {formData.topic}</p>
             </div>
 
             {formData.mode === 'online' && meetingLink ? (
               <div className="space-y-3">
-                <p className="text-slate-400 text-sm">Reunión online:</p>
+                <p className="text-slate-600 text-sm">Reunión online:</p>
                 <a
                   href={meetingLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-cyan-400 hover:text-cyan-300 text-sm break-all"
+                  className="block text-brand-600 hover:text-brand-700 text-sm break-all"
                 >
                   {meetingLink}
                 </a>
                 <button
                   type="button"
                   onClick={handleCopyLink}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:bg-white/10 transition-colors text-sm"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 hover:bg-slate-200 transition-colors text-sm"
                 >
                   <Copy className="w-4 h-4" />
                   Copiar link
                 </button>
               </div>
             ) : (
-              <p className="flex items-center gap-2 text-slate-400 text-sm justify-center">
-                <MapPin className="w-4 h-4 text-cyan-400" />
+              <p className="flex items-center gap-2 text-slate-600 text-sm justify-center">
+                <MapPin className="w-4 h-4 text-brand-600" />
                 Carrer Rausell 6, 1º, Gandia, Valencia
               </p>
             )}
 
             <Link
               to="/"
-              className="inline-flex items-center gap-2 mt-8 text-cyan-400 hover:text-cyan-300 font-medium text-sm transition-colors"
+              className="inline-flex items-center gap-2 mt-8 text-brand-600 hover:text-brand-700 font-medium text-sm transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               Volver al inicio
