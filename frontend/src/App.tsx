@@ -7,7 +7,6 @@ import {
   X,
   ChevronDown,
   Play,
-  Check,
 } from 'lucide-react';
 import ScheduleAppointment from './ScheduleAppointment';
 
