@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agenda · Gestión de citas</title>
+  <link rel="stylesheet" href="tailwind.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core/locales/es.global.min.js"></script>
+  <style>
+    .panel { display: none; }
+    .panel.active { display: block; animation: fadeIn 0.2s ease; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .nav-btn { transition: background .15s, color .15s; }
+    .nav-btn.active { background: #eff6ff; color: #2563eb; font-weight: 600; }
+    .input-base { @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 placeholder-slate-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 transition; }
+    .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-lg bg-primary-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition disabled:opacity-60 disabled:pointer-events-none; }
+    .btn-secondary { @apply inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 transition; }
+    .result-box { @apply rounded-xl border p-4 text-sm; }
+    .result-box.loading { @apply border-slate-200 bg-slate-50 text-slate-500; }
+    .result-box.success { @apply border-green-200 bg-green-50 text-green-800; }
+    .result-box.error { @apply border-red-200 bg-red-50 text-red-800; }
+    .result-box.info { @apply border-slate-200 bg-slate-50 text-slate-700; }
+    .slot-chip { @apply inline-flex items-center justify-center rounded-lg border border-primary-200 bg-primary-50 px-3 py-1.5 text-sm font-medium text-primary-700; }
+    .card-cita { @apply flex items-center justify-between gap-4 rounded-xl border border-slate-200 bg-white p-4 transition hover:border-slate-300; }
+    #calendario-visual { min-height: 500px; }
+    .fc .fc-toolbar-title { font-size: 1.1rem; }
+    .fc .fc-button { text-transform: capitalize; }
+    .fc-event { cursor: pointer; }
+    .fc .fc-event-title { font-weight: 500; }
+    .fc-timegrid-event { min-height: 32px; }
+    .fc-event-main { padding: 2px 6px; }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-100 font-sans text-slate-800 antialiased">
+  <div class="flex flex-col lg:flex-row min-h-screen">
+    <!-- Sidebar (estilo CRM) -->
+    <aside class="lg:w-60 lg:min-h-screen lg:border-r lg:border-slate-200 bg-white shrink-0">
+      <div class="p-4 border-b border-slate-200">
+        <h1 class="text-base font-bold text-slate-900 tracking-tight">Agenda</h1>
+        <p class="text-xs text-slate-500 mt-0.5">Gestión de citas</p>
+      </div>
+      <nav class="p-2 space-y-0.5">
+        <button type="button" data-panel="slots" class="nav-btn active w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm text-slate-600 hover:bg-slate-100">
+          <span class="text-slate-400 text-lg">📅</span>
+          Disponibilidad
+        </button>
+        <button type="button" data-panel="consultar" class="nav-btn w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm text-slate-600 hover:bg-slate-100">
+          <span class="text-slate-400 text-lg">🔍</span>
+          Citas del paciente
+        </button>
+        <button type="button" data-panel="agendar" class="nav-btn w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm text-slate-600 hover:bg-slate-100">
+          <span class="text-slate-400 text-lg">➕</span>
+          Nueva cita
+        </button>
+        <button type="button" data-panel="cancelar" class="nav-btn w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm text-slate-600 hover:bg-slate-100">
+          <span class="text-slate-400 text-lg">✕</span>
+          Cancelar cita
+        </button>
+        <button type="button" data-panel="mover" class="nav-btn w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm text-slate-600 hover:bg-slate-100">
+          <span class="text-slate-400 text-lg">↔</span>
+          Reagendar
+        </button>
+        <button type="button" data-panel="calendario" class="nav-btn w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm text-slate-600 hover:bg-slate-100">
+          <span class="text-slate-400 text-lg">📆</span>
+          Calendario
+        </button>
+        <button type="button" data-panel="clientes" class="nav-btn w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm text-slate-600 hover:bg-slate-100">
+          <span class="text-slate-400 text-lg">👥</span>
+          Clientes
+        </button>
+      </nav>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="flex-1 p-6 lg:p-8">
+      <!-- 1. Disponibilidad -->
+      <section id="panel-slots" class="panel active">
+        <div class="max-w-2xl">
+          <h2 class="text-lg font-semibold text-slate-900 mb-1">Consultar disponibilidad</h2>
+          <p class="text-sm text-slate-500 mb-6">Seleccione la fecha y el tramo horario para ver los horarios disponibles.</p>
+          <div class="flex flex-wrap gap-4 items-end">
+            <div>
+              <label class="mb-1.5 block text-sm font-medium text-slate-700">Fecha</label>
+              <input type="text" id="slots-date" class="input-base w-full max-w-[180px]" placeholder="dd/mm/aaaa" />
+            </div>
+            <div>
+              <label class="mb-1.5 block text-sm font-medium text-slate-700">Tramo</label>
+              <select id="slots-periodo" class="input-base max-w-[220px]">
+                <option value="all">Todo el día</option>
+                <option value="mañana">Mañana (9:00 – 14:00)</option>
+                <option value="tarde">Tarde (14:00 – 20:00)</option>
+              </select>
+            </div>
+            <button type="button" id="btn-slots" class="btn-primary">Buscar disponibilidad</button>
+          </div>
+          <div id="slots-result" class="mt-6"></div>
+        </div>
+      </section>
+
+      <!-- 2. Citas del paciente -->
+      <section id="panel-consultar" class="panel">
+        <div class="max-w-2xl">
+          <h2 class="text-lg font-semibold text-slate-900 mb-1">Citas del paciente</h2>
+          <p class="text-sm text-slate-500 mb-6">Busque por teléfono para ver las citas pendientes.</p>
+          <div class="flex flex-wrap gap-3 items-end">
+            <div class="min-w-[220px]">
+              <label class="mb-1.5 block text-sm font-medium text-slate-700">Teléfono del paciente</label>
+              <input type="text" id="consultar-telefono" class="input-base" placeholder="Ej. +34 600 000 000" />
+            </div>
+            <button type="button" id="btn-consultar" class="btn-primary">Buscar</button>
+          </div>
+          <div id="consultar-result" class="mt-6"></div>
+        </div>
+      </section>
+
+      <!-- 3. Nueva cita -->
+      <section id="panel-agendar" class="panel">
+        <div class="max-w-2xl">
+          <h2 class="text-lg font-semibold text-slate-900 mb-1">Nueva cita</h2>
+          <p class="text-sm text-slate-500 mb-6">Busque un cliente de la base de datos o introduzca datos manualmente. Asigne doctor y sede.</p>
+          <div class="rounded-xl border border-slate-200 bg-white p-5 space-y-4">
+            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Paciente</p>
+            <div>
+              <label class="mb-1.5 block text-sm font-medium text-slate-700">Buscar cliente</label>
+              <input type="text" id="agendar-buscar-cliente" class="input-base" placeholder="Nombre, teléfono o email..." autocomplete="off" />
+              <div id="agendar-cliente-results" class="hidden mt-1 rounded-lg border border-slate-200 bg-white shadow-lg max-h-48 overflow-y-auto z-10"></div>
+              <input type="hidden" id="agendar-client-id" />
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="mb-1.5 block text-sm font-medium text-slate-700">Nombre y apellidos</label>
+                <input type="text" id="agendar-nombre" class="input-base" placeholder="Nombre del paciente" />
+              </div>
+              <div>
+                <label class="mb-1.5 block text-sm font-medium text-slate-700">Teléfono</label>
+                <input type="text" id="agendar-telefono" class="input-base" placeholder="+34 600 000 000" />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="mb-1.5 block text-sm font-medium text-slate-700">Doctor / Profesional</label>
+                <select id="agendar-doctor" class="input-base"></select>
+              </div>
+              <div>
+                <label class="mb-1.5 block text-sm font-medium text-slate-700">Sede / Clínica</label>
+                <select id="agendar-sede" class="input-base"></select>
+              </div>
+            </div>
+            <div>
+              <label class="mb-1.5 block text-sm font-medium text-slate-700">Fecha y hora de la cita</label>
+              <input type="text" id="agendar-datetime" class="input-base" placeholder="Seleccionar fecha y hora" />
+            </div>
+            <button type="button" id="btn-agendar" class="btn-primary">Confirmar cita</button>
+          </div>
+          <div id="agendar-result" class="mt-6"></div>
+        </div>
+      </section>
+
+      <!-- 4. Cancelar cita -->
+      <section id="panel-cancelar" class="panel">
+        <div class="max-w-2xl">
+          <h2 class="text-lg font-semibold text-slate-900 mb-1">Cancelar cita</h2>
+          <p class="text-sm text-slate-500 mb-6">Busque por teléfono y seleccione la cita a cancelar.</p>
+          <div class="flex flex-wrap gap-3 items-end">
+            <div class="min-w-[220px]">
+              <label class="mb-1.5 block text-sm font-medium text-slate-700">Teléfono del paciente</label>
+              <input type="text" id="cancelar-telefono" class="input-base" placeholder="+34 600 000 000" />
+            </div>
+            <button type="button" id="btn-cancelar-listar" class="btn-secondary">Buscar citas</button>
+          </div>
+          <div id="cancelar-result" class="mt-4"></div>
+          <div id="cancelar-list" class="mt-4 space-y-2"></div>
+        </div>
+      </section>
+
+      <!-- 5. Reagendar -->
+      <section id="panel-mover" class="panel">
+        <div class="max-w-2xl">
+          <h2 class="text-lg font-semibold text-slate-900 mb-1">Reagendar cita</h2>
+          <p class="text-sm text-slate-500 mb-6">Busque al paciente, seleccione la cita y asigne el nuevo horario.</p>
+          <div class="flex flex-wrap gap-3 items-end mb-4">
+            <div class="min-w-[220px]">
+              <label class="mb-1.5 block text-sm font-medium text-slate-700">Teléfono del paciente</label>
+              <input type="text" id="mover-telefono" class="input-base" placeholder="+34 600 000 000" />
+            </div>
+            <button type="button" id="btn-mover-listar" class="btn-secondary">Buscar citas</button>
+          </div>
+          <div id="mover-result" class="mt-4"></div>
+          <div id="mover-list" class="mt-4 space-y-2"></div>
+          <div class="rounded-xl border border-slate-200 bg-white p-5 mt-6 space-y-4" id="mover-form" style="display:none;">
+            <input type="hidden" id="mover-booking-uid" />
+            <input type="hidden" id="mover-booking-nombre" />
+            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Nuevo horario</p>
+            <div>
+              <label class="mb-1.5 block text-sm font-medium text-slate-700">Fecha y hora</label>
+              <input type="text" id="mover-datetime" class="input-base" placeholder="Seleccionar nueva fecha y hora" />
+            </div>
+            <button type="button" id="btn-mover-confirmar" class="btn-primary">Confirmar reagendamiento</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Clientes (BBDD CRM) -->
+      <section id="panel-clientes" class="panel">
+        <div class="max-w-4xl">
+          <h2 class="text-lg font-semibold text-slate-900 mb-1">Base de datos de clientes</h2>
+          <p class="text-sm text-slate-500 mb-6">Gestione los pacientes de la clínica. Al agendar una cita podrá buscarlos y asignar doctor y sede.</p>
+          <div class="flex flex-wrap gap-4 mb-6">
+            <div class="flex-1 min-w-[200px]">
+              <input type="text" id="clientes-search" class="input-base" placeholder="Buscar por nombre, teléfono o email..." />
+            </div>
+            <button type="button" id="clientes-btn-buscar" class="btn-primary">Buscar</button>
+            <button type="button" id="clientes-btn-nuevo" class="btn-secondary">+ Nuevo cliente</button>
+          </div>
+          <div id="clientes-list" class="rounded-xl border border-slate-200 bg-white overflow-hidden">
+            <table class="w-full text-sm text-left">
+              <thead class="bg-slate-50 border-b border-slate-200">
+                <tr>
+                  <th class="px-4 py-3 font-semibold text-slate-700">Nombre</th>
+                  <th class="px-4 py-3 font-semibold text-slate-700">Teléfono</th>
+                  <th class="px-4 py-3 font-semibold text-slate-700">Email</th>
+                  <th class="px-4 py-3 font-semibold text-slate-700 w-24">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="clientes-tbody" class="text-slate-600"></tbody>
+            </table>
+            <p id="clientes-empty" class="hidden p-6 text-center text-slate-500 text-sm">No hay clientes. Use «Nuevo cliente» para añadir.</p>
+          </div>
+          <div id="clientes-form-wrap" class="hidden mt-6 rounded-xl border border-slate-200 bg-white p-6">
+            <h3 class="font-semibold text-slate-900 mb-4" id="clientes-form-title">Nuevo cliente</h3>
+            <input type="hidden" id="clientes-form-id" />
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="mb-1.5 block text-sm font-medium text-slate-700">Nombre *</label>
+                <input type="text" id="clientes-form-nombre" class="input-base" placeholder="Nombre" />
+              </div>
+              <div>
+                <label class="mb-1.5 block text-sm font-medium text-slate-700">Apellidos</label>
+                <input type="text" id="clientes-form-apellidos" class="input-base" placeholder="Apellidos" />
+              </div>
+              <div>
+                <label class="mb-1.5 block text-sm font-medium text-slate-700">Teléfono *</label>
+                <input type="text" id="clientes-form-telefono" class="input-base" placeholder="+34 600 000 000" />
+              </div>
+              <div>
+                <label class="mb-1.5 block text-sm font-medium text-slate-700">Email</label>
+                <input type="email" id="clientes-form-email" class="input-base" placeholder="email@ejemplo.com" />
+              </div>
+            </div>
+            <div class="flex gap-2 mt-4">
+              <button type="button" id="clientes-form-guardar" class="btn-primary">Guardar</button>
+              <button type="button" id="clientes-form-cancelar" class="btn-secondary">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Calendario visual (todas las funcionalidades) -->
+      <section id="panel-calendario" class="panel">
+        <div class="flex flex-col h-full">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+            <div>
+              <h2 class="text-lg font-semibold text-slate-900">Calendario</h2>
+              <p class="text-sm text-slate-500">Consulta citas, horarios disponibles, reserva, cancela o reagenda desde la vista.</p>
+            </div>
+            <div class="flex flex-wrap items-center gap-2">
+              <button type="button" id="cal-btn-nueva-cita" class="btn-primary">+ Nueva cita</button>
+            </div>
+          </div>
+          <div class="flex flex-col lg:flex-row gap-4 flex-1 min-h-0">
+            <div class="flex-1 min-h-[400px] lg:min-h-[calc(100vh-14rem)] rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
+              <div id="calendario-visual"></div>
+            </div>
+            <aside id="cal-panel-slots" class="lg:w-72 shrink-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm hidden">
+              <h3 class="text-sm font-semibold text-slate-800 mb-2">Horarios disponibles</h3>
+              <p id="cal-slots-fecha" class="text-xs text-slate-500 mb-3"></p>
+              <div id="cal-slots-list" class="flex flex-wrap gap-2"></div>
+              <p id="cal-slots-empty" class="text-sm text-slate-500 hidden">Cargando…</p>
+            </aside>
+          </div>
+        </div>
+        <!-- Modal: Nueva cita (desde calendario) -->
+        <div id="modal-nueva-cita-cal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4" aria-hidden="true">
+          <div class="bg-white rounded-xl shadow-xl max-w-md w-full p-6">
+            <h3 class="text-lg font-semibold text-slate-900 mb-4">Nueva cita</h3>
+            <div class="space-y-4">
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Nombre y apellidos</label>
+                <input type="text" id="cal-nueva-nombre" class="input-base" placeholder="Nombre del paciente" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Teléfono</label>
+                <input type="text" id="cal-nueva-telefono" class="input-base" placeholder="+34 600 000 000" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Doctor / Profesional</label>
+                <select id="cal-nueva-doctor" class="input-base"></select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Sede / Clínica</label>
+                <select id="cal-nueva-sede" class="input-base"></select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Fecha y hora</label>
+                <input type="text" id="cal-nueva-datetime" class="input-base" placeholder="Seleccionar fecha y hora" />
+              </div>
+            </div>
+            <div class="flex gap-2 mt-6">
+              <button type="button" id="cal-nueva-cerrar" class="btn-secondary flex-1">Cancelar</button>
+              <button type="button" id="cal-nueva-confirmar" class="btn-primary flex-1">Confirmar cita</button>
+            </div>
+            <div id="cal-nueva-result" class="mt-3 text-sm hidden"></div>
+          </div>
+        </div>
+        <!-- Modal: Acciones sobre una cita (cancelar / reagendar) -->
+        <div id="modal-acciones-cita" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4" aria-hidden="true">
+          <div class="bg-white rounded-xl shadow-xl max-w-md w-full p-6">
+            <h3 class="text-lg font-semibold text-slate-900 mb-1">Cita</h3>
+            <p id="modal-cita-info" class="text-sm text-slate-600 mb-4"></p>
+            <div class="flex gap-2">
+              <button type="button" id="cal-accion-cancelar" class="btn-secondary flex-1 text-red-600 border-red-200 hover:bg-red-50">Cancelar cita</button>
+              <button type="button" id="cal-accion-reagendar" class="btn-primary flex-1">Reagendar</button>
+            </div>
+            <button type="button" id="cal-accion-cerrar" class="w-full mt-2 text-sm text-slate-500 hover:text-slate-700">Cerrar</button>
+          </div>
+        </div>
+        <!-- Modal: Reagendar (nueva fecha) -->
+        <div id="modal-reagendar-cal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4" aria-hidden="true">
+          <div class="bg-white rounded-xl shadow-xl max-w-md w-full p-6">
+            <h3 class="text-lg font-semibold text-slate-900 mb-4">Reagendar cita</h3>
+            <div class="space-y-4">
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Nueva fecha y hora</label>
+                <input type="text" id="cal-reagendar-datetime" class="input-base" placeholder="Seleccionar" />
+              </div>
+            </div>
+            <div class="flex gap-2 mt-6">
+              <button type="button" id="cal-reagendar-cerrar" class="btn-secondary flex-1">Cancelar</button>
+              <button type="button" id="cal-reagendar-confirmar" class="btn-primary flex-1">Confirmar</button>
+            </div>
+            <div id="cal-reagendar-result" class="mt-3 text-sm hidden"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const API = window.location.origin;
+
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const panelId = btn.dataset.panel;
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+        const panel = document.getElementById('panel-' + panelId);
+        if (panel) {
+          panel.classList.add('active');
+          btn.classList.add('active');
+          if (panelId === 'calendario') window.initCalendarioVisual && window.initCalendarioVisual();
+          if (panelId === 'clientes') window.cargarClientes && window.cargarClientes();
+        }
+      });
+    });
+
+    // Cargar doctores y sedes al inicio
+    (async function initDoctoresSedes() {
+      try {
+        const [rDoc, rSede] = await Promise.all([fetch(API + '/api/doctores'), fetch(API + '/api/sedes')]);
+        const doctores = (await rDoc.json()) || [];
+        const sedes = (await rSede.json()) || [];
+        const opt = (arr, ph) => '<option value="">' + (ph || '—') + '</option>' + (arr || []).map(x => '<option value="' + String(x).replace(/"/g, '&quot;') + '">' + x + '</option>').join('');
+        ['agendar-doctor', 'cal-nueva-doctor'].forEach(id => { const e = document.getElementById(id); if (e) e.innerHTML = opt(doctores, 'Seleccionar doctor'); });
+        ['agendar-sede', 'cal-nueva-sede'].forEach(id => { const e = document.getElementById(id); if (e) e.innerHTML = opt(sedes, 'Seleccionar sede'); });
+      } catch (e) {}
+    })();
+
+    // ——— Panel Clientes ———
+    window.cargarClientes = async function(q) {
+      const tbody = document.getElementById('clientes-tbody');
+      const empty = document.getElementById('clientes-empty');
+      if (!tbody) return;
+      try {
+        const r = await fetch(API + '/api/clientes' + (q ? '?q=' + encodeURIComponent(q) : ''));
+        const list = await r.json();
+        tbody.innerHTML = '';
+        document.getElementById('clientes-empty').classList.toggle('hidden', list.length > 0);
+        const esc = (s) => { const d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; };
+        list.forEach(c => {
+          const tr = document.createElement('tr');
+          tr.className = 'border-b border-slate-100 hover:bg-slate-50';
+          const fullName = (c.nombre || '') + ' ' + (c.apellidos || '');
+          tr.innerHTML = '<td class="px-4 py-3 font-medium text-slate-900">' + esc(fullName.trim() || '—') + '</td><td class="px-4 py-3">' + esc(c.telefono) + '</td><td class="px-4 py-3">' + esc(c.email) + '</td><td class="px-4 py-3"><button type="button" class="text-primary-600 hover:underline text-sm">Editar</button></td>';
+          tr.querySelector('button').onclick = () => editarCliente(c);
+          tbody.appendChild(tr);
+        });
+      } catch (e) {
+        tbody.innerHTML = '<tr><td colspan="4" class="px-4 py-3 text-red-600">Error al cargar</td></tr>';
+      }
+    };
+    document.getElementById('clientes-btn-buscar').addEventListener('click', () => window.cargarClientes(document.getElementById('clientes-search').value.trim()));
+    document.getElementById('clientes-search').addEventListener('keydown', e => { if (e.key === 'Enter') window.cargarClientes(document.getElementById('clientes-search').value.trim()); });
+    document.getElementById('clientes-btn-nuevo').addEventListener('click', () => {
+      document.getElementById('clientes-form-title').textContent = 'Nuevo cliente';
+      document.getElementById('clientes-form-id').value = '';
+      document.getElementById('clientes-form-nombre').value = '';
+      document.getElementById('clientes-form-apellidos').value = '';
+      document.getElementById('clientes-form-telefono').value = '';
+      document.getElementById('clientes-form-email').value = '';
+      document.getElementById('clientes-form-wrap').classList.remove('hidden');
+    });
+    function editarCliente(c) {
+      document.getElementById('clientes-form-title').textContent = 'Editar cliente';
+      document.getElementById('clientes-form-id').value = c.id || '';
+      document.getElementById('clientes-form-nombre').value = c.nombre || '';
+      document.getElementById('clientes-form-apellidos').value = c.apellidos || '';
+      document.getElementById('clientes-form-telefono').value = c.telefono || '';
+      document.getElementById('clientes-form-email').value = c.email || '';
+      document.getElementById('clientes-form-wrap').classList.remove('hidden');
+    }
+    document.getElementById('clientes-form-cancelar').addEventListener('click', () => document.getElementById('clientes-form-wrap').classList.add('hidden'));
+    document.getElementById('clientes-form-guardar').addEventListener('click', async () => {
+      const id = document.getElementById('clientes-form-id').value;
+      const nombre = document.getElementById('clientes-form-nombre').value.trim();
+      const telefono = (document.getElementById('clientes-form-telefono').value || '').trim().replace(/\s/g, '');
+      if (!nombre) return alert('Introduzca el nombre.');
+      if (!telefono || !/\d/.test(telefono)) return alert('Introduzca un teléfono válido.');
+      const body = { nombre, apellidos: document.getElementById('clientes-form-apellidos').value.trim(), telefono, email: document.getElementById('clientes-form-email').value.trim() };
+      try {
+        if (id) {
+          await fetch(API + '/api/clientes/' + id, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+        } else {
+          await fetch(API + '/api/clientes', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+        }
+        document.getElementById('clientes-form-wrap').classList.add('hidden');
+        window.cargarClientes(document.getElementById('clientes-search').value.trim());
+      } catch (e) { alert('Error: ' + e.message); }
+    });
+    window.cargarClientes();
+
+    function setResult(elId, content, type) {
+      const el = document.getElementById(elId);
+      if (!el) return;
+      el.innerHTML = content;
+      el.className = 'mt-6 result-box ' + (type === 'loading' ? 'loading' : type === 'success' ? 'success' : type === 'error' ? 'error' : 'info');
+    }
+
+    function resultHtml(message, type) {
+      const icon = type === 'success' ? '✓' : type === 'error' ? '✕' : '○';
+      return '<span class="font-medium">' + icon + '</span> ' + message;
+    }
+
+    // ——— Disponibilidad ———
+    document.getElementById('slots-date').flatpickr({
+      locale: 'es',
+      dateFormat: 'Y-m-d',
+      minDate: 'today',
+    });
+
+    document.getElementById('btn-slots').addEventListener('click', async () => {
+      const dateInput = document.getElementById('slots-date').value;
+      const periodo = document.getElementById('slots-periodo').value;
+      if (!dateInput) {
+        setResult('slots-result', resultHtml('Seleccione una fecha.', 'error'), 'error');
+        return;
+      }
+      let start = new Date(dateInput + 'T00:00:00');
+      let end = new Date(dateInput + 'T23:59:59');
+      if (periodo === 'mañana') {
+        start = new Date(dateInput + 'T09:00:00');
+        end = new Date(dateInput + 'T14:00:00');
+      } else if (periodo === 'tarde') {
+        start = new Date(dateInput + 'T14:00:00');
+        end = new Date(dateInput + 'T20:00:00');
+      }
+      setResult('slots-result', 'Consultando disponibilidad…', 'loading');
+      try {
+        const r = await fetch(`${API}/api/slots?start=${start.toISOString()}&end=${end.toISOString()}`);
+        const data = await r.json();
+        if (!r.ok) {
+          setResult('slots-result', resultHtml((data.error || data.message || r.status), 'error'), 'error');
+          return;
+        }
+        const raw = data.data || {};
+        const slots = [];
+        for (const k of Object.keys(raw)) {
+          const arr = raw[k];
+          if (Array.isArray(arr)) {
+            for (const s of arr) {
+              const startStr = typeof s === 'string' ? s : (s && s.start);
+              if (startStr) slots.push(new Date(startStr));
+            }
+          }
+        }
+        slots.sort((a, b) => a - b);
+        const opts = { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid' };
+        const horarios = slots.map(d => d.toLocaleString('es-ES', opts));
+        const container = document.getElementById('slots-result');
+        if (horarios.length) {
+          const count = horarios.length;
+          let html = '<div class="rounded-xl border border-slate-200 bg-white p-4"><p class="text-sm font-medium text-slate-700 mb-3">Se encontraron ' + count + ' horario' + (count === 1 ? '' : 's') + ' disponible' + (count === 1 ? '' : 's') + '</p><div class="flex flex-wrap gap-2">';
+          horarios.slice(0, 36).forEach(h => { html += '<span class="slot-chip">' + h + '</span>'; });
+          if (slots.length > 36) html += '<span class="slot-chip opacity-75">+ ' + (slots.length - 36) + ' más</span>';
+          html += '</div></div>';
+          container.innerHTML = html;
+          container.className = 'mt-6';
+        } else {
+          setResult('slots-result', resultHtml('No hay horarios disponibles para el día seleccionado.', 'info'), 'info');
+        }
+      } catch (e) {
+        setResult('slots-result', resultHtml('Error de conexión: ' + e.message, 'error'), 'error');
+      }
+    });
+
+    function normalizarTelefono(val) {
+      const s = (val || '').trim().replace(/\s/g, '');
+      return s;
+    }
+    function telefonoValido(s) {
+      return s && /\d/.test(s);
+    }
+
+    // ——— Citas del paciente ———
+    document.getElementById('btn-consultar').addEventListener('click', async () => {
+      const telefono = normalizarTelefono(document.getElementById('consultar-telefono').value);
+      if (!telefonoValido(telefono)) {
+        setResult('consultar-result', resultHtml('Introduzca el teléfono del paciente (con números).', 'error'), 'error');
+        return;
+      }
+      setResult('consultar-result', 'Buscando citas…', 'loading');
+      try {
+        const r = await fetch(`${API}/api/bookings?telefono=${encodeURIComponent(telefono)}`);
+        const data = await r.json();
+        if (!r.ok) {
+          setResult('consultar-result', resultHtml((data.error || data.message || r.status), 'error'), 'error');
+          return;
+        }
+        const bookings = Array.isArray(data.data) ? data.data : (data.bookings || []);
+        const futuros = bookings.filter(b => {
+          if (b.status === 'CANCELLED' || b.status === 'cancelled') return false;
+          return new Date(b.start || b.startTime) > new Date();
+        });
+        const container = document.getElementById('consultar-result');
+        if (futuros.length === 0) {
+          setResult('consultar-result', resultHtml('No hay citas pendientes para este paciente.', 'info'), 'info');
+          return;
+        }
+        const opts = { weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid' };
+        let html = '<div class="space-y-2"><p class="text-sm font-medium text-slate-700 mb-2">' + futuros.length + ' cita' + (futuros.length === 1 ? '' : 's') + ' pendiente' + (futuros.length === 1 ? '' : 's') + '</p>';
+        futuros.forEach(b => {
+          const fecha = new Date(b.start || b.startTime).toLocaleString('es-ES', opts);
+          const nombre = (b.attendees && b.attendees[0] && (b.attendees[0].name || b.attendees[0].attendeeName)) || '—';
+          html += '<div class="card-cita"><div><p class="font-medium text-slate-900">' + fecha + '</p><p class="text-xs text-slate-500">' + nombre + '</p></div><span class="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">Confirmada</span></div>';
+        });
+        html += '</div>';
+        container.innerHTML = html;
+        container.className = 'mt-6';
+      } catch (e) {
+        setResult('consultar-result', resultHtml('Error: ' + e.message, 'error'), 'error');
+      }
+    });
+
+    // ——— Nueva cita (búsqueda de cliente) ———
+    let agendarClienteSearchTimer;
+    const agendarBuscarInput = document.getElementById('agendar-buscar-cliente');
+    const agendarResultsEl = document.getElementById('agendar-cliente-results');
+    if (agendarBuscarInput && agendarResultsEl) {
+      agendarBuscarInput.addEventListener('input', function() {
+        clearTimeout(agendarClienteSearchTimer);
+        const q = this.value.trim();
+        agendarResultsEl.classList.add('hidden');
+        if (q.length < 2) return;
+        agendarClienteSearchTimer = setTimeout(async () => {
+          try {
+            const r = await fetch(API + '/api/clientes?q=' + encodeURIComponent(q));
+            const list = await r.json();
+            if (!list.length) { agendarResultsEl.innerHTML = '<div class="p-3 text-slate-500 text-sm">Sin resultados</div>'; agendarResultsEl.classList.remove('hidden'); return; }
+            agendarResultsEl.innerHTML = list.slice(0, 8).map(c => '<div class="p-3 hover:bg-slate-100 cursor-pointer border-b border-slate-100 last:border-0" data-id="' + c.id + '" data-nombre="' + (c.nombre || '') + ' ' + (c.apellidos || '') + '" data-telefono="' + (c.telefono || '') + '">' + (c.nombre || '') + ' ' + (c.apellidos || '') + ' · ' + (c.telefono || '') + '</div>').join('');
+            agendarResultsEl.classList.remove('hidden');
+            agendarResultsEl.querySelectorAll('[data-id]').forEach(row => {
+              row.addEventListener('click', function() {
+                document.getElementById('agendar-client-id').value = this.dataset.id || '';
+                document.getElementById('agendar-nombre').value = (this.dataset.nombre || '').trim();
+                document.getElementById('agendar-telefono').value = this.dataset.telefono || '';
+                agendarResultsEl.classList.add('hidden');
+                agendarBuscarInput.value = '';
+              });
+            });
+          } catch (e) {}
+        }, 250);
+      });
+      agendarBuscarInput.addEventListener('blur', () => setTimeout(() => agendarResultsEl.classList.add('hidden'), 150));
+    }
+
+    document.getElementById('agendar-datetime').flatpickr({
+      locale: 'es',
+      enableTime: true,
+      dateFormat: 'Y-m-d H:i',
+      time_24hr: true,
+      minDate: 'today',
+    });
+
+    document.getElementById('btn-agendar').addEventListener('click', async () => {
+      const nombre = document.getElementById('agendar-nombre').value.trim();
+      const telefono = normalizarTelefono(document.getElementById('agendar-telefono').value);
+      const start = document.getElementById('agendar-datetime').value;
+      const clientId = (document.getElementById('agendar-client-id') && document.getElementById('agendar-client-id').value) || '';
+      const doctor = (document.getElementById('agendar-doctor') && document.getElementById('agendar-doctor').value) || '';
+      const sede = (document.getElementById('agendar-sede') && document.getElementById('agendar-sede').value) || '';
+      if (!nombre) {
+        setResult('agendar-result', resultHtml('Introduzca el nombre del paciente.', 'error'), 'error');
+        return;
+      }
+      if (!telefonoValido(telefono)) {
+        setResult('agendar-result', resultHtml('Introduzca el teléfono del paciente (con números).', 'error'), 'error');
+        return;
+      }
+      if (!start) {
+        setResult('agendar-result', resultHtml('Seleccione la fecha y hora de la cita.', 'error'), 'error');
+        return;
+      }
+      const startISO = new Date(start.replace(' ', 'T')).toISOString();
+      setResult('agendar-result', 'Registrando cita…', 'loading');
+      try {
+        const body = { nombre, telefono, start: startISO };
+        if (clientId) body.clientId = clientId;
+        if (doctor) body.doctor = doctor;
+        if (sede) body.sede = sede;
+        const r = await fetch(`${API}/api/bookings`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        });
+        const data = await r.json();
+        if (!r.ok) {
+          setResult('agendar-result', resultHtml((data.error || data.message || JSON.stringify(data)), 'error'), 'error');
+          return;
+        }
+        setResult('agendar-result', resultHtml('Cita registrada correctamente.', 'success'), 'success');
+        document.getElementById('agendar-client-id').value = '';
+      } catch (e) {
+        setResult('agendar-result', resultHtml('Error: ' + e.message, 'error'), 'error');
+      }
+    });
+
+    // ——— Cancelar cita ———
+    document.getElementById('btn-cancelar-listar').addEventListener('click', async () => {
+      const telefono = normalizarTelefono(document.getElementById('cancelar-telefono').value);
+      const listEl = document.getElementById('cancelar-list');
+      if (!telefonoValido(telefono)) {
+        setResult('cancelar-result', resultHtml('Introduzca el teléfono del paciente (con números).', 'error'), 'error');
+        return;
+      }
+      listEl.innerHTML = '';
+      setResult('cancelar-result', 'Buscando citas…', 'loading');
+      try {
+        const r = await fetch(`${API}/api/bookings?telefono=${encodeURIComponent(telefono)}`);
+        const data = await r.json();
+        if (!r.ok) {
+          setResult('cancelar-result', resultHtml((data.error || data.message || r.status), 'error'), 'error');
+          return;
+        }
+        const bookings = Array.isArray(data.data) ? data.data : (data.bookings || []);
+        const futuros = bookings.filter(b => {
+          if (b.status === 'CANCELLED' || b.status === 'cancelled') return false;
+          return new Date(b.start || b.startTime) > new Date();
+        });
+        setResult('cancelar-result', futuros.length ? resultHtml('Seleccione la cita a cancelar:', 'info') : resultHtml('No hay citas pendientes para este paciente.', 'info'), 'info');
+        futuros.forEach(b => {
+          const uid = b.uid || b.id;
+          const date = new Date(b.start || b.startTime);
+          const fechaStr = date.toLocaleString('es-ES', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+          const nombre = (b.attendees && b.attendees[0] && (b.attendees[0].name || b.attendees[0].attendeeName)) || 'Paciente';
+          const card = document.createElement('div');
+          card.className = 'card-cita';
+          card.innerHTML = '<div><p class="font-medium text-slate-900">' + fechaStr + '</p><p class="text-xs text-slate-500">' + nombre + '</p></div><button type="button" class="btn-secondary !py-2 !px-3 text-red-600 border-red-200 hover:bg-red-50 hover:border-red-300">Cancelar cita</button>';
+          card.querySelector('button').onclick = async () => {
+            setResult('cancelar-result', 'Cancelando…', 'loading');
+            try {
+              const res = await fetch(`${API}/api/bookings/${uid}/cancel`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ reason: 'Solicitud del cliente' }),
+              });
+              const d = await res.json();
+              setResult('cancelar-result', res.ok ? resultHtml('La cita ha sido cancelada.', 'success') : resultHtml(d.error || d.message || 'Error', 'error'), res.ok ? 'success' : 'error');
+              if (res.ok) listEl.innerHTML = '';
+            } catch (e) {
+              setResult('cancelar-result', resultHtml('Error: ' + e.message, 'error'), 'error');
+            }
+          };
+          listEl.appendChild(card);
+        });
+      } catch (e) {
+        setResult('cancelar-result', resultHtml('Error: ' + e.message, 'error'), 'error');
+      }
+    });
+
+    // ——— Reagendar ———
+    document.getElementById('mover-datetime').flatpickr({
+      locale: 'es',
+      enableTime: true,
+      dateFormat: 'Y-m-d H:i',
+      time_24hr: true,
+      minDate: 'today',
+    });
+
+    document.getElementById('btn-mover-listar').addEventListener('click', async () => {
+      const telefono = normalizarTelefono(document.getElementById('mover-telefono').value);
+      const listEl = document.getElementById('mover-list');
+      const formEl = document.getElementById('mover-form');
+      if (!telefonoValido(telefono)) {
+        setResult('mover-result', resultHtml('Introduzca el teléfono del paciente (con números).', 'error'), 'error');
+        return;
+      }
+      listEl.innerHTML = '';
+      formEl.style.display = 'none';
+      setResult('mover-result', 'Buscando citas…', 'loading');
+      try {
+        const r = await fetch(`${API}/api/bookings?telefono=${encodeURIComponent(telefono)}`);
+        const data = await r.json();
+        if (!r.ok) {
+          setResult('mover-result', resultHtml((data.error || data.message || r.status), 'error'), 'error');
+          return;
+        }
+        const bookings = Array.isArray(data.data) ? data.data : (data.bookings || []);
+        const futuros = bookings.filter(b => {
+          if (b.status === 'CANCELLED' || b.status === 'cancelled') return false;
+          return new Date(b.start || b.startTime) > new Date();
+        });
+        setResult('mover-result', futuros.length ? resultHtml('Seleccione la cita a reagendar:', 'info') : resultHtml('No hay citas pendientes para este paciente.', 'info'), 'info');
+        futuros.forEach(b => {
+          const uid = b.uid || b.id;
+          const date = new Date(b.start || b.startTime).toLocaleString('es-ES', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+          const nombre = (b.attendees && b.attendees[0] && (b.attendees[0].name || b.attendees[0].attendeeName)) || 'Paciente';
+          const card = document.createElement('div');
+          card.className = 'card-cita';
+          card.innerHTML = '<div><p class="font-medium text-slate-900">' + date + '</p><p class="text-xs text-slate-500">' + nombre + '</p></div><button type="button" class="btn-secondary !py-2 !px-3">Reagendar</button>';
+          card.querySelector('button').onclick = () => {
+            document.getElementById('mover-booking-uid').value = uid;
+            document.getElementById('mover-booking-nombre').value = nombre;
+            formEl.style.display = 'block';
+            setResult('mover-result', resultHtml('Indique el nuevo horario y confirme el reagendamiento.', 'info'), 'info');
+          };
+          listEl.appendChild(card);
+        });
+      } catch (e) {
+        setResult('mover-result', resultHtml('Error: ' + e.message, 'error'), 'error');
+      }
+    });
+
+    document.getElementById('btn-mover-confirmar').addEventListener('click', async () => {
+      const uid = document.getElementById('mover-booking-uid').value;
+      const nuevaFecha = document.getElementById('mover-datetime').value;
+      if (!uid || !nuevaFecha) {
+        setResult('mover-result', resultHtml('Seleccione una cita y el nuevo horario.', 'error'), 'error');
+        return;
+      }
+      const startISO = new Date(nuevaFecha.replace(' ', 'T')).toISOString();
+      setResult('mover-result', 'Reagendando…', 'loading');
+      try {
+        const cancelRes = await fetch(`${API}/api/bookings/${uid}/cancel`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ reason: 'Reagendado por el cliente' }),
+        });
+        if (!cancelRes.ok) {
+          setResult('mover-result', resultHtml('Error al cancelar la cita anterior.', 'error'), 'error');
+          return;
+        }
+        const telefono = document.getElementById('mover-telefono').value.trim();
+        const nombre = document.getElementById('mover-booking-nombre').value.trim() || 'Paciente';
+        const bookRes = await fetch(`${API}/api/bookings`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nombre, telefono, start: startISO }),
+        });
+        const data = await bookRes.json();
+        if (!bookRes.ok) {
+          setResult('mover-result', resultHtml('La cita anterior se canceló pero no se pudo crear la nueva: ' + (data.error || data.message), 'error'), 'error');
+          return;
+        }
+        setResult('mover-result', resultHtml('La cita ha sido reagendada correctamente.', 'success'), 'success');
+        document.getElementById('mover-form').style.display = 'none';
+      } catch (e) {
+        setResult('mover-result', resultHtml('Error: ' + e.message, 'error'), 'error');
+      }
+    });
+
+    // ——— Calendario visual (panel Calendario) ———
+    let calendarInstance = null;
+    let calEventActual = null; // { uid, nombre, telefono, start }
+
+    window.initCalendarioVisual = function() {
+      const calEl = document.getElementById('calendario-visual');
+      if (!calEl || typeof FullCalendar === 'undefined') return;
+      if (calendarInstance) {
+        calendarInstance.refetchEvents();
+        return;
+      }
+      calendarInstance = new FullCalendar.Calendar(calEl, {
+        locale: 'es',
+        initialView: 'timeGridWeek',
+        headerToolbar: { left: 'prev,next today', center: 'title', right: 'dayGridMonth,timeGridWeek' },
+        slotMinTime: '08:00:00',
+        slotMaxTime: '21:00:00',
+        slotDuration: '00:30:00',
+        allDaySlot: false,
+        height: 'auto',
+        eventMinHeight: 32,
+        selectable: true,
+        selectMirror: true,
+        timeZone: 'Europe/Madrid',
+        events: function(info, successCallback, failureCallback) {
+          fetch(API + '/api/bookings-range?start=' + encodeURIComponent(info.startStr) + '&end=' + encodeURIComponent(info.endStr))
+            .then(r => {
+              if (!r.ok) return r.text().then(() => []);
+              return r.json();
+            })
+            .then(data => {
+              const raw = Array.isArray(data) ? data : [];
+              const list = raw.filter(b => {
+                const s = (b.status || '').toUpperCase();
+                return s !== 'CANCELLED' && s !== 'CANCELED' && s !== 'REJECTED';
+              });
+              const events = list.map(b => {
+                const start = b.start || b.startTime;
+                const end = b.end || b.endTime;
+                const att = (b.attendees && b.attendees[0]) || {};
+                const nombre = (att.name || att.attendeeName || 'Cita').trim() || 'Cita';
+                const startDate = start ? new Date(start) : null;
+                const endDate = end ? new Date(end) : (startDate ? new Date(startDate.getTime() + 30 * 60000) : null);
+                return {
+                  id: String(b.uid || b.id || ''),
+                  title: nombre,
+                  start: startDate ? startDate.toISOString() : start,
+                  end: endDate ? endDate.toISOString() : (startDate ? new Date(startDate.getTime() + 30 * 60000).toISOString() : undefined),
+                  allDay: false,
+                  extendedProps: { uid: b.uid || b.id, nombre, telefono: att.phoneNumber || att.phone || '', doctor: b.doctor || '', sede: b.sede || '' }
+                };
+              });
+              successCallback(events);
+            })
+            .catch(() => successCallback([]));
+        },
+        dateClick: function(info) {
+          const dayStart = new Date(info.dateStr);
+          dayStart.setHours(0, 0, 0, 0);
+          const dayEnd = new Date(dayStart);
+          dayEnd.setHours(23, 59, 59, 999);
+          fetch(API + '/api/slots?start=' + dayStart.toISOString() + '&end=' + dayEnd.toISOString())
+            .then(r => r.json())
+            .then(data => {
+              const raw = data.data || {};
+              const slots = [];
+              for (const k of Object.keys(raw)) {
+                const arr = raw[k];
+                if (Array.isArray(arr)) for (const s of arr) {
+                  const startStr = typeof s === 'string' ? s : (s && s.start);
+                  if (startStr) slots.push(new Date(startStr));
+                }
+              }
+              slots.sort((a, b) => a - b);
+              const panel = document.getElementById('cal-panel-slots');
+              const listEl = document.getElementById('cal-slots-list');
+              const fechaEl = document.getElementById('cal-slots-fecha');
+              const emptyEl = document.getElementById('cal-slots-empty');
+              if (!panel || !listEl) return;
+              panel.classList.remove('hidden');
+              fechaEl.textContent = dayStart.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' });
+              listEl.innerHTML = '';
+              emptyEl.classList.add('hidden');
+              if (slots.length === 0) {
+                emptyEl.textContent = 'No hay horarios disponibles.';
+                emptyEl.classList.remove('hidden');
+                return;
+              }
+              const opts = { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid' };
+              slots.forEach(d => {
+                const span = document.createElement('button');
+                span.type = 'button';
+                span.className = 'slot-chip hover:bg-primary-200 focus:outline-none focus:ring-2 focus:ring-primary-500';
+                span.textContent = d.toLocaleString('es-ES', opts);
+                span.dataset.start = d.toISOString();
+                span.onclick = () => { abrirModalNuevaCitaCal(d.toISOString()); };
+                listEl.appendChild(span);
+              });
+            })
+            .catch(() => {
+              const panel = document.getElementById('cal-panel-slots');
+              const emptyEl = document.getElementById('cal-slots-empty');
+              if (panel) panel.classList.remove('hidden');
+              if (emptyEl) { emptyEl.textContent = 'Error al cargar horarios.'; emptyEl.classList.remove('hidden'); }
+            });
+        },
+        eventClick: function(info) {
+          info.jsEvent.preventDefault();
+          calEventActual = {
+            uid: info.event.extendedProps.uid,
+            nombre: info.event.extendedProps.nombre || info.event.title,
+            telefono: info.event.extendedProps.telefono || '',
+            doctor: info.event.extendedProps.doctor || '',
+            sede: info.event.extendedProps.sede || '',
+            start: info.event.start
+          };
+          const infoEl = document.getElementById('modal-cita-info');
+          if (infoEl) {
+            let txt = (info.event.title || 'Cita') + ' · ' + (info.event.start ? info.event.start.toLocaleString('es-ES', { dateStyle: 'full', timeStyle: 'short' }) : '');
+            if (calEventActual.doctor) txt += ' · ' + calEventActual.doctor;
+            if (calEventActual.sede) txt += ' · ' + calEventActual.sede;
+            infoEl.textContent = txt;
+          }
+          document.getElementById('modal-acciones-cita').classList.remove('hidden');
+          document.getElementById('modal-acciones-cita').classList.add('flex');
+        },
+        select: function(info) {
+          abrirModalNuevaCitaCal(info.startStr);
+        }
+      });
+      calendarInstance.render();
+    };
+
+    function abrirModalNuevaCitaCal(isoStart) {
+      document.getElementById('cal-nueva-nombre').value = '';
+      document.getElementById('cal-nueva-telefono').value = '';
+      if (isoStart) {
+        const d = new Date(isoStart);
+        const pad = n => String(n).padStart(2, '0');
+        document.getElementById('cal-nueva-datetime').value = d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
+      } else {
+        document.getElementById('cal-nueva-datetime').value = '';
+      }
+      if (window.calNuevaFlatpickr) window.calNuevaFlatpickr.setDate(isoStart || null, false);
+      document.getElementById('cal-nueva-result').classList.add('hidden');
+      document.getElementById('modal-nueva-cita-cal').classList.remove('hidden');
+      document.getElementById('modal-nueva-cita-cal').classList.add('flex');
+    }
+
+    document.getElementById('cal-btn-nueva-cita').addEventListener('click', () => abrirModalNuevaCitaCal(null));
+
+    if (!window.calNuevaFlatpickr) {
+      window.calNuevaFlatpickr = flatpickr(document.getElementById('cal-nueva-datetime'), {
+        locale: 'es',
+        enableTime: true,
+        dateFormat: 'Y-m-d H:i',
+        time_24hr: true,
+        minDate: 'today'
+      });
+    }
+    if (!window.calReagendarFlatpickr) {
+      window.calReagendarFlatpickr = flatpickr(document.getElementById('cal-reagendar-datetime'), {
+        locale: 'es',
+        enableTime: true,
+        dateFormat: 'Y-m-d H:i',
+        time_24hr: true,
+        minDate: 'today'
+      });
+    }
+
+    document.getElementById('cal-nueva-cerrar').addEventListener('click', () => {
+      document.getElementById('modal-nueva-cita-cal').classList.add('hidden');
+      document.getElementById('modal-nueva-cita-cal').classList.remove('flex');
+    });
+    document.getElementById('modal-nueva-cita-cal').addEventListener('click', e => {
+      if (e.target.id === 'modal-nueva-cita-cal') { e.target.classList.add('hidden'); e.target.classList.remove('flex'); }
+    });
+
+    document.getElementById('cal-nueva-confirmar').addEventListener('click', async () => {
+      const nombre = document.getElementById('cal-nueva-nombre').value.trim();
+      const telefono = normalizarTelefono(document.getElementById('cal-nueva-telefono').value);
+      const dt = document.getElementById('cal-nueva-datetime').value;
+      const doctor = (document.getElementById('cal-nueva-doctor') && document.getElementById('cal-nueva-doctor').value) || '';
+      const sede = (document.getElementById('cal-nueva-sede') && document.getElementById('cal-nueva-sede').value) || '';
+      const resultEl = document.getElementById('cal-nueva-result');
+      if (!nombre) { resultEl.textContent = 'Introduzca el nombre.'; resultEl.className = 'mt-3 text-sm text-red-600'; resultEl.classList.remove('hidden'); return; }
+      if (!telefonoValido(telefono)) { resultEl.textContent = 'Introduzca un teléfono válido.'; resultEl.className = 'mt-3 text-sm text-red-600'; resultEl.classList.remove('hidden'); return; }
+      if (!dt) { resultEl.textContent = 'Seleccione fecha y hora.'; resultEl.className = 'mt-3 text-sm text-red-600'; resultEl.classList.remove('hidden'); return; }
+      const startISO = new Date(dt.replace(' ', 'T')).toISOString();
+      const body = { nombre, telefono, start: startISO };
+      if (doctor) body.doctor = doctor;
+      if (sede) body.sede = sede;
+      resultEl.textContent = 'Guardando…';
+      resultEl.className = 'mt-3 text-sm text-slate-600';
+      resultEl.classList.remove('hidden');
+      try {
+        const r = await fetch(API + '/api/bookings', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+        const data = await r.json();
+        if (!r.ok) { resultEl.textContent = data.error || data.message || 'Error'; resultEl.className = 'mt-3 text-sm text-red-600'; return; }
+        resultEl.textContent = 'Cita creada correctamente.';
+        resultEl.className = 'mt-3 text-sm text-green-600';
+        if (calendarInstance) calendarInstance.refetchEvents();
+        setTimeout(() => { document.getElementById('modal-nueva-cita-cal').classList.add('hidden'); document.getElementById('modal-nueva-cita-cal').classList.remove('flex'); }, 1200);
+      } catch (e) { resultEl.textContent = 'Error: ' + e.message; resultEl.className = 'mt-3 text-sm text-red-600'; }
+    });
+
+    document.getElementById('cal-accion-cerrar').addEventListener('click', () => {
+      document.getElementById('modal-acciones-cita').classList.add('hidden');
+      document.getElementById('modal-acciones-cita').classList.remove('flex');
+      calEventActual = null;
+    });
+    document.getElementById('modal-acciones-cita').addEventListener('click', e => {
+      if (e.target.id === 'modal-acciones-cita') { e.target.classList.add('hidden'); e.target.classList.remove('flex'); calEventActual = null; }
+    });
+
+    document.getElementById('cal-accion-cancelar').addEventListener('click', async () => {
+      if (!calEventActual || !calEventActual.uid) return;
+      try {
+        const r = await fetch(API + '/api/bookings/' + calEventActual.uid + '/cancel', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ reason: 'Solicitud del cliente' }) });
+        if (r.ok) { if (calendarInstance) calendarInstance.refetchEvents(); document.getElementById('modal-acciones-cita').classList.add('hidden'); document.getElementById('modal-acciones-cita').classList.remove('flex'); calEventActual = null; }
+      } catch (e) {}
+    });
+
+    document.getElementById('cal-accion-reagendar').addEventListener('click', () => {
+      if (!calEventActual) return;
+      document.getElementById('modal-acciones-cita').classList.add('hidden');
+      document.getElementById('modal-acciones-cita').classList.remove('flex');
+      document.getElementById('cal-reagendar-datetime').value = '';
+      if (window.calReagendarFlatpickr) window.calReagendarFlatpickr.set('defaultDate', null);
+      document.getElementById('cal-reagendar-result').classList.add('hidden');
+      document.getElementById('modal-reagendar-cal').classList.remove('hidden');
+      document.getElementById('modal-reagendar-cal').classList.add('flex');
+    });
+
+    document.getElementById('cal-reagendar-cerrar').addEventListener('click', () => {
+      document.getElementById('modal-reagendar-cal').classList.add('hidden');
+      document.getElementById('modal-reagendar-cal').classList.remove('flex');
+    });
+    document.getElementById('modal-reagendar-cal').addEventListener('click', e => {
+      if (e.target.id === 'modal-reagendar-cal') { e.target.classList.add('hidden'); e.target.classList.remove('flex'); }
+    });
+
+    document.getElementById('cal-reagendar-confirmar').addEventListener('click', async () => {
+      if (!calEventActual || !calEventActual.uid) return;
+      const nuevaFecha = document.getElementById('cal-reagendar-datetime').value;
+      const resultEl = document.getElementById('cal-reagendar-result');
+      if (!nuevaFecha) { resultEl.textContent = 'Seleccione la nueva fecha y hora.'; resultEl.className = 'mt-3 text-sm text-red-600'; resultEl.classList.remove('hidden'); return; }
+      const startISO = new Date(nuevaFecha.replace(' ', 'T')).toISOString();
+      resultEl.textContent = 'Reagendando…';
+      resultEl.className = 'mt-3 text-sm text-slate-600';
+      resultEl.classList.remove('hidden');
+      try {
+        const cancelRes = await fetch(API + '/api/bookings/' + calEventActual.uid + '/cancel', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ reason: 'Reagendado' }) });
+        if (!cancelRes.ok) { resultEl.textContent = 'Error al cancelar la cita anterior.'; resultEl.className = 'mt-3 text-sm text-red-600'; return; }
+        const bookRes = await fetch(API + '/api/bookings', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ nombre: calEventActual.nombre, telefono: calEventActual.telefono || '', start: startISO }) });
+        const data = await bookRes.json();
+        if (!bookRes.ok) { resultEl.textContent = data.error || data.message || 'Error al crear la nueva cita.'; resultEl.className = 'mt-3 text-sm text-red-600'; return; }
+        resultEl.textContent = 'Cita reagendada correctamente.';
+        resultEl.className = 'mt-3 text-sm text-green-600';
+        if (calendarInstance) calendarInstance.refetchEvents();
+        calEventActual = null;
+        setTimeout(() => { document.getElementById('modal-reagendar-cal').classList.add('hidden'); document.getElementById('modal-reagendar-cal').classList.remove('flex'); }, 1200);
+      } catch (e) { resultEl.textContent = 'Error: ' + e.message; resultEl.className = 'mt-3 text-sm text-red-600'; }
+    });
+  </script>
+</body>
+</html>
