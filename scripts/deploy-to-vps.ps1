@@ -6,7 +6,7 @@ $ErrorActionPreference = "Stop"
 $VPS = "ubuntu@137.74.115.81"
 $KEY = "$env:USERPROFILE\.ssh\id_ed25519_pablo"
 
-$Root = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
+$Root = Split-Path -Parent $PSScriptRoot
 Set-Location $Root
 
 Write-Host "==> Build local (frontend + backend)..." -ForegroundColor Cyan

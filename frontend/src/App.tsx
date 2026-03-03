@@ -1,7 +1,6 @@
-import { useState } from 'react';
-import { BrowserRouter, Routes, Route, Link, Outlet } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { BrowserRouter, Routes, Route, Link, Outlet, useLocation } from 'react-router-dom';
 import {
-  Phone,
   ArrowRight,
   Menu,
   X,
@@ -10,52 +9,52 @@ import {
 } from 'lucide-react';
 import ScheduleAppointment from './ScheduleAppointment';
 
-// ============ HEADER (igual que Ringr) ============
+// ============ HEADER ============
 function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/98 backdrop-blur border-b border-brand-100/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 lg:h-20">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-lg bg-cta-gradient flex items-center justify-center shadow-brand-sm">
-              <Phone className="w-5 h-5 text-white" />
-            </div>
-            <span className="font-display font-bold text-lg text-slate-900 tracking-tight">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200/80 shadow-sm">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-14 lg:h-16">
+          <Link to="/" className="flex items-center gap-2.5">
+            <span className="font-display font-bold text-xl text-slate-900 tracking-tight">
               Gandia<span className="text-brand-600">Software</span>
             </span>
           </Link>
-          <nav className="hidden lg:flex items-center gap-8">
-            <Link to="/#servicios" className="text-slate-600 hover:text-brand-600 font-medium transition-colors">Producto</Link>
-            <Link to="/#casos-exito" className="text-slate-600 hover:text-brand-600 font-medium transition-colors">Casos de éxito</Link>
-            <Link to="/#industrias" className="text-slate-600 hover:text-brand-600 font-medium transition-colors">Para tu clínica</Link>
-            <Link to="/#integraciones" className="text-slate-600 hover:text-brand-600 font-medium transition-colors">Integraciones</Link>
-            <Link to="/#compania" className="text-slate-600 hover:text-brand-600 font-medium transition-colors">Compañía</Link>
-            <div className="relative">
-              <button onClick={() => setLangOpen(!langOpen)} className="flex items-center gap-1 text-slate-600 hover:text-brand-600 font-medium">
-                Select Language <span className="text-xs">Español</span> <ChevronDown className="w-4 h-4" />
-              </button>
-              {langOpen && <div className="absolute top-full mt-1 py-2 w-40 bg-white rounded-lg shadow-lg border border-slate-200">Español</div>}
-            </div>
-            <Link to="/agendar" className="text-slate-600 hover:text-brand-600 font-medium transition-colors">Iniciar sesión</Link>
-            <Link to="/agendar" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-cta-gradient text-white font-semibold shadow-brand hover:shadow-brand-lg transition-all">
-              Prueba ahora
+          <nav className="hidden lg:flex items-center gap-6">
+            <Link to="/#servicios" className="text-slate-600 hover:text-brand-600 text-sm font-medium transition-colors">Producto</Link>
+            <Link to="/#casos-exito" className="text-slate-600 hover:text-brand-600 text-sm font-medium transition-colors">Casos de éxito</Link>
+            <Link to="/#industrias" className="text-slate-600 hover:text-brand-600 text-sm font-medium transition-colors">Para tu clínica</Link>
+            <Link to="/#integraciones" className="text-slate-600 hover:text-brand-600 text-sm font-medium transition-colors">Integraciones</Link>
+            <Link to="/#pricing" className="text-slate-600 hover:text-brand-600 text-sm font-medium transition-colors">Pricing</Link>
+            <Link to="/#faq" className="text-slate-600 hover:text-brand-600 text-sm font-medium transition-colors">FAQ</Link>
+            <Link to="/#calculadora" className="ml-2 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-brand-100 text-brand-700 text-sm font-semibold hover:bg-brand-200 transition-colors">
+              Calcula tu ahorro
+            </Link>
+            <Link to="/agendar" className="ml-2 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-brand-600 text-white text-sm font-semibold hover:bg-brand-700 transition-colors">
+              Reservar demo
               <ArrowRight className="w-4 h-4" />
             </Link>
           </nav>
-          <button type="button" className="lg:hidden p-2 text-slate-600" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menú">
+          <button type="button" className="lg:hidden p-2 text-slate-600 hover:text-slate-900" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menú">
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
         {mobileOpen && (
-          <nav className="lg:hidden pb-6 flex flex-col gap-4 border-t border-slate-200 pt-4">
-            <Link to="/#servicios" onClick={() => setMobileOpen(false)} className="text-slate-600 hover:text-brand-600 font-medium">Producto</Link>
-            <Link to="/#casos-exito" onClick={() => setMobileOpen(false)} className="text-slate-600 hover:text-brand-600 font-medium">Casos de éxito</Link>
-            <Link to="/#industrias" onClick={() => setMobileOpen(false)} className="text-slate-600 hover:text-brand-600 font-medium">Para tu clínica</Link>
-            <Link to="/#integraciones" onClick={() => setMobileOpen(false)} className="text-slate-600 hover:text-brand-600 font-medium">Integraciones</Link>
-            <Link to="/#compania" onClick={() => setMobileOpen(false)} className="text-slate-600 hover:text-brand-600 font-medium">Compañía</Link>
-            <Link to="/agendar" onClick={() => setMobileOpen(false)} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-brand-600 text-white font-semibold w-fit">Prueba ahora <ArrowRight className="w-4 h-4" /></Link>
+          <nav className="lg:hidden pb-5 flex flex-col gap-1 border-t border-slate-200 pt-4">
+            <Link to="/#calculadora" onClick={() => setMobileOpen(false)} className="py-3 px-2 rounded-lg bg-brand-100 text-brand-700 font-semibold mb-2 text-center">
+              Calcula tu ahorro
+            </Link>
+            <Link to="/#pricing" onClick={() => setMobileOpen(false)} className="py-2 text-slate-600 hover:text-brand-600 font-medium">Pricing</Link>
+            <Link to="/#servicios" onClick={() => setMobileOpen(false)} className="py-2 text-slate-600 hover:text-brand-600 font-medium">Producto</Link>
+            <Link to="/#casos-exito" onClick={() => setMobileOpen(false)} className="py-2 text-slate-600 hover:text-brand-600 font-medium">Casos de éxito</Link>
+            <Link to="/#industrias" onClick={() => setMobileOpen(false)} className="py-2 text-slate-600 hover:text-brand-600 font-medium">Para tu clínica</Link>
+            <Link to="/#integraciones" onClick={() => setMobileOpen(false)} className="py-2 text-slate-600 hover:text-brand-600 font-medium">Integraciones</Link>
+            <Link to="/#faq" onClick={() => setMobileOpen(false)} className="py-2 text-slate-600 hover:text-brand-600 font-medium">FAQ</Link>
+            <Link to="/agendar" onClick={() => setMobileOpen(false)} className="mt-2 inline-flex items-center gap-2 px-4 py-3 rounded-lg bg-brand-600 text-white font-semibold w-fit">
+              Reservar demo
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </nav>
         )}
       </div>
@@ -84,29 +83,29 @@ function Footer() {
             <h3 className="font-semibold text-white mb-4">Producto</h3>
             <ul className="space-y-3 text-slate-400 text-sm">
               <li><Link to="/#servicios" className="hover:text-white transition-colors">Plataforma</Link></li>
+              <li><Link to="/#pricing" className="hover:text-white transition-colors">Pricing</Link></li>
               <li><Link to="/#plataforma" className="hover:text-white transition-colors">Analíticas</Link></li>
-              <li><Link to="/#como-funciona" className="hover:text-white transition-colors">Campañas</Link></li>
-              <li><a href="#" className="hover:text-white transition-colors">Control de calidad</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Orquestador</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Modelos propios</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">API Pública</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Implementación</a></li>
+              <li><Link to="/#como-funciona" className="hover:text-white transition-colors">Cómo funciona</Link></li>
+              <li><Link to="/#servicios" className="hover:text-white transition-colors">Control de calidad</Link></li>
+              <li><Link to="/#integraciones" className="hover:text-white transition-colors">API e integraciones</Link></li>
+              <li><Link to="/#compania" className="hover:text-white transition-colors">Implementación</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="font-semibold text-white mb-4">Compañía</h3>
             <ul className="space-y-3 text-slate-400 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">Novedades</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Partner Program</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Seguridad</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Base de conocimiento</a></li>
+              <li><Link to="/#compania" className="hover:text-white transition-colors">Novedades</Link></li>
+              <li><Link to="/#compania" className="hover:text-white transition-colors">Partners</Link></li>
+              <li><Link to="/#faq" className="hover:text-white transition-colors">Seguridad y RGPD</Link></li>
+              <li><Link to="/#faq" className="hover:text-white transition-colors">Base de conocimiento</Link></li>
               <li><Link to="/#faq" className="hover:text-white transition-colors">Preguntas frecuentes</Link></li>
-              <li><a href="#" className="hover:text-white transition-colors">Sobre nosotros</a></li>
+              <li><Link to="/#compania" className="hover:text-white transition-colors">Sobre nosotros</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="font-semibold text-white mb-4">Comienza ahora</h3>
             <ul className="space-y-3 text-slate-400 text-sm">
+              <li><Link to="/#calculadora" className="hover:text-white transition-colors">Calcula tu ahorro</Link></li>
               <li><Link to="/agendar" className="hover:text-white transition-colors">Inicia sesión</Link></li>
               <li><Link to="/agendar" className="hover:text-white transition-colors">Habla con ventas</Link></li>
             </ul>
@@ -115,10 +114,10 @@ function Footer() {
         <div className="border-t border-white/10 mt-12 pt-8">
           <p className="text-slate-400 text-sm">Powered by Gandia Software</p>
           <div className="flex flex-wrap gap-6 mt-4 text-sm text-slate-400">
-            <a href="#" className="hover:text-brand-300 transition-colors">Política de privacidad</a>
-            <a href="#" className="hover:text-brand-300 transition-colors">Política de cookies</a>
-            <a href="#" className="hover:text-brand-300 transition-colors">Aviso Legal</a>
-            <a href="#" className="hover:text-brand-300 transition-colors">Política de Seguridad de la Información</a>
+            <Link to="/#faq" className="hover:text-brand-300 transition-colors">Política de privacidad</Link>
+            <Link to="/#faq" className="hover:text-brand-300 transition-colors">Política de cookies</Link>
+            <Link to="/#faq" className="hover:text-brand-300 transition-colors">Aviso Legal</Link>
+            <Link to="/#faq" className="hover:text-brand-300 transition-colors">Seguridad</Link>
           </div>
         </div>
       </div>
@@ -127,6 +126,21 @@ function Footer() {
 }
 
 function Layout() {
+  const location = useLocation();
+  const prevHash = useRef<string | null>(null);
+
+  useEffect(() => {
+    const hash = location.hash.replace('#', '');
+    if (hash && hash !== prevHash.current) {
+      prevHash.current = hash;
+      const el = document.getElementById(hash);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+      }
+    }
+    if (!hash) prevHash.current = null;
+  }, [location.pathname, location.hash]);
+
   return (
     <div className="min-h-screen flex flex-col bg-ringr-bg/30">
       <Header />
@@ -138,8 +152,24 @@ function Layout() {
   );
 }
 
+const PRECIO_POR_MINUTO = 0.32;
+
 function Home() {
+  const location = useLocation();
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
+  const [calculadoraAbierta, setCalculadoraAbierta] = useState(false);
+  const [minutosMes, setMinutosMes] = useState('500');
+  const [costePersonalMes, setCostePersonalMes] = useState('2000');
+
+  useEffect(() => {
+    if (location.hash === '#calculadora') setCalculadoraAbierta(true);
+  }, [location.hash]);
+
+  const min = Math.max(0, Number(minutosMes) || 0);
+  const costeActual = Math.max(0, Number(costePersonalMes) || 0);
+  const costeUsoMes = PRECIO_POR_MINUTO * min;
+  const ahorro = Math.max(0, costeActual - costeUsoMes);
+  const ahorroPorcentaje = costeActual > 0 ? Math.round((ahorro / costeActual) * 100) : 0;
 
   return (
     <>
@@ -152,15 +182,26 @@ function Home() {
             IA para clínicas de medicina estética
           </Link>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-slate-900 leading-[1.1] tracking-tight mb-6">
-            Llamadas con IA para clínicas de medicina estética.
+            La recepción que nunca se satura.
           </h1>
-          <p className="text-xl lg:text-2xl text-slate-700 max-w-3xl mx-auto mb-10 font-medium">
-            Atiende el teléfono 24/7, confirma citas, reduce no-shows e integra con tu CRM y ERP. Ingeniería conversacional pensada para tu clínica.
+          <p className="text-xl lg:text-2xl text-slate-700 max-w-3xl mx-auto mb-6 font-medium">
+            Todas las llamadas simultáneas que necesites. Línea siempre libre. Atiende el teléfono 24/7, confirma citas, reduce no-shows e integra con tu CRM y ERP.
           </p>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-6">
+            <strong className="text-slate-800">Agente de voz en todos los idiomas:</strong> tu recepción atiende a pacientes en español, inglés, francés, alemán y más, sin límite de idiomas.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            <span className="inline-flex items-center rounded-full bg-green-100 px-4 py-1.5 text-sm font-medium text-green-800">Llamadas simultáneas ilimitadas</span>
+            <span className="inline-flex items-center rounded-full bg-green-100 px-4 py-1.5 text-sm font-medium text-green-800">Línea nunca saturada</span>
+            <span className="inline-flex items-center rounded-full bg-brand-100 px-4 py-1.5 text-sm font-medium text-brand-800">Agente en todos los idiomas</span>
+          </div>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <Link to="/agendar" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-cta-gradient text-white font-bold shadow-brand-lg hover:shadow-brand hover:opacity-95 transition-all">
               Prueba ahora
               <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link to="/#calculadora" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white border-2 border-brand-300 text-brand-700 font-semibold hover:bg-brand-50 hover:border-brand-400 transition-colors shadow-card">
+              Calcula tu ahorro
             </Link>
             <a href="#integraciones" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border-2 border-brand-300 text-brand-700 font-semibold hover:bg-brand-50 hover:border-brand-400 transition-colors">
               Ver integraciones
@@ -170,9 +211,10 @@ function Home() {
               Cómo funciona
             </a>
           </div>
-          <p className="text-slate-600 text-sm max-w-2xl mx-auto">
+          <p className="text-slate-600 text-sm max-w-2xl mx-auto mb-2">
             Pensado para centros de estética, medicina estética y wellness. Cumplimiento RGPD y LOPD. Integración total con los CRMs y ERPs del sector.
           </p>
+          <p className="text-slate-500 text-xs">Demo gratuita. Sin compromiso.</p>
         </div>
       </section>
 
@@ -197,25 +239,31 @@ function Home() {
       <section id="servicios" className="py-20 lg:py-28 bg-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-brand-600 font-semibold text-sm uppercase tracking-wider mb-4">
-            Seguro | Natural | Especializado en medicina estética
+            Infraestructura que escala contigo
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-slate-900 text-center max-w-4xl mx-auto mb-16">
-            IA con voz que atiende a tus pacientes 24/7, confirma citas y se integra con tu CRM y agenda.
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-slate-900 text-center max-w-4xl mx-auto mb-4">
+            Todas las llamadas que quieras. La línea nunca saturada.
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 mb-16">
+          <p className="text-center text-slate-600 max-w-2xl mx-auto mb-16">
+            Múltiples pacientes pueden llamar a la vez. Sin colas, sin esperas, sin perder una sola llamada. IA con voz 24/7 integrada con tu CRM y agenda. <strong className="text-slate-700">El agente habla todos los idiomas:</strong> ideal para clínicas con pacientes internacionales.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             <div className="text-center p-6 rounded-2xl bg-white/80 border border-brand-100 shadow-card">
-              <p className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-brand-600 to-brand-800 bg-clip-text text-transparent">75</p>
-              <p className="text-2xl font-bold text-brand-600">%</p>
-              <p className="text-slate-600 text-sm mt-2">menos no-shows con recordatorios por voz.</p>
+              <p className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-brand-600 to-brand-800 bg-clip-text text-transparent">∞</p>
+              <p className="text-slate-600 text-sm mt-2 font-medium">Llamadas simultáneas. Línea nunca saturada.</p>
             </div>
             <div className="text-center p-6 rounded-2xl bg-white/80 border border-brand-100 shadow-card">
               <p className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-brand-600 to-brand-800 bg-clip-text text-transparent">24/7</p>
-              <p className="text-slate-600 text-sm mt-2">recepción telefónica automática.</p>
+              <p className="text-slate-600 text-sm mt-2">Recepción automática. Sin ampliar plantilla.</p>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-white/80 border border-brand-100 shadow-card">
+              <p className="text-4xl font-bold text-brand-600 mt-1">Todos los idiomas</p>
+              <p className="text-slate-600 text-sm mt-2">Agente de voz multilingüe. Atiende en español, inglés, francés, alemán y más.</p>
             </div>
             <div className="text-center p-6 rounded-2xl bg-white/80 border border-brand-100 shadow-card">
               <p className="text-5xl lg:text-6xl font-bold text-brand-500">+</p>
-              <p className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-brand-600 to-brand-800 bg-clip-text text-transparent">100%</p>
-              <p className="text-slate-600 text-sm mt-2">integrado con tu CRM y ERP del sector.</p>
+              <p className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-brand-600 to-brand-800 bg-clip-text text-transparent">75%</p>
+              <p className="text-slate-600 text-sm mt-2">menos no-shows con confirmaciones por voz.</p>
             </div>
           </div>
           <div className="text-center">
@@ -271,6 +319,7 @@ function Home() {
             {[
               'Confirmación y recordatorio de citas',
               'Recepción telefónica 24/7',
+              'Agente de voz en todos los idiomas',
               'Reagendamiento automático',
               'Integración con agenda y CRM',
               'Recordatorios pre y post tratamiento',
@@ -293,12 +342,15 @@ function Home() {
           <p className="text-center text-brand-600 font-semibold text-sm uppercase tracking-wider mb-4">
             Cómo funciona
           </p>
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-slate-900 text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-slate-900 text-center max-w-3xl mx-auto mb-4">
             La IA atiende cada llamada, confirma o reagenda citas y sincroniza todo con tu CRM y agenda.
           </h2>
+          <p className="text-center text-slate-600 max-w-2xl mx-auto mb-16">
+            Varias llamadas a la vez, sin colas: la línea nunca se satura. Cada paciente es atendido al momento.
+          </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { num: '01', title: 'Atiende la llamada', desc: 'Recepción 24/7: el paciente llama, la IA responde, consulta disponibilidad y horarios de tu clínica en tiempo real.' },
+              { num: '01', title: 'Atiende la llamada', desc: 'Recepción 24/7: el paciente llama, la IA responde al instante. Llamadas simultáneas ilimitadas, línea nunca saturada.' },
               { num: '02', title: 'Confirma o reagenda', desc: 'Recordatorios por voz, confirmación de asistencia y reagendamiento automático según tu agenda.' },
               { num: '03', title: 'Sincroniza con tu CRM', desc: 'Cada cita confirmada o modificada se refleja al instante en NetClinicas, HeaBea, MN Program, ClinicApp, AgendaPro y el resto de integraciones.' },
               { num: '04', title: 'Menos no-shows', desc: 'Menos huecos en la agenda y más ocupación gracias a recordatorios y confirmaciones automatizadas.' },
@@ -313,14 +365,45 @@ function Home() {
         </div>
       </section>
 
+      {/* ========== PRICING ========== */}
+      <section id="pricing" className="py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-brand-600 font-semibold text-sm uppercase tracking-wider mb-4">
+            Precio
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-slate-900 text-center mb-12">
+            Tarifa clara y predecible
+          </h2>
+          <div className="max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 px-6 py-8 rounded-2xl bg-brand-50/50 border-2 border-brand-200">
+            <span className="text-3xl sm:text-4xl font-bold text-brand-700">3.000 €</span>
+            <span className="text-slate-600 font-medium text-lg">pago único (una vez)</span>
+            <span className="text-slate-400 hidden sm:inline">+</span>
+            <span className="text-3xl sm:text-4xl font-bold text-brand-600">0,32 €/min</span>
+          </div>
+          <p className="text-center text-slate-600 text-sm mt-4 max-w-xl mx-auto">
+            Solo pagas por el uso cada mes. El pago único de 3.000 € se abona una sola vez al contratar.
+          </p>
+          <div className="text-center mt-8">
+            <Link to="/#calculadora" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand-600 text-white font-semibold hover:bg-brand-700 transition-colors shadow-card">
+              Calcula tu ahorro
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ========== INFRAESTRUCTURA CONVERSACIONAL ========== */}
       <section id="infraestructura" className="py-20 lg:py-28 bg-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-slate-900 text-center mb-4">
-            Infraestructura conversacional para clínicas de medicina estética.
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-slate-900 text-center mb-2">
+            Llamadas simultáneas ilimitadas. Línea nunca saturada.
           </h2>
+          <p className="text-center text-slate-600 max-w-2xl mx-auto mb-8">
+            No importa cuántos pacientes llamen a la vez: nuestra infraestructura atiende todas las llamadas. Sin colas ni líneas ocupadas.
+          </p>
           <div className="flex justify-center gap-4 mb-16">
-            <Link to="/agendar" className="px-6 py-3 rounded-lg bg-white border border-brand-200 text-brand-700 font-semibold hover:bg-brand-50 shadow-card">Calcula tu ahorro</Link>
+            <Link to="/#calculadora" className="px-6 py-3 rounded-lg bg-white border border-brand-200 text-brand-700 font-semibold hover:bg-brand-50 shadow-card">
+              Calcula tu ahorro
+            </Link>
           </div>
           <div className="grid sm:grid-cols-3 gap-8 mb-16">
             <div className="text-center">
@@ -350,13 +433,13 @@ function Home() {
       <section id="integraciones" className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-brand-600 font-semibold text-sm uppercase tracking-wider mb-4">
-            Integración total
+            Conecta con lo que ya usas
           </p>
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-slate-900 text-center max-w-3xl mx-auto mb-4">
-            Con los CRMs y ERPs que usan las clínicas de medicina estética.
+            Integraciones con los CRMs y ERPs de medicina estética.
           </h2>
           <p className="text-center text-slate-600 max-w-3xl mx-auto mb-12">
-            Conectamos con el software de gestión que ya tienes: agenda, historial de pacientes, facturación y cumplimiento normativo. Sin duplicar datos ni cambiar de proveedor.
+            Una sola infraestructura: todas tus llamadas atendidas, nunca saturada. <strong className="text-slate-700">Agente de voz multilingüe</strong> para atender a pacientes en cualquier idioma. Conectamos con tu agenda, historial y facturación. API disponible para integraciones a medida.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
             {[
@@ -450,7 +533,11 @@ function Home() {
           <p className="text-center text-slate-600 max-w-2xl mx-auto mb-16">
             Va más allá de un bot tradicional. Ejecuta conversaciones con IA conversacional con lógica, contexto y reglas de negocio en tiempo real.
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="p-6 rounded-2xl border border-brand-100 bg-brand-50/20 shadow-card hover:shadow-card-hover hover:border-brand-200 transition-all">
+              <h3 className="font-bold text-slate-900 mb-2">Voz en todos los idiomas</h3>
+              <p className="text-slate-600 text-sm mt-2">El agente habla español, inglés, francés, alemán y más. Ideal para clínicas con pacientes internacionales o turismo médico.</p>
+            </div>
             <div className="p-6 rounded-2xl border border-brand-100 bg-brand-50/20 shadow-card hover:shadow-card-hover hover:border-brand-200 transition-all">
               <h3 className="font-bold text-slate-900 mb-2">Orquestador conversacional propio</h3>
             </div>
@@ -539,25 +626,26 @@ function Home() {
           </p>
           <div className="space-y-2">
             {[
-              '¿Cumple con RGPD y LOPD para datos de pacientes?',
-              '¿Qué planes ofrece para clínicas?',
-              '¿Qué incluye el coste de la integración inicial?',
-              '¿Se integra con mi CRM o software de agenda?',
-              '¿Cómo puedo ver una demo para mi clínica?',
-              '¿Funciona con varios profesionales o sedes?',
-            ].map((q, i) => (
+              { q: '¿El agente de voz habla otros idiomas?', a: 'Sí. Nuestro agente de voz está implementado para hablar todos los idiomas: español, inglés, francés, alemán y muchos más. Ideal para clínicas con pacientes internacionales o turismo médico. Sin configuración extra.' },
+              { q: '¿Cumple con RGPD y LOPD para datos de pacientes?', a: 'Sí. Nuestra solución cumple RGPD y LOPD y está pensada para el sector sanitario y estético. Nos integramos con NetClinicas, HeaBea, MN Program, ClinicApp, AgendaPro, Proclinica, Estetical, Odoo y otros. Contacta con nosotros para una demo adaptada a tu clínica.' },
+              { q: '¿Qué planes ofrece para clínicas?', a: 'Sí. Nuestra solución cumple RGPD y LOPD y está pensada para el sector sanitario y estético. Nos integramos con NetClinicas, HeaBea, MN Program, ClinicApp, AgendaPro, Proclinica, Estetical, Odoo y otros. Contacta con nosotros para una demo adaptada a tu clínica.' },
+              { q: '¿Qué incluye el coste de la integración inicial?', a: 'Sí. Nuestra solución cumple RGPD y LOPD y está pensada para el sector sanitario y estético. Nos integramos con NetClinicas, HeaBea, MN Program, ClinicApp, AgendaPro, Proclinica, Estetical, Odoo y otros. Contacta con nosotros para una demo adaptada a tu clínica.' },
+              { q: '¿Se integra con mi CRM o software de agenda?', a: 'Sí. Nuestra solución cumple RGPD y LOPD y está pensada para el sector sanitario y estético. Nos integramos con NetClinicas, HeaBea, MN Program, ClinicApp, AgendaPro, Proclinica, Estetical, Odoo y otros. Contacta con nosotros para una demo adaptada a tu clínica.' },
+              { q: '¿Cómo puedo ver una demo para mi clínica?', a: 'Sí. Nuestra solución cumple RGPD y LOPD y está pensada para el sector sanitario y estético. Nos integramos con NetClinicas, HeaBea, MN Program, ClinicApp, AgendaPro, Proclinica, Estetical, Odoo y otros. Contacta con nosotros para una demo adaptada a tu clínica.' },
+              { q: '¿Funciona con varios profesionales o sedes?', a: 'Sí. Nuestra solución cumple RGPD y LOPD y está pensada para el sector sanitario y estético. Nos integramos con NetClinicas, HeaBea, MN Program, ClinicApp, AgendaPro, Proclinica, Estetical, Odoo y otros. Contacta con nosotros para una demo adaptada a tu clínica.' },
+            ].map((item, i) => (
               <div key={i} className="bg-white rounded-lg border border-brand-100 shadow-card overflow-hidden">
                 <button
                   type="button"
                   className="w-full px-6 py-4 text-left font-medium text-slate-900 flex justify-between items-center"
                   onClick={() => setFaqOpen(faqOpen === i ? null : i)}
                 >
-                  {q}
+                  {item.q}
                   <ChevronDown className={`w-5 h-5 text-slate-500 transition-transform ${faqOpen === i ? 'rotate-180' : ''}`} />
                 </button>
                 {faqOpen === i && (
                   <div className="px-6 pb-4 text-slate-600 text-sm">
-                    Sí. Nuestra solución cumple RGPD y LOPD y está pensada para el sector sanitario y estético. Nos integramos con NetClinicas, HeaBea, MN Program, ClinicApp, AgendaPro, Proclinica, Estetical, Odoo y otros. Contacta con nosotros para una demo adaptada a tu clínica.
+                    {item.a}
                   </div>
                 )}
               </div>
@@ -590,6 +678,77 @@ function Home() {
           </p>
         </div>
       </section>
+
+      {/* Modal Calculadora de ahorro */}
+      {calculadoraAbierta && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50" onClick={() => setCalculadoraAbierta(false)}>
+          <div className="bg-white rounded-2xl shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8" onClick={e => e.stopPropagation()}>
+            <div className="flex justify-between items-start mb-6">
+              <h3 className="text-xl font-display font-bold text-slate-900">Calcula tu ahorro</h3>
+              <button type="button" onClick={() => setCalculadoraAbierta(false)} className="p-1.5 rounded-lg text-slate-400 hover:bg-slate-100 hover:text-slate-600" aria-label="Cerrar">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="rounded-xl border border-brand-100 bg-brand-50/50 p-4 mb-6">
+              <p className="text-sm font-semibold text-slate-700 mb-1">Precio de uso</p>
+              <p className="text-lg font-bold text-brand-700">0,32 €/min</p>
+              <p className="text-xs text-slate-600 mt-1">Solo pagas por los minutos de llamada cada mes. Compara con lo que te cuesta tener a personas atendiendo el teléfono.</p>
+            </div>
+            <div className="space-y-4">
+              <div>
+                <label htmlFor="calc-minutos" className="block text-sm font-medium text-slate-700 mb-1">
+                  Minutos de llamadas al mes (estimado)
+                </label>
+                <input
+                  id="calc-minutos"
+                  type="number"
+                  min={0}
+                  step={50}
+                  value={minutosMes}
+                  onChange={e => setMinutosMes(e.target.value)}
+                  className="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-slate-900 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
+                />
+              </div>
+              <div>
+                <label htmlFor="calc-coste" className="block text-sm font-medium text-slate-700 mb-1">
+                  Coste actual (€/mes) — personas atendiendo el teléfono
+                </label>
+                <input
+                  id="calc-coste"
+                  type="number"
+                  min={0}
+                  step={100}
+                  value={costePersonalMes}
+                  onChange={e => setCostePersonalMes(e.target.value)}
+                  className="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-slate-900 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
+                  placeholder="Ej. 2000"
+                />
+                <p className="text-xs text-slate-500 mt-1">Salarios, horas dedicadas o coste externalizado de recepción.</p>
+              </div>
+            </div>
+            <div className="mt-6 pt-6 border-t border-slate-200">
+              <p className="text-sm text-slate-600 mb-1">Coste con nosotros este mes (0,32 €/min):</p>
+              <p className="text-2xl font-bold text-slate-900">{costeUsoMes.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €</p>
+              <p className="text-sm text-slate-600 mt-3 mb-1">Tu ahorro estimado al mes:</p>
+              <p className="text-2xl font-bold text-green-600">{ahorro.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €</p>
+              {ahorro > 0 && costeActual > 0 && (
+                <>
+                  <p className="text-xl font-bold text-green-600 mt-1">{ahorroPorcentaje} % de ahorro</p>
+                  <p className="text-xs text-slate-500 mt-2">Ahorro anual aproximado: <strong>{ (ahorro * 12).toLocaleString('es-ES', { maximumFractionDigits: 0 }) } €</strong></p>
+                </>
+              )}
+            </div>
+            <div className="mt-6 flex gap-3">
+              <Link to="/agendar" className="flex-1 text-center px-4 py-3 rounded-lg bg-brand-600 text-white font-semibold hover:bg-brand-700 transition-colors">
+                Reservar demo
+              </Link>
+              <button type="button" onClick={() => setCalculadoraAbierta(false)} className="px-4 py-3 rounded-lg border border-slate-300 text-slate-700 font-medium hover:bg-slate-50">
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

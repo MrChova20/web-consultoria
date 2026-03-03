@@ -4,27 +4,143 @@ Todo el proyecto (frontend + API) corre en **un solo proceso** y **un solo puert
 
 ---
 
-## Tu VPS
+## Llegar a ~/apps/web-consultoria y desplegar (recomendado)
+
+Clona el repo desde GitHub en **~/apps/web-consultoria** y despliega en el **primer puerto libre** (4000, 5000, 8080, 9000, …) para no chocar con otros proyectos.
 
 | | |
 |---|---|
-| **Host** | `137.74.115.81` |
+| **Host** | `vps-d3220941` (o la IP que tengas configurada, ej. `137.74.115.81`) |
+| **Usuario** | `ubuntu` |
+| **Ruta en VPS** | `~/apps/web-consultoria` |
+
+### Opción A: Desde tu PC (PowerShell)
+
+Ejecuta esto desde la raíz del proyecto (o desde cualquier sitio si tienes el script). El script se envía por SSH y en el VPS: crea `~/apps`, clona el repo, hace build y arranca con PM2 en un puerto libre.
+
+```powershell
+$VPS = "ubuntu@vps-d3220941"
+$KEY = "$env:USERPROFILE\.ssh\id_ed25519_pablo"
+Get-Content .\scripts\setup-and-deploy-vps.sh -Raw | ssh -i $KEY -o StrictHostKeyChecking=no $VPS 'bash -s'
+```
+
+Si usas la IP en lugar del hostname:
+
+```powershell
+Get-Content .\scripts\setup-and-deploy-vps.sh -Raw | ssh -i $KEY -o StrictHostKeyChecking=no ubuntu@137.74.115.81 'bash -s'
+```
+
+Al finalizar verás la URL (IP:PUERTO). En el VPS: `pm2 logs web-consultoria`.
+
+### Opción B: Dentro del VPS
+
+Conéctate y ejecuta:
+
+```bash
+ssh -i ~/.ssh/id_ed25519_pablo -o StrictHostKeyChecking=no ubuntu@vps-d3220941
+```
+
+Una vez dentro:
+
+```bash
+mkdir -p ~/apps && cd ~/apps
+git clone https://github.com/MrChova20/web-consultoria.git
+cd web-consultoria
+chmod +x scripts/setup-and-deploy-vps.sh
+./scripts/setup-and-deploy-vps.sh
+```
+
+Quedarás en `~/apps/web-consultoria` y la app correrá en un puerto no usado (el script lo elige solo). Para actualizar más adelante:
+
+```bash
+cd ~/apps/web-consultoria
+git pull
+./scripts/setup-and-deploy-vps.sh
+```
+
+**Requisitos en el VPS:** Node.js (v18+), npm, git y PM2 (`npm install -g pm2`). La primera vez el script crea `backend/.env` con `PORT`; edita ese archivo para añadir correo (MAIL_*, APPOINTMENT_EMAIL_TO) si usas el formulario de citas.
+
+---
+
+## Tu VPS (referencia)
+
+| | |
+|---|---|
+| **Host** | `vps-d3220941` / `137.74.115.81` |
 | **Usuario** | `ubuntu` |
 | **Clave SSH** | `$env:USERPROFILE\.ssh\id_ed25519_pablo` (Windows) |
 
 ### Conectar desde Windows (PowerShell)
 
 ```powershell
-ssh -i $env:USERPROFILE\.ssh\id_ed25519_pablo -o StrictHostKeyChecking=no ubuntu@137.74.115.81
+ssh -i $env:USERPROFILE\.ssh\id_ed25519_pablo -o StrictHostKeyChecking=no ubuntu@vps-d3220941
 ```
 
 ### Conectar desde Linux / Mac
 
 ```bash
-ssh -i ~/.ssh/id_ed25519_pablo -o StrictHostKeyChecking=no ubuntu@137.74.115.81
+ssh -i ~/.ssh/id_ed25519_pablo -o StrictHostKeyChecking=no ubuntu@vps-d3220941
 ```
 
-Una vez dentro, la web quedará en: **http://137.74.115.81:PUERTO** (ej. `http://137.74.115.81:4000`).
+Una vez dentro, la web quedará en: **http://TU_VPS_IP:PUERTO** (el script indica el puerto usado, ej. 4000).
+
+### URLs de acceso (web-consultoria)
+
+En el mismo VPS hay otros proyectos en otros puertos. Para **este** proyecto:
+
+| Uso | URL |
+|-----|-----|
+| **Por IP y puerto** (acceso directo) | **http://137.74.115.81:4000/** |
+| **Por dominio** (sin puerto, HTTPS) | **https://gandiasoftware.com** |
+
+Ambas sirven la misma app; Nginx en el 80/443 redirige el dominio al puerto 4000.
+
+### Si obtienes ERR_CONNECTION_TIMED_OUT
+
+El navegador no puede conectar porque el **puerto (ej. 4000) está bloqueado**. Hay que abrirlo en dos sitios:
+
+**1. Firewall del VPS (UFW)** — conectado por SSH:
+
+```bash
+# Ver estado
+sudo ufw status
+
+# Permitir el puerto (ej. 4000) y recargar
+sudo ufw allow 4000/tcp
+sudo ufw reload
+
+# Si UFW estaba inactive, activarlo deja SSH (22) permitido; asegúrate de no cerrar el 22
+sudo ufw allow 22/tcp
+sudo ufw enable
+```
+
+**2. Firewall / reglas del proveedor (OVH, AWS, etc.)**  
+En el panel de control del VPS (OVH Cloud, AWS Security Groups, etc.) añade una regla **entrante** para **TCP puerto 4000** (origen: 0.0.0.0/0 o “Todo el mundo”) y guarda. Sin esto, el tráfico ni siquiera llega al servidor.
+
+Después de abrir el puerto, prueba de nuevo: **http://137.74.115.81:4000**
+
+### Registro A para www (HTTPS)
+En la **Configuración DNS personalizada** añade un registro **A**:
+- **Nombre de host:** `www` (o `www.gandiasoftware.com` si el panel lo pide así)
+- **Apunte a / Valor:** `137.74.115.81`
+- **TTL:** 3600 (o el que use el resto)
+
+Así **www.gandiasoftware.com** irá al mismo VPS que la raíz y podrás tener HTTPS para ambos.
+
+### Usar dominio (gandiasoftware.com) sin poner puerto
+
+DNS no permite configurar puerto; el navegador usa el 80 por defecto. Para que **gandiasoftware.com** abra tu app:
+
+1. **DNS:** En tu proveedor de dominio, pon el registro **A** de `gandiasoftware.com` apuntando a **137.74.115.81** (no a 76.76.21.21).
+2. **Nginx en el VPS:** Proxy del puerto 80 al 4000. En el VPS:
+   - Sube o crea el fichero con el contenido de `scripts/nginx-gandiasoftware.conf`.
+   - Luego:
+     ```bash
+     sudo cp /ruta/nginx-gandiasoftware.conf /etc/nginx/sites-available/gandiasoftware.com
+     sudo ln -sf /etc/nginx/sites-available/gandiasoftware.com /etc/nginx/sites-enabled/
+     sudo nginx -t && sudo systemctl reload nginx
+     ```
+   Así **http://gandiasoftware.com** (puerto 80) mostrará la app que corre en el 4000.
 
 ### Subir el proyecto desde Windows (PowerShell)
 

@@ -95,8 +95,8 @@ function personalizeMessage(
   html: string,
   recipient: Recipient
 ): string {
-  const nombre = recipient.nombre ?? recipient.name ?? "";
-  const name = recipient.name ?? recipient.nombre ?? "";
+  const nombre = recipient.nombre != null ? recipient.nombre : (recipient.name != null ? recipient.name : "");
+  const name = recipient.name != null ? recipient.name : (recipient.nombre != null ? recipient.nombre : "");
 
   return html
     .replace(/{{\s*nombre\s*}}/gi, nombre)
@@ -162,10 +162,10 @@ const processTick = async () => {
       return;
     }
   } catch (err: any) {
-    const msg = String(err?.message || err);
+    const msg = String((err && err.message) || err);
 
     // 535 / EAUTH → credenciales incorrectas: pausar completamente
-    if (msg.includes("535") || err?.code === "EAUTH") {
+    if (msg.includes("535") || (err && err.code) === "EAUTH") {
       pushLog(
         "⛔ Error de autenticación SMTP (535/EAUTH). Envío pausado. Revisa MAIL_USER/MAIL_PASS (App Password en Gmail)."
       );

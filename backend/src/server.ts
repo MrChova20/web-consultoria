@@ -20,6 +20,7 @@ if (isProduction) {
 }
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+const HOST = process.env.HOST || '0.0.0.0'; // 0.0.0.0 para aceptar conexiones externas
+app.listen(Number(PORT), HOST, () => {
+  console.log(`Servidor corriendo en http://${HOST}:${PORT}`);
 });
