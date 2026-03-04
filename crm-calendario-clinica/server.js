@@ -277,7 +277,7 @@ app.post('/api/bookings', async (req, res) => {
     if (!r.ok) {
       return res.status(r.status).json(data);
     }
-    const bookingUid = data.uid || data.data?.uid || data.id;
+    const bookingUid = data.uid || (data.data && data.data.uid) || data.id;
     if (bookingUid && (body.clientId || body.doctor || body.sede)) {
       const citas = readCitasLocales();
       citas.push({
