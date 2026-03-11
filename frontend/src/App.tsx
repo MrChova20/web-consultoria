@@ -152,7 +152,7 @@ function Layout() {
   );
 }
 
-const PRECIO_POR_MINUTO = 0.32;
+const PRECIO_POR_MINUTO = 0.23;
 
 function Home() {
   const location = useLocation();
@@ -372,17 +372,11 @@ function Home() {
             Precio
           </p>
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-slate-900 text-center mb-12">
-            Tarifa clara y predecible
+            Precio por minuto, sin cuota fija
           </h2>
-          <div className="max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 px-6 py-8 rounded-2xl bg-brand-50/50 border-2 border-brand-200">
-            <span className="text-3xl sm:text-4xl font-bold text-brand-700">3.000 €</span>
-            <span className="text-slate-600 font-medium text-lg">pago único (una vez)</span>
-            <span className="text-slate-400 hidden sm:inline">+</span>
-            <span className="text-3xl sm:text-4xl font-bold text-brand-600">0,32 €/min</span>
+          <div className="max-w-2xl mx-auto flex items-center justify-center px-6 py-8 rounded-2xl bg-brand-50/50 border-2 border-brand-200">
+            <span className="text-3xl sm:text-4xl font-bold text-brand-600">0,23 €/min</span>
           </div>
-          <p className="text-center text-slate-600 text-sm mt-4 max-w-xl mx-auto">
-            Solo pagas por el uso cada mes. El pago único de 3.000 € se abona una sola vez al contratar.
-          </p>
           <div className="text-center mt-8">
             <Link to="/#calculadora" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand-600 text-white font-semibold hover:bg-brand-700 transition-colors shadow-card">
               Calcula tu ahorro
@@ -691,7 +685,7 @@ function Home() {
             </div>
             <div className="rounded-xl border border-brand-100 bg-brand-50/50 p-4 mb-6">
               <p className="text-sm font-semibold text-slate-700 mb-1">Precio de uso</p>
-              <p className="text-lg font-bold text-brand-700">0,32 €/min</p>
+              <p className="text-lg font-bold text-brand-700">0,23 €/min</p>
               <p className="text-xs text-slate-600 mt-1">Solo pagas por los minutos de llamada cada mes. Compara con lo que te cuesta tener a personas atendiendo el teléfono.</p>
             </div>
             <div className="space-y-4">
@@ -727,7 +721,7 @@ function Home() {
               </div>
             </div>
             <div className="mt-6 pt-6 border-t border-slate-200">
-              <p className="text-sm text-slate-600 mb-1">Coste con nosotros este mes (0,32 €/min):</p>
+              <p className="text-sm text-slate-600 mb-1">Coste con nosotros este mes (0,23 €/min):</p>
               <p className="text-2xl font-bold text-slate-900">{costeUsoMes.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €</p>
               <p className="text-sm text-slate-600 mt-3 mb-1">Tu ahorro estimado al mes:</p>
               <p className="text-2xl font-bold text-green-600">{ahorro.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €</p>
