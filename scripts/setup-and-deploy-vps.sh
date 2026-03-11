@@ -1,5 +1,5 @@
 #!/bin/bash
-# Clona el repo en ~/apps/web-consultoria, busca un puerto libre y despliega con PM2.
+# Clona el repo en ~/apps/web-consultoria y despliega SIEMPRE en el puerto 4000 con PM2.
 # Uso EN EL VPS: bash scripts/setup-and-deploy-vps.sh
 # O desde fuera: ssh ubuntu@vps-d3220941 'bash -s' < scripts/setup-and-deploy-vps.sh
 # (después de tener el repo en el VPS, desde la raíz: ./scripts/setup-and-deploy-vps.sh)
@@ -21,18 +21,7 @@ if [ -z "$NODE_MAJOR" ] || [ "$NODE_MAJOR" -lt 18 ] 2>/dev/null; then
 fi
 APPS_DIR="$HOME/apps"
 PROJECT_DIR="$APPS_DIR/web-consultoria"
-CANDIDATE_PORTS=(4000 5000 8080 9000 3001 4001)
-
-# --- Buscar puerto libre ---
-find_free_port() {
-  for port in "${CANDIDATE_PORTS[@]}"; do
-    if ! ss -tlnp 2>/dev/null | grep -q ":$port "; then
-      echo "$port"
-      return
-    fi
-  done
-  echo "5000"
-}
+PORT=4000
 
 # --- Llegar a ~/apps/web-consultoria ---
 mkdir -p "$APPS_DIR"
@@ -57,9 +46,8 @@ if [ ! -f "package.json" ] && [ -d "frontend" ]; then
   cd "$PROJECT_DIR"
 fi
 
-# --- Puerto libre ---
-PORT=$(find_free_port)
-echo "==> Usando puerto: $PORT"
+# --- Puerto fijo ---
+echo "==> Usando puerto fijo: $PORT"
 
 # --- Build ---
 echo "==> Instalando dependencias frontend..."
